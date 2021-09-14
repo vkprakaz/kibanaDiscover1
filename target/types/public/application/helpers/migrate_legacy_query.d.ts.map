@@ -1,0 +1,1 @@
+{"version":3,"file":"migrate_legacy_query.d.ts","sourceRoot":"","sources":["../../../../../public/application/helpers/migrate_legacy_query.ts"],"names":[],"mappings":"AASA,OAAO,EAAE,KAAK,EAAE,MAAM,yBAAyB,CAAC;AAEhD;;;;;GAKG;AAEH,wBAAgB,kBAAkB,CAAC,KAAK,EAAE,KAAK,GAAG;IAAE,CAAC,GAAG,EAAE,MAAM,GAAG,OAAO,CAAA;CAAE,GAAG,MAAM,GAAG,KAAK,CAO5F"}

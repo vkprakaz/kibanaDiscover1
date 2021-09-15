@@ -1,5 +1,5 @@
-import { IndexPattern, IndexPatternField } from '../../../../../data/common';
-import { SortDirection } from '../../../../../data/public';
+import { IndexPattern, IndexPatternField } from '../../../../../../../src/plugins/data/common';
+import { SortDirection } from '../../../../../../../src/plugins/data/public';
 import { LoadingStatus } from '../../angular/context_query_state';
 import { AppState } from '../../angular/context_state';
 import { EsHitRecordList } from '../../angular/context/api/context';

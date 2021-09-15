@@ -13,7 +13,7 @@ import {
   ISearchSource,
   IndexPatternsContract,
   EsQuerySortValue,
-} from '../../../../../../data/public';
+} from '../../../../../../../../src/plugins/data/public';
 import { EsHitRecord } from './context';
 
 export function fetchAnchorProvider(

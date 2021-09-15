@@ -6,8 +6,8 @@
  * Side Public License, v 1.
  */
 import { indexPatternWithTimefieldMock } from '../../../../__mocks__/index_pattern_with_timefield';
-import { SearchSource } from '../../../../../../data/public';
-import { dataPluginMock } from '../../../../../../data/public/mocks';
+import { SearchSource } from '../../../../../../../../src/plugins/data/public';
+import { dataPluginMock } from '../../../../../../../../src/plugins/data/public/mocks';
 import { getChartAggConfigs } from './get_chart_agg_configs';
 
 describe('getChartAggConfigs', () => {

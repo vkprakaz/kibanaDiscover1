@@ -1,4 +1,4 @@
-import { IndexPatternField } from 'src/plugins/data/public';
+import { IndexPatternField } from 'src/plugins/../../src/plugins/data/public';
 import { FieldFilterState } from './field_filter';
 interface GroupedFields {
     selected: IndexPatternField[];

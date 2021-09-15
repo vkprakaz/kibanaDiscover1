@@ -1,6 +1,6 @@
 import { IUiSettingsClient, SavedObject, ToastsStart } from 'kibana/public';
 import { IndexPattern } from '../../../../kibana_services';
-import { IndexPatternsContract, SearchSource } from '../../../../../../data/common';
+import { IndexPatternsContract, SearchSource } from '../../../../../../../../src/plugins/data/common';
 export declare type IndexPatternSavedObject = SavedObject & {
     title: string;
 };

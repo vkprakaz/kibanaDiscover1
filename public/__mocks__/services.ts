@@ -6,11 +6,11 @@
  * Side Public License, v 1.
  */
 import { DiscoverServices } from '../build_services';
-import { dataPluginMock } from '../../../data/public/mocks';
+import { dataPluginMock } from '../../../../../src/plugins/data/public/mocks';
 import { chromeServiceMock, coreMock, docLinksServiceMock } from '../../../../core/public/mocks';
 import { DEFAULT_COLUMNS_SETTING } from '../../common';
 import { savedSearchMock } from './saved_search';
-import { UI_SETTINGS } from '../../../data/common';
+import { UI_SETTINGS } from '../../../../../src/plugins/data/common';
 import { TopNavMenu } from '../../../navigation/public';
 const dataPlugin = dataPluginMock.createStartContract();
 

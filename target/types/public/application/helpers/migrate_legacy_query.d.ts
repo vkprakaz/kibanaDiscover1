@@ -1,4 +1,4 @@
-import { Query } from 'src/plugins/data/public';
+import { Query } from 'src/plugins/../../src/plugins/data/public';
 /**
  * Creates a standardized query object from old queries that were either strings or pure ES query DSL
  *

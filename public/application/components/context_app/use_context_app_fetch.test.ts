@@ -8,8 +8,8 @@
 
 import { act, renderHook } from '@testing-library/react-hooks';
 import { setServices, getServices } from '../../../kibana_services';
-import { SortDirection } from '../../../../../data/public';
-import { createFilterManagerMock } from '../../../../../data/public/query/filter_manager/filter_manager.mock';
+import { SortDirection } from '../../../../../../../src/plugins/data/public';
+import { createFilterManagerMock } from '../../../../../../../src/plugins/data/public/query/filter_manager/filter_manager.mock';
 import { CONTEXT_TIE_BREAKER_FIELDS_SETTING } from '../../../../common';
 import { DiscoverServices } from '../../../build_services';
 import { indexPatternMock } from '../../../__mocks__/index_pattern';

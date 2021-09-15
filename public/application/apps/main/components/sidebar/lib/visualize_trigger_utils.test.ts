@@ -6,7 +6,7 @@
  * Side Public License, v 1.
  */
 
-import type { IndexPatternField } from 'src/plugins/data/common';
+import type { IndexPatternField } from 'src/plugins/../../src/plugins/data/common';
 import type { Action } from 'src/plugins/ui_actions/public';
 import { getVisualizeInformation } from './visualize_trigger_utils';
 

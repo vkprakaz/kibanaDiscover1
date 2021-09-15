@@ -1,6 +1,6 @@
 import { EuiDataGridColumn } from '@elastic/eui';
 import { DiscoverGridSettings } from './types';
-import { IndexPattern } from '../../../../../data/common/index_patterns/index_patterns';
+import { IndexPattern } from '../../../../../../../src/plugins/data/common/index_patterns/index_patterns';
 export declare function getLeadControlColumns(): {
     id: string;
     width: number;

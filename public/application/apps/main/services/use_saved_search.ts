@@ -16,11 +16,11 @@ import {
   isCompleteResponse,
   SearchSource,
   tabifyAggResponse,
-} from '../../../../../../data/common';
+} from '../../../../../../../../src/plugins/data/common';
 import { GetStateReturn } from './discover_state';
 import { ElasticSearchHit } from '../../../doc_views/doc_views_types';
 import { RequestAdapter } from '../../../../../../inspector/public';
-import { AutoRefreshDoneFn, search } from '../../../../../../data/public';
+import { AutoRefreshDoneFn, search } from '../../../../../../../../src/plugins/data/public';
 import { calcFieldCounts } from '../utils/calc_field_counts';
 import { validateTimeRange } from '../utils/validate_time_range';
 import { updateSearchSource } from '../utils/update_search_source';

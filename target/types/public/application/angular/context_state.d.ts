@@ -1,7 +1,7 @@
 import { History } from 'history';
 import { NotificationsStart, IUiSettingsClient } from 'kibana/public';
 import { ReduxLikeStateContainer } from '../../../../kibana_utils/public';
-import { FilterManager, Filter } from '../../../../data/public';
+import { FilterManager, Filter } from '../../../../../../src/plugins/data/public';
 export interface AppState {
     /**
      * Columns displayed in the table, cannot be changed by UI, just in discover's main app

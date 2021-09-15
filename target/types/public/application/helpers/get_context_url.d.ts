@@ -1,4 +1,4 @@
-import { FilterManager } from '../../../../data/public';
+import { FilterManager } from '../../../../../../src/plugins/data/public';
 import { DiscoverServices } from '../../build_services';
 /**
  * Helper function to generate an URL to a document in Discover's context view

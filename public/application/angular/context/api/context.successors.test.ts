@@ -11,7 +11,7 @@ import { get, last } from 'lodash';
 
 import { createIndexPatternsStub, createContextSearchSourceStub } from './_stubs';
 import { setServices, SortDirection } from '../../../../kibana_services';
-import { Query } from '../../../../../../data/public';
+import { Query } from '../../../../../../../../src/plugins/data/public';
 import { EsHitRecordList, fetchContextProvider, SurrDocType } from './context';
 import { EsHitRecord } from './context';
 import { DiscoverServices } from '../../../../build_services';

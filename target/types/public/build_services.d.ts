@@ -1,7 +1,7 @@
 import { History } from 'history';
 import type { auto } from 'angular';
 import { Capabilities, ChromeStart, CoreStart, DocLinksStart, ToastsStart, IUiSettingsClient, PluginInitializerContext } from 'kibana/public';
-import { FilterManager, TimefilterContract, IndexPatternsContract, DataPublicPluginStart } from 'src/plugins/data/public';
+import { FilterManager, TimefilterContract, IndexPatternsContract, DataPublicPluginStart } from 'src/plugins/../../src/plugins/data/public';
 import { Start as InspectorPublicPluginStart } from 'src/plugins/inspector/public';
 import { SharePluginStart } from 'src/plugins/share/public';
 import { ChartsPluginStart } from 'src/plugins/charts/public';

@@ -14,8 +14,8 @@ import realHits from '../../../../../../__fixtures__/real_hits.js';
 // @ts-expect-error
 import stubbedLogstashFields from '../../../../../../__fixtures__/logstash_fields';
 import { coreMock } from '../../../../../../../../../core/public/mocks';
-import { IndexPattern } from '../../../../../../../../data/public';
-import { getStubIndexPattern } from '../../../../../../../../data/public/test_utils';
+import { IndexPattern } from '../../../../../../../../../../src/plugins/data/public';
+import { getStubIndexPattern } from '../../../../../../../../../../src/plugins/data/public/test_utils';
 // @ts-expect-error
 import { fieldCalculator } from './field_calculator';
 

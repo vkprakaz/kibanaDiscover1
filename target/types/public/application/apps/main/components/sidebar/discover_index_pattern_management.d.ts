@@ -1,5 +1,5 @@
 import { DiscoverServices } from '../../../../../build_services';
-import { IndexPattern } from '../../../../../../../data/common/index_patterns/index_patterns';
+import { IndexPattern } from '../../../../../../../../../src/plugins/data/common/index_patterns/index_patterns';
 export interface DiscoverIndexPatternManagementProps {
     /**
      * Currently selected index pattern

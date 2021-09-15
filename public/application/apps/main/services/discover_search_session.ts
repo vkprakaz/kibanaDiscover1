@@ -8,7 +8,7 @@
 
 import { History } from 'history';
 import { filter } from 'rxjs/operators';
-import { DataPublicPluginStart } from '../../../../../../data/public';
+import { DataPublicPluginStart } from '../../../../../../../../src/plugins/data/public';
 import {
   createQueryParamObservable,
   getQueryParams,

@@ -23,7 +23,7 @@ import {
   TimefilterContract,
   IndexPatternsContract,
   DataPublicPluginStart,
-} from 'src/plugins/data/public';
+} from 'src/plugins/../../src/plugins/data/public';
 import { Start as InspectorPublicPluginStart } from 'src/plugins/inspector/public';
 import { SharePluginStart } from 'src/plugins/share/public';
 import { ChartsPluginStart } from 'src/plugins/charts/public';

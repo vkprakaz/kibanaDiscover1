@@ -6,7 +6,7 @@
  * Side Public License, v 1.
  */
 
-import { EsQuerySortValue, SortDirection } from '../../../../../../data/public';
+import { EsQuerySortValue, SortDirection } from '../../../../../../../../src/plugins/data/public';
 import { createIndexPatternsStub, createSearchSourceStub } from './_stubs';
 import { fetchAnchorProvider } from './anchor';
 import { EsHitRecord, EsHitRecordList } from './context';

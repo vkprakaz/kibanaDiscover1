@@ -1,4 +1,4 @@
-import { IndexPattern } from '../../../../../data/public';
+import { IndexPattern } from '../../../../../../../src/plugins/data/public';
 import { DiscoverServices } from '../../../build_services';
 import { AppState } from '../../angular/context_state';
 export declare function useContextAppState({ indexPattern, services, }: {

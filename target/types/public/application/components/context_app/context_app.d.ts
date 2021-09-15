@@ -1,5 +1,5 @@
 import './context_app.scss';
-import { IndexPattern } from '../../../../../data/common';
+import { IndexPattern } from '../../../../../../../src/plugins/data/common';
 export interface ContextAppProps {
     indexPattern: IndexPattern;
     indexPatternId: string;

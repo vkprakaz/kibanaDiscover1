@@ -7,7 +7,7 @@
  */
 
 import { updateSearchSource } from './update_search_source';
-import { IndexPattern } from '../../../../../../data/public';
+import { IndexPattern } from '../../../../../../../../src/plugins/data/public';
 import { SavedSearch } from '../../../../saved_searches';
 import { AppState } from '../services/discover_state';
 import { SortOrder } from '../../../../saved_searches/types';

@@ -36,8 +36,8 @@ export declare const getHistory: () => import("history").History<any>;
  */
 export declare const syncHistoryLocations: () => import("history").History<any>;
 export declare const getScopedHistory: import("../../kibana_utils/public").Get<ScopedHistory<unknown>>, setScopedHistory: import("../../kibana_utils/public").Set<ScopedHistory<unknown>>;
-export declare const tabifyAggResponse: typeof import("../../data/common").tabifyAggResponse;
+export declare const tabifyAggResponse: typeof import("../../../../src/plugins/data/common").tabifyAggResponse;
 export { unhashUrl, redirectWhenMissing } from '../../kibana_utils/public';
 export { formatMsg, formatStack, subscribeWithScope } from '../../kibana_legacy/public';
-export { IndexPatternsContract, IIndexPattern, IndexPattern, indexPatterns, IFieldType, ISearchSource, EsQuerySortValue, SortDirection, } from '../../data/public';
+export { IndexPatternsContract, IIndexPattern, IndexPattern, indexPatterns, IFieldType, ISearchSource, EsQuerySortValue, SortDirection, } from '../../../../src/plugins/data/public';
 //# sourceMappingURL=kibana_services.d.ts.map

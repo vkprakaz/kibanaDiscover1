@@ -2,7 +2,7 @@ import '../index.scss';
 import angular from 'angular';
 import 'angular-sanitize';
 import { CoreStart, PluginInitializerContext } from 'kibana/public';
-import { DataPublicPluginStart } from '../../../../data/public';
+import { DataPublicPluginStart } from '../../../../../../src/plugins/data/public';
 import { NavigationPublicPluginStart as NavigationStart } from '../../../../navigation/public';
 import { DiscoverStartPlugins } from '../../plugin';
 /**

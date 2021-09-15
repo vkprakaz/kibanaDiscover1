@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 import { EsHitRecordList } from './context';
-export declare function createIndexPatternsStub(): Pick<import("../../../../../../data/public").IndexPatternsService, "create" | "delete" | "find" | "get" | "ensureDefaultIndexPattern" | "getIds" | "getTitles" | "getIdsWithTitle" | "clearCache" | "getCache" | "getDefault" | "getDefaultId" | "setDefault" | "hasUserIndexPattern" | "getFieldsForWildcard" | "getFieldsForIndexPattern" | "refreshFields" | "fieldArrayToMap" | "savedObjectToSpec" | "migrate" | "createAndSave" | "createSavedObject" | "updateSavedObject">;
+export declare function createIndexPatternsStub(): Pick<import("../../../../../../../../src/plugins/data/public").IndexPatternsService, "create" | "delete" | "find" | "get" | "ensureDefaultIndexPattern" | "getIds" | "getTitles" | "getIdsWithTitle" | "clearCache" | "getCache" | "getDefault" | "getDefaultId" | "setDefault" | "hasUserIndexPattern" | "getFieldsForWildcard" | "getFieldsForIndexPattern" | "refreshFields" | "fieldArrayToMap" | "savedObjectToSpec" | "migrate" | "createAndSave" | "createSavedObject" | "updateSavedObject">;
 /**
  * A stubbed search source with a `fetch` method that returns all of `_stubHits`.
  */

@@ -1,5 +1,5 @@
 import { DiscoverLayoutProps } from '../layout/types';
-import { Query, TimeRange } from '../../../../../../../data/common/query';
+import { Query, TimeRange } from '../../../../../../../../../src/plugins/data/common/query';
 import { GetStateReturn } from '../../services/discover_state';
 export declare type DiscoverTopNavProps = Pick<DiscoverLayoutProps, 'indexPattern' | 'navigateTo' | 'savedSearch' | 'services' | 'searchSource'> & {
     onOpenInspector: () => void;

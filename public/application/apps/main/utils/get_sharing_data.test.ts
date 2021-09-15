@@ -7,8 +7,8 @@
  */
 
 import { Capabilities, IUiSettingsClient } from 'kibana/public';
-import { IndexPattern } from 'src/plugins/data/public';
-import { createSearchSourceMock } from '../../../../../../data/common/search/search_source/mocks';
+import { IndexPattern } from 'src/plugins/../../src/plugins/data/public';
+import { createSearchSourceMock } from '../../../../../../../../src/plugins/data/common/search/search_source/mocks';
 import { DOC_HIDE_TIME_COLUMN_SETTING, SORT_DEFAULT_ORDER_SETTING } from '../../../../../common';
 import { indexPatternMock } from '../../../../__mocks__/index_pattern';
 import { getSharingData, showPublicUrlSwitch } from './get_sharing_data';

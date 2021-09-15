@@ -9,7 +9,7 @@
 import { IUiSettingsClient } from 'kibana/public';
 import { getState } from './context_state';
 import { createBrowserHistory, History } from 'history';
-import { FilterManager, Filter } from '../../../../data/public';
+import { FilterManager, Filter } from '../../../../../../src/plugins/data/public';
 import { coreMock } from '../../../../../core/public/mocks';
 import { SEARCH_FIELDS_FROM_SOURCE } from '../../../common';
 

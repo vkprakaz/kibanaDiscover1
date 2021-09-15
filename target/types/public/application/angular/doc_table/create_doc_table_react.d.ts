@@ -1,7 +1,7 @@
 import angular, { auto, IScope } from 'angular';
 import type { estypes } from '@elastic/elasticsearch';
 import { IIndexPattern } from '../../../kibana_services';
-import { IndexPatternField } from '../../../../../data/common';
+import { IndexPatternField } from '../../../../../../../src/plugins/data/common';
 export interface DocTableLegacyProps {
     columns: string[];
     searchDescription?: string;

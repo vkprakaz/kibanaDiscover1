@@ -1,7 +1,7 @@
 import { UiCounterMetricType } from '@kbn/analytics';
-import { IndexPatternAttributes } from '../../../../../../../data/common';
+import { IndexPatternAttributes } from '../../../../../../../../../src/plugins/data/common';
 import { SavedObject } from '../../../../../../../../core/types';
-import { IndexPatternField, IndexPattern } from '../../../../../../../data/public';
+import { IndexPatternField, IndexPattern } from '../../../../../../../../../src/plugins/data/public';
 import { DiscoverServices } from '../../../../../build_services';
 import { ElasticSearchHit } from '../../../../doc_views/doc_views_types';
 import { AppState } from '../../services/discover_state';

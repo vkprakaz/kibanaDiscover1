@@ -7,8 +7,8 @@
  */
 
 import type { UrlGeneratorsDefinition } from '../../share/public';
-import type { TimeRange, Filter, Query, QueryState, RefreshInterval } from '../../data/public';
-import { esFilters } from '../../data/public';
+import type { TimeRange, Filter, Query, QueryState, RefreshInterval } from '../../../../src/plugins/data/public';
+import { esFilters } from '../../../../src/plugins/data/public';
 import { setStateToKbnUrl } from '../../kibana_utils/public';
 
 export const DISCOVER_APP_URL_GENERATOR = 'DISCOVER_APP_URL_GENERATOR';

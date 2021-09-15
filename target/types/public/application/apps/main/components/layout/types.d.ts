@@ -1,5 +1,5 @@
-import { IndexPattern, IndexPatternAttributes, Query, SavedObject, TimeRange } from '../../../../../../../data/common';
-import { ISearchSource } from '../../../../../../../data/public';
+import { IndexPattern, IndexPatternAttributes, Query, SavedObject, TimeRange } from '../../../../../../../../../src/plugins/data/common';
+import { ISearchSource } from '../../../../../../../../../src/plugins/data/public';
 import { AppState, GetStateReturn } from '../../services/discover_state';
 import { SavedSearchRefetchSubject, SavedSearchDataSubject } from '../../services/use_saved_search';
 import { DiscoverServices } from '../../../../../build_services';

@@ -7,7 +7,7 @@
  */
 
 import { difference } from 'lodash';
-import { IndexPattern, IndexPatternField } from 'src/plugins/data/public';
+import { IndexPattern, IndexPatternField } from 'src/plugins/../../src/plugins/data/public';
 import { isNestedFieldParent } from '../../../utils/nested_fields';
 
 export function getIndexPatternFieldList(

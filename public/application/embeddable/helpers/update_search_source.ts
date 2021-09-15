@@ -6,7 +6,7 @@
  * Side Public License, v 1.
  */
 
-import { IndexPattern, ISearchSource } from '../../../../../data/common';
+import { IndexPattern, ISearchSource } from '../../../../../../../src/plugins/data/common';
 import { getSortForSearchSource } from '../../angular/doc_table';
 import { SortPairArr } from '../../angular/doc_table/lib/get_sort';
 

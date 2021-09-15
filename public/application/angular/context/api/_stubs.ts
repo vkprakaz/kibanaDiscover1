@@ -9,7 +9,7 @@
 import sinon from 'sinon';
 import moment from 'moment';
 
-import { IndexPatternsContract } from '../../../../../../data/public';
+import { IndexPatternsContract } from '../../../../../../../../src/plugins/data/public';
 import { EsHitRecordList } from './context';
 
 type SortHit = {

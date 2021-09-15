@@ -16,7 +16,7 @@ import {
   ErrorEmbeddable,
 } from '../../../../embeddable/public';
 
-import { TimeRange } from '../../../../data/public';
+import { TimeRange } from '../../../../../../src/plugins/data/public';
 
 import { SearchInput, SearchOutput } from './types';
 import { SEARCH_EMBEDDABLE_TYPE } from './constants';

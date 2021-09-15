@@ -9,7 +9,7 @@
 import { ComponentType } from 'react';
 import { IScope } from 'angular';
 import type { estypes } from '@elastic/elasticsearch';
-import { IndexPattern } from '../../../../data/public';
+import { IndexPattern } from '../../../../../../src/plugins/data/public';
 
 export interface AngularDirective {
   controller: (...injectedServices: unknown[]) => void;

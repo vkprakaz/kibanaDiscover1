@@ -12,7 +12,7 @@ import { ScopedHistory, AppMountParameters } from 'kibana/public';
 import { UiActionsStart } from 'src/plugins/ui_actions/public';
 import { DiscoverServices } from './build_services';
 import { createGetterSetter } from '../../kibana_utils/public';
-import { search } from '../../data/public';
+import { search } from '../../../../src/plugins/data/public';
 import { DocViewsRegistry } from './application/doc_views/doc_views_registry';
 
 let angularModule: ng.IModule | null = null;
@@ -105,4 +105,4 @@ export {
   ISearchSource,
   EsQuerySortValue,
   SortDirection,
-} from '../../data/public';
+} from '../../../../src/plugins/data/public';

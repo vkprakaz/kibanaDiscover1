@@ -13,7 +13,7 @@ import {
   visualizeGeoFieldTrigger,
 } from '../../../../../../../../ui_actions/public';
 import { getUiActions } from '../../../../../../kibana_services';
-import { IndexPatternField, KBN_FIELD_TYPES } from '../../../../../../../../data/public';
+import { IndexPatternField, KBN_FIELD_TYPES } from '../../../../../../../../../../src/plugins/data/public';
 
 function getTriggerConstant(type: string) {
   return type === KBN_FIELD_TYPES.GEO_POINT || type === KBN_FIELD_TYPES.GEO_SHAPE

@@ -1,5 +1,5 @@
 import { FieldDetails } from './types';
-import { IndexPatternField, IndexPattern } from '../../../../../../../data/public';
+import { IndexPatternField, IndexPattern } from '../../../../../../../../../src/plugins/data/public';
 interface DiscoverFieldDetailsProps {
     field: IndexPatternField;
     indexPattern: IndexPattern;

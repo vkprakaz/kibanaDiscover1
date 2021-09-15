@@ -2,7 +2,7 @@ import './discover_field.scss';
 import React from 'react';
 import { UiCounterMetricType } from '@kbn/analytics';
 import { FieldDetails } from './types';
-import { IndexPatternField, IndexPattern } from '../../../../../../../data/public';
+import { IndexPatternField, IndexPattern } from '../../../../../../../../../src/plugins/data/public';
 export interface DiscoverFieldProps {
     /**
      * Determines whether add/remove button is displayed not only when focused

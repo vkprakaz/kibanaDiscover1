@@ -12,7 +12,7 @@ import { discoverServiceMock } from '../../../../__mocks__/services';
 import { savedSearchMock } from '../../../../__mocks__/saved_search';
 import { useDiscoverState } from './use_discover_state';
 import { indexPatternMock } from '../../../../__mocks__/index_pattern';
-import { SearchSource } from '../../../../../../data/common';
+import { SearchSource } from '../../../../../../../../src/plugins/data/common';
 
 describe('test useDiscoverState', () => {
   test('return is valid', async () => {

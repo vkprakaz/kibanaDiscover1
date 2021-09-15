@@ -1,4 +1,4 @@
-import { IndexPattern, ISearchSource } from '../../../../../../data/common';
+import { IndexPattern, ISearchSource } from '../../../../../../../../src/plugins/data/common';
 import { SortOrder } from '../../../../saved_searches/types';
 import { DiscoverServices } from '../../../../build_services';
 /**

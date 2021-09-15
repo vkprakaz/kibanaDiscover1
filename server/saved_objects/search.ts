@@ -10,7 +10,7 @@ import { SavedObjectsType } from 'kibana/server';
 import { searchMigrations } from './search_migrations';
 
 export const searchSavedObjectType: SavedObjectsType = {
-  name: 'search',
+  name: 'searchNew',
   hidden: false,
   namespaceType: 'single',
   management: {

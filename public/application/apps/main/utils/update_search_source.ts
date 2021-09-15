@@ -8,10 +8,10 @@
 
 import { getSortForSearchSource } from '../../../angular/doc_table';
 import { SAMPLE_SIZE_SETTING, SORT_DEFAULT_ORDER_SETTING } from '../../../../../common';
-import { IndexPattern, ISearchSource } from '../../../../../../data/common';
+import { IndexPattern, ISearchSource } from '../../../../../../../../src/plugins/data/common';
 import { SortOrder } from '../../../../saved_searches/types';
 import { DiscoverServices } from '../../../../build_services';
-import { indexPatterns as indexPatternsUtils } from '../../../../../../data/public';
+import { indexPatterns as indexPatternsUtils } from '../../../../../../../../src/plugins/data/public';
 
 /**
  * Helper function to update the given searchSource before fetching/sharing/persisting

@@ -1,7 +1,7 @@
 import { Subject, BehaviorSubject } from 'rxjs';
 import { DiscoverServices } from '../../../../build_services';
 import { DiscoverSearchSessionManager } from './discover_search_session';
-import { IndexPattern, SearchSource } from '../../../../../../data/common';
+import { IndexPattern, SearchSource } from '../../../../../../../../src/plugins/data/common';
 import { GetStateReturn } from './discover_state';
 import { ElasticSearchHit } from '../../../doc_views/doc_views_types';
 import { RequestAdapter } from '../../../../../../inspector/public';

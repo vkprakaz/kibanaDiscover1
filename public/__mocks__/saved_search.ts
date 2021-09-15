@@ -7,7 +7,7 @@
  */
 
 import { SavedSearch } from '../saved_searches';
-import { createSearchSourceMock } from '../../../data/public/mocks';
+import { createSearchSourceMock } from '../../../../../src/plugins/data/public/mocks';
 import { indexPatternMock } from './index_pattern';
 
 export const savedSearchMock = ({

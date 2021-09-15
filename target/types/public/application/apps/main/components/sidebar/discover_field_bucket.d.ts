@@ -1,5 +1,5 @@
 import { Bucket } from './types';
-import { IndexPatternField } from '../../../../../../../data/public';
+import { IndexPatternField } from '../../../../../../../../../src/plugins/data/public';
 import './discover_field_bucket.scss';
 interface Props {
     bucket: Bucket;

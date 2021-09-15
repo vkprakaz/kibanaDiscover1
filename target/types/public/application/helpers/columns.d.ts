@@ -1,4 +1,4 @@
-import { IndexPattern } from '../../../../data/common';
+import { IndexPattern } from '../../../../../../src/plugins/data/common';
 /**
  * Function to provide fallback when
  * 1) no columns are given

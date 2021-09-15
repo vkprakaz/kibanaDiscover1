@@ -1,5 +1,5 @@
 import { IUiSettingsClient } from 'kibana/public';
-import { DataPublicPluginStart, IndexPattern } from '../../../../../../../data/public';
+import { DataPublicPluginStart, IndexPattern } from '../../../../../../../../../src/plugins/data/public';
 import { SavedSearch } from '../../../../../saved_searches';
 import { AppState, GetStateReturn } from '../../services/discover_state';
 import { TimechartBucketInterval } from '../timechart_header/timechart_header';

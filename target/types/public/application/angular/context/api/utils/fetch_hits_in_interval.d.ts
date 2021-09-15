@@ -1,4 +1,4 @@
-import { ISearchSource, EsQuerySortValue, SortDirection } from '../../../../../../../data/public';
+import { ISearchSource, EsQuerySortValue, SortDirection } from '../../../../../../../../../src/plugins/data/public';
 import { EsHitRecordList } from '../context';
 import { IntervalValue } from './generate_intervals';
 import { EsQuerySearchAfter } from './get_es_query_search_after';

@@ -1,5 +1,5 @@
 import './timechart_header.scss';
-import { DataPublicPluginStart } from '../../../../../../../data/public';
+import { DataPublicPluginStart } from '../../../../../../../../../src/plugins/data/public';
 export interface TimechartBucketInterval {
     scaled?: boolean;
     description?: string;

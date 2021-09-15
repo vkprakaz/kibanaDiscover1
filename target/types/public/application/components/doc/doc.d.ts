@@ -1,4 +1,4 @@
-import { IndexPatternsContract } from 'src/plugins/data/public';
+import { IndexPatternsContract } from 'src/plugins/../../src/plugins/data/public';
 export interface DocProps {
     /**
      * Id of the doc in ES

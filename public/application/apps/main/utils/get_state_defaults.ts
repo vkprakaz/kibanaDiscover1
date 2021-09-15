@@ -12,7 +12,7 @@ import { DEFAULT_COLUMNS_SETTING, SORT_DEFAULT_ORDER_SETTING } from '../../../..
 import { getSortArray } from '../../../angular/doc_table';
 import { getDefaultSort } from '../../../angular/doc_table/lib/get_default_sort';
 import { SavedSearch } from '../../../../saved_searches';
-import { DataPublicPluginStart } from '../../../../../../data/public';
+import { DataPublicPluginStart } from '../../../../../../../../src/plugins/data/public';
 
 import { AppState } from '../services/discover_state';
 

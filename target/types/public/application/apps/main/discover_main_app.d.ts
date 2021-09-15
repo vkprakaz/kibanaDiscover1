@@ -1,5 +1,5 @@
 import { History } from 'history';
-import { IndexPattern, IndexPatternAttributes, SavedObject } from '../../../../../data/common';
+import { IndexPattern, IndexPatternAttributes, SavedObject } from '../../../../../../../src/plugins/data/common';
 import { DiscoverServices } from '../../../build_services';
 import { SavedSearch } from '../../../saved_searches';
 export interface DiscoverMainProps {

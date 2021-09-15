@@ -1,5 +1,5 @@
 import { SavedObject } from 'kibana/public';
-import { IndexPattern, IndexPatternAttributes } from 'src/plugins/data/public';
+import { IndexPattern, IndexPatternAttributes } from 'src/plugins/../../src/plugins/data/public';
 export interface DiscoverIndexPatternProps {
     /**
      * list of available index patterns, if length > 1, component offers a "change" link

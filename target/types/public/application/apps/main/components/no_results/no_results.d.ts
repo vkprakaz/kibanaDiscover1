@@ -1,4 +1,4 @@
-import { DataPublicPluginStart } from '../../../../../../../data/public';
+import { DataPublicPluginStart } from '../../../../../../../../../src/plugins/data/public';
 import './_no_results.scss';
 export interface DiscoverNoResultsProps {
     timeFieldName?: string;

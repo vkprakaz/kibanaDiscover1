@@ -1,5 +1,5 @@
 import { History } from 'history';
-import { IndexPattern } from '../../../../../../data/public';
+import { IndexPattern } from '../../../../../../../../src/plugins/data/public';
 import { DiscoverServices } from '../../../../build_services';
 import { SavedSearch } from '../../../../saved_searches';
 export declare function useDiscoverState({ services, history, initialIndexPattern, initialSavedSearch, }: {
@@ -15,7 +15,7 @@ export declare function useDiscoverState({ services, history, initialIndexPatter
     onChangeIndexPattern: (id: string) => Promise<void>;
     onUpdateQuery: (_payload: any, isUpdate?: boolean | undefined) => void;
     savedSearch: SavedSearch;
-    searchSource: import("../../../../../../data/public").SearchSource;
+    searchSource: import("../../../../../../../../src/plugins/data/public").SearchSource;
     setState: import("react").Dispatch<import("react").SetStateAction<import("./discover_state").AppState>>;
     state: import("./discover_state").AppState;
     stateContainer: import("./discover_state").GetStateReturn;

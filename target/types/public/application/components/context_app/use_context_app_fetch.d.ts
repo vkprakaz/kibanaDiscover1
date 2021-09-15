@@ -1,6 +1,6 @@
 import { DiscoverServices } from '../../../build_services';
 import { EsHitRecord, SurrDocType } from '../../angular/context/api/context';
-import { IndexPattern } from '../../../../../data/public';
+import { IndexPattern } from '../../../../../../../src/plugins/data/public';
 import { ContextFetchState } from '../../angular/context_query_state';
 import { AppState } from '../../angular/context_state';
 export interface ContextAppFetchProps {

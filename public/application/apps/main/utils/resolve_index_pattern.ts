@@ -9,7 +9,7 @@
 import { i18n } from '@kbn/i18n';
 import { IUiSettingsClient, SavedObject, ToastsStart } from 'kibana/public';
 import { IndexPattern } from '../../../../kibana_services';
-import { IndexPatternsContract, SearchSource } from '../../../../../../data/common';
+import { IndexPatternsContract, SearchSource } from '../../../../../../../../src/plugins/data/common';
 
 export type IndexPatternSavedObject = SavedObject & { title: string };
 

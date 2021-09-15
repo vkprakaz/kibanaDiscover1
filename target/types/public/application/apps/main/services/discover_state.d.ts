@@ -1,7 +1,7 @@
 import { History } from 'history';
 import { NotificationsStart, IUiSettingsClient } from 'kibana/public';
 import { IKbnUrlStateStorage, ReduxLikeStateContainer, StateContainer } from '../../../../../../kibana_utils/public';
-import { DataPublicPluginStart, Filter, FilterManager, IndexPattern, Query, SearchSessionInfoProvider } from '../../../../../../data/public';
+import { DataPublicPluginStart, Filter, FilterManager, IndexPattern, Query, SearchSessionInfoProvider } from '../../../../../../../../src/plugins/data/public';
 import { DiscoverGridSettings } from '../../../components/discover_grid/types';
 import { SavedSearch } from '../../../../saved_searches';
 export interface AppState {

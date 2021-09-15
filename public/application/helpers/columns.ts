@@ -6,7 +6,7 @@
  * Side Public License, v 1.
  */
 
-import { IndexPattern } from '../../../../data/common';
+import { IndexPattern } from '../../../../../../src/plugins/data/common';
 
 // We store this outside the function as a constant, so we're not creating a new array every time
 // the function is returning this. A changing array might cause the data grid to think it got

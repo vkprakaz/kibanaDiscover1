@@ -1,5 +1,5 @@
 import type { estypes } from '@elastic/elasticsearch';
-import { Filter, IndexPatternsContract } from 'src/plugins/data/public';
+import { Filter, IndexPatternsContract } from 'src/plugins/../../src/plugins/data/public';
 import { SortDirection } from './utils/sorting';
 export declare enum SurrDocType {
     SUCCESSORS = "successors",

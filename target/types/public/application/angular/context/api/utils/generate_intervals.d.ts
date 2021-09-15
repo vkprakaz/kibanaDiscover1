@@ -1,4 +1,4 @@
-import { SortDirection } from '../../../../../../../data/public';
+import { SortDirection } from '../../../../../../../../../src/plugins/data/public';
 import { SurrDocType } from '../context';
 export declare type IntervalValue = number | null;
 /**

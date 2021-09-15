@@ -1,5 +1,5 @@
 import { History } from 'history';
-import { DataPublicPluginStart } from '../../../../../../data/public';
+import { DataPublicPluginStart } from '../../../../../../../../src/plugins/data/public';
 export interface DiscoverSearchSessionManagerDeps {
     history: History;
     session: DataPublicPluginStart['search']['session'];

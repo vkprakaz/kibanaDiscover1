@@ -9,7 +9,7 @@ import { useMemo, useEffect } from 'react';
 import { History } from 'history';
 import { DiscoverSearchSessionManager } from './discover_search_session';
 import { createSearchSessionRestorationDataProvider, GetStateReturn } from './discover_state';
-import { noSearchSessionStorageCapabilityMessage } from '../../../../../../data/public';
+import { noSearchSessionStorageCapabilityMessage } from '../../../../../../../../src/plugins/data/public';
 import { DiscoverServices } from '../../../../build_services';
 import { SavedSearch } from '../../../../saved_searches';
 

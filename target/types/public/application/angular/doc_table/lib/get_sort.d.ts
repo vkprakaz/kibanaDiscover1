@@ -1,4 +1,4 @@
-import { IndexPattern } from '../../../../../../data/public';
+import { IndexPattern } from '../../../../../../../../src/plugins/data/public';
 export declare type SortPairObj = Record<string, string>;
 export declare type SortPairArr = [string, string];
 export declare type SortPair = SortPairArr | SortPairObj;

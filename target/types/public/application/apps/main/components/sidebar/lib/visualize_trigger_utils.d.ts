@@ -1,4 +1,4 @@
-import { IndexPatternField } from '../../../../../../../../data/public';
+import { IndexPatternField } from '../../../../../../../../../../src/plugins/data/public';
 export declare function triggerVisualizeActions(field: IndexPatternField, indexPatternId: string | undefined, contextualFields: string[]): void;
 export interface VisualizeInformation {
     field: IndexPatternField;

@@ -1,4 +1,4 @@
-import { SearchSource } from '../../../data/public';
+import { SearchSource } from '../../../../../src/plugins/data/public';
 import { SavedObjectSaveOpts } from '../../../saved_objects/public';
 import { DiscoverGridSettings } from '../application/components/discover_grid/types';
 export declare type SortOrder = [string, string];

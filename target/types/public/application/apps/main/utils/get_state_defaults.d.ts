@@ -1,6 +1,6 @@
 import { IUiSettingsClient } from 'kibana/public';
 import { SavedSearch } from '../../../../saved_searches';
-import { DataPublicPluginStart } from '../../../../../../data/public';
+import { DataPublicPluginStart } from '../../../../../../../../src/plugins/data/public';
 import { AppState } from '../services/discover_state';
 export declare function getStateDefaults({ config, data, savedSearch, }: {
     config: IUiSettingsClient;

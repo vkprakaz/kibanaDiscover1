@@ -1,4 +1,4 @@
-import { IndexPattern } from '../../../../../../data/public';
+import { IndexPattern } from '../../../../../../../../src/plugins/data/public';
 import { SavedSearch } from '../../../../saved_searches';
 import { AppState } from '../services/discover_state';
 import { SavedObjectSaveOpts } from '../../../../../../saved_objects/public';

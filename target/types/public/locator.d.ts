@@ -1,5 +1,5 @@
 import type { SerializableState } from 'src/plugins/kibana_utils/common';
-import type { TimeRange, Filter, Query, RefreshInterval } from '../../data/public';
+import type { TimeRange, Filter, Query, RefreshInterval } from '../../../../src/plugins/data/public';
 import type { LocatorDefinition, LocatorPublic } from '../../share/public';
 export declare const DISCOVER_APP_LOCATOR = "DISCOVER_APP_LOCATOR";
 export interface DiscoverAppLocatorParams extends SerializableState {

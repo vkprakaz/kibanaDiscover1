@@ -1,6 +1,6 @@
 import React from 'react';
 import { UiCounterMetricType } from '@kbn/analytics';
-import type { IndexPattern, IndexPatternField } from 'src/plugins/data/common';
+import type { IndexPattern, IndexPatternField } from 'src/plugins/../../src/plugins/data/common';
 import type { FieldDetails } from './types';
 interface Props {
     field: IndexPatternField;

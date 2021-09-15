@@ -8,7 +8,7 @@ import { KibanaLegacySetup, KibanaLegacyStart } from 'src/plugins/kibana_legacy/
 import { UrlForwardingSetup, UrlForwardingStart } from 'src/plugins/url_forwarding/public';
 import { HomePublicPluginSetup } from 'src/plugins/home/public';
 import { Start as InspectorPublicPluginStart } from 'src/plugins/inspector/public';
-import { DataPublicPluginStart, DataPublicPluginSetup } from '../../data/public';
+import { DataPublicPluginStart, DataPublicPluginSetup } from '../../../../src/plugins/data/public';
 import { SavedObjectLoader, SavedObjectsStart } from '../../saved_objects/public';
 import { UrlGeneratorState } from '../../share/public';
 import { DocViewInput, DocViewInputFn } from './application/doc_views/doc_views_types';

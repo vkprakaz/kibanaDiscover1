@@ -12,7 +12,7 @@ import { createIndexPatternsStub, createContextSearchSourceStub } from './_stubs
 import { EsHitRecordList, fetchContextProvider, SurrDocType } from './context';
 import { setServices, SortDirection } from '../../../../kibana_services';
 import { EsHitRecord } from './context';
-import { Query } from '../../../../../../data/public';
+import { Query } from '../../../../../../../../src/plugins/data/public';
 import { DiscoverServices } from '../../../../build_services';
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;

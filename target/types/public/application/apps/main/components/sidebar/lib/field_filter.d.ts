@@ -1,4 +1,4 @@
-import { IndexPatternField } from '../../../../../../../../data/public';
+import { IndexPatternField } from '../../../../../../../../../../src/plugins/data/public';
 export interface FieldFilterState {
     missing: boolean;
     type: string;

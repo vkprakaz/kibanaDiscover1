@@ -7,7 +7,7 @@
  */
 
 import type { Capabilities, IUiSettingsClient } from 'kibana/public';
-import { ISearchSource } from '../../../../../../data/common';
+import { ISearchSource } from '../../../../../../../../src/plugins/data/common';
 import { DOC_HIDE_TIME_COLUMN_SETTING, SORT_DEFAULT_ORDER_SETTING } from '../../../../../common';
 import type { SavedSearch, SortOrder } from '../../../../saved_searches/types';
 import { AppState } from '../services/discover_state';

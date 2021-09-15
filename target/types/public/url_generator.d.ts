@@ -1,5 +1,5 @@
 import type { UrlGeneratorsDefinition } from '../../share/public';
-import type { TimeRange, Filter, Query, RefreshInterval } from '../../data/public';
+import type { TimeRange, Filter, Query, RefreshInterval } from '../../../../src/plugins/data/public';
 export declare const DISCOVER_APP_URL_GENERATOR = "DISCOVER_APP_URL_GENERATOR";
 export interface DiscoverUrlGeneratorState {
     /**

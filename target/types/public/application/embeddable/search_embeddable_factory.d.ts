@@ -1,7 +1,7 @@
 import { auto } from 'angular';
 import { UiActionsStart } from 'src/plugins/ui_actions/public';
 import { EmbeddableFactoryDefinition, Container, ErrorEmbeddable } from '../../../../embeddable/public';
-import { TimeRange } from '../../../../data/public';
+import { TimeRange } from '../../../../../../src/plugins/data/public';
 import { SearchInput, SearchOutput } from './types';
 import { SavedSearchEmbeddable } from './saved_search_embeddable';
 interface StartServices {

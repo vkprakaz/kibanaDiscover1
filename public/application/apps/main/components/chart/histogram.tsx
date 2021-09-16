@@ -34,7 +34,7 @@ import {
   Endzones,
   getAdjustedInterval,
   renderEndzoneTooltip,
-} from '../../../../../../../charts/public';
+} from '../../../../../../../../src/plugins/charts/public';
 
 export interface DiscoverHistogramProps {
   chartData: IChart;

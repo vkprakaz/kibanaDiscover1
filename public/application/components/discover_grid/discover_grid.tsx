@@ -37,7 +37,7 @@ import {
 import { defaultPageSize, gridStyle, pageSizeArr, toolbarVisibility } from './constants';
 import { DiscoverServices } from '../../../build_services';
 import { getDisplayedColumns } from '../../helpers/columns';
-import { KibanaContextProvider } from '../../../../../kibana_react/public';
+import { KibanaContextProvider } from '../../../../../../src/plugins/kibana_react/public';
 import { MAX_DOC_FIELDS_DISPLAYED } from '../../../../common';
 import { DiscoverGridDocumentToolbarBtn, getDocId } from './discover_grid_document_selection';
 

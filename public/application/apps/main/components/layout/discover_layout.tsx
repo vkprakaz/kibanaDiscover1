@@ -29,7 +29,7 @@ import {
   esFilters,
   IndexPatternField,
   indexPatterns as indexPatternsUtils,
-} from '../../../../../../../data/public';
+} from '../../../../../../../../src/plugins/data/public';
 import { DiscoverSidebarResponsive } from '../sidebar';
 import { DiscoverLayoutProps } from './types';
 import { SortPairArr } from '../../../../angular/doc_table/lib/get_sort';

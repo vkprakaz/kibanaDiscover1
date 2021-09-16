@@ -13,7 +13,7 @@ import _ from 'lodash';
 import realHits from '../../../../../../__fixtures__/real_hits.js';
 // @ts-expect-error
 import stubbedLogstashFields from '../../../../../../__fixtures__/logstash_fields';
-import { coreMock } from '../../../../../../../../../core/public/mocks';
+import { coreMock } from '../../../../../../../../../../src/core/public/mocks';
 import { IndexPattern } from '../../../../../../../../../../src/plugins/data/public';
 import { getStubIndexPattern } from '../../../../../../../../../../src/plugins/data/public/test_utils';
 // @ts-expect-error

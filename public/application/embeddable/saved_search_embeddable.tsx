@@ -11,12 +11,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { i18n } from '@kbn/i18n';
 import { isEqual } from 'lodash';
-import { Container, Embeddable } from '../../../../embeddable/public';
+import { Container, Embeddable } from '../../../../../src/plugins/embeddable/public';
 import { ISearchEmbeddable, SearchInput, SearchOutput } from './types';
 import { SavedSearch } from '../../saved_searches';
-import { Adapters, RequestAdapter } from '../../../../inspector/common';
+import { Adapters, RequestAdapter } from '../../../../../src/plugins/inspector/common';
 import { SEARCH_EMBEDDABLE_TYPE } from './constants';
-import { APPLY_FILTER_TRIGGER, esFilters, FilterManager } from '../../../../data/public';
+import { APPLY_FILTER_TRIGGER, esFilters, FilterManager } from '../../../../../src/plugins/data/public';
 import { DiscoverServices } from '../../build_services';
 import {
   Query,
@@ -25,11 +25,11 @@ import {
   IFieldType,
   IndexPattern,
   ISearchSource,
-} from '../../../../data/common';
+} from '../../../../../src/plugins/data/common';
 import { SortOrder } from '../angular/doc_table/components/table_header/helpers';
 import { ElasticSearchHit } from '../doc_views/doc_views_types';
 import { SavedSearchEmbeddableComponent } from './saved_search_embeddable_component';
-import { UiActionsStart } from '../../../../ui_actions/public';
+import { UiActionsStart } from '../../../../../src/plugins/ui_actions/public';
 import { getServices } from '../../kibana_services';
 import {
   DOC_HIDE_TIME_COLUMN_SETTING,

@@ -8,8 +8,8 @@
 
 import { stringify } from 'query-string';
 import rison from 'rison-node';
-import { url } from '../../../../kibana_utils/common';
-import { esFilters, FilterManager } from '../../../../data/public';
+import { url } from '../../../../../src/plugins/kibana_utils/common';
+import { esFilters, FilterManager } from '../../../../../src/plugins/data/public';
 import { DiscoverServices } from '../../build_services';
 
 /**

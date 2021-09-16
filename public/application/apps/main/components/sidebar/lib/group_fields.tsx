@@ -6,7 +6,7 @@
  * Side Public License, v 1.
  */
 
-import { IndexPatternField } from 'src/plugins/data/public';
+import { IndexPatternField } from '../../../../../../../../../../src/plugins/data/public';
 import { FieldFilterState, isFieldFiltered } from './field_filter';
 
 interface GroupedFields {

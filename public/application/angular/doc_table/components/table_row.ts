@@ -10,7 +10,7 @@ import { find } from 'lodash';
 import $ from 'jquery';
 import openRowHtml from './table_row/open.html';
 import detailsHtml from './table_row/details.html';
-import { dispatchRenderComplete } from '../../../../../../kibana_utils/public';
+import { dispatchRenderComplete } from '../../../../../../../src/plugins/kibana_utils/public';
 import { DOC_HIDE_TIME_COLUMN_SETTING } from '../../../../../common';
 import { getServices } from '../../../../kibana_services';
 import { getContextUrl } from '../../../helpers/get_context_url';

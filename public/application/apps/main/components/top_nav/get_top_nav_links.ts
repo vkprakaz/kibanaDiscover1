@@ -10,7 +10,7 @@ import { i18n } from '@kbn/i18n';
 import moment from 'moment';
 import { showOpenSearchPanel } from './show_open_search_panel';
 import { getSharingData, showPublicUrlSwitch } from '../../utils/get_sharing_data';
-import { unhashUrl } from '../../../../../../../kibana_utils/public';
+import { unhashUrl } from '../../../../../../../../src/plugins/kibana_utils/public';
 import { DiscoverServices } from '../../../../../build_services';
 import { SavedSearch } from '../../../../../saved_searches';
 import { onSaveSearch } from './on_save_search';

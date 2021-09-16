@@ -16,9 +16,9 @@ import 'angular-sanitize';
 import { EuiIcon } from '@elastic/eui';
 import { i18nDirective, i18nFilter, I18nProvider } from '@kbn/i18n/angular';
 import { CoreStart, PluginInitializerContext } from 'kibana/public';
-import { DataPublicPluginStart } from '../../../../../../src/plugins/data/public';
-import { Storage } from '../../../../kibana_utils/public';
-import { NavigationPublicPluginStart as NavigationStart } from '../../../../navigation/public';
+import { DataPublicPluginStart } from '../../../../../src/plugins/data/public';
+import { Storage } from '../../../../../src/plugins/kibana_utils/public';
+import { NavigationPublicPluginStart as NavigationStart } from '../../../../../src/plugins/navigation/public';
 import { createDocTableDirective } from './doc_table';
 import { createTableHeaderDirective } from './doc_table/components/table_header';
 import {
@@ -39,7 +39,7 @@ import {
   PromiseServiceCreator,
   registerListenEventListener,
   watchMultiDecorator,
-} from '../../../../kibana_legacy/public';
+} from '../../../../../src/plugins/kibana_legacy/public';
 import { DiscoverStartPlugins } from '../../plugin';
 import { getScopedHistory } from '../../kibana_services';
 import { createDiscoverDirective } from './create_discover_directive';

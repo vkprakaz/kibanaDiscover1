@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { EuiFlexGroup, EuiFlexItem, EuiToolTip } from '@elastic/eui';
-import { FieldIcon, FieldIconProps } from '../../../../../kibana_react/public';
+import { FieldIcon, FieldIconProps } from '../../../../../../src/plugins/kibana_react/public';
 import { getFieldTypeName } from './field_type_name';
 import { FieldMapping } from '../../doc_views/doc_views_types';
 

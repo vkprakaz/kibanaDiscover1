@@ -12,8 +12,8 @@ import { CONTEXT_TIE_BREAKER_FIELDS_SETTING } from '../../../../common';
 import { DiscoverServices } from '../../../build_services';
 import { fetchAnchorProvider } from '../../angular/context/api/anchor';
 import { EsHitRecord, fetchContextProvider, SurrDocType } from '../../angular/context/api/context';
-import { MarkdownSimple, toMountPoint } from '../../../../../kibana_react/public';
-import { IndexPattern, SortDirection } from '../../../../../data/public';
+import { MarkdownSimple, toMountPoint } from '../../../../../../src/plugins/kibana_react/public';
+import { IndexPattern, SortDirection } from '../../../../../../src/plugins/data/public';
 import {
   ContextFetchState,
   FailureReason,

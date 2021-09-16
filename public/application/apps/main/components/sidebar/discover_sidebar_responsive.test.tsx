@@ -15,10 +15,10 @@ import realHits from '../../../../../__fixtures__/real_hits.js';
 import stubbedLogstashFields from '../../../../../__fixtures__/logstash_fields';
 import { mountWithIntl } from '@kbn/test/jest';
 import React from 'react';
-import { coreMock } from '../../../../../../../../core/public/mocks';
-import { IndexPatternAttributes } from '../../../../../../../data/common';
-import { getStubIndexPattern } from '../../../../../../../data/public/test_utils';
-import { SavedObject } from '../../../../../../../../core/types';
+import { coreMock } from '../../../../../../../../src/core/public/mocks';
+import { IndexPatternAttributes } from '../../../../../../../../src/plugins/data/common';
+import { getStubIndexPattern } from '../../../../../../../src/plugins/data/public/test_utils';
+import { SavedObject } from '../../../../../../../../src/core/types';
 import {
   DiscoverSidebarResponsive,
   DiscoverSidebarResponsiveProps,

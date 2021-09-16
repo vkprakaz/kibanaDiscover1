@@ -14,9 +14,9 @@ import {
   EmbeddableFactoryDefinition,
   Container,
   ErrorEmbeddable,
-} from '../../../../embeddable/public';
+} from '../../../../../src/plugins/embeddable/public';
 
-import { TimeRange } from '../../../../../../src/plugins/data/public';
+import { TimeRange } from '../../../../../src/plugins/data/public';
 
 import { SearchInput, SearchOutput } from './types';
 import { SEARCH_EMBEDDABLE_TYPE } from './constants';

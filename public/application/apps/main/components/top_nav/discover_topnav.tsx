@@ -8,7 +8,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { DiscoverLayoutProps } from '../layout/types';
 import { getTopNavLinks } from './get_top_nav_links';
-import { Query, TimeRange } from '../../../../../../../data/common/query';
+import { Query, TimeRange } from '../../../../../../../../src/plugins/data/common/query';
 import { getHeaderActionMenuMounter } from '../../../../../kibana_services';
 import { GetStateReturn } from '../../services/discover_state';
 

@@ -11,8 +11,8 @@ import { createHashHistory } from 'history';
 import { ScopedHistory, AppMountParameters } from 'kibana/public';
 import { UiActionsStart } from 'src/plugins/ui_actions/public';
 import { DiscoverServices } from './build_services';
-import { createGetterSetter } from '../../kibana_utils/public';
-import { search } from '../../../../src/plugins/data/public';
+import { createGetterSetter } from '../../../src/plugins/kibana_utils/public';
+import { search } from '../../../src/plugins/data/public';
 import { DocViewsRegistry } from './application/doc_views/doc_views_registry';
 
 let angularModule: ng.IModule | null = null;
@@ -92,8 +92,8 @@ export const [getScopedHistory, setScopedHistory] = createGetterSetter<ScopedHis
 );
 
 export const { tabifyAggResponse } = search;
-export { unhashUrl, redirectWhenMissing } from '../../kibana_utils/public';
-export { formatMsg, formatStack, subscribeWithScope } from '../../kibana_legacy/public';
+export { unhashUrl, redirectWhenMissing } from '../../../src/plugins/kibana_utils/public';
+export { formatMsg, formatStack, subscribeWithScope } from '../../../src/plugins/kibana_legacy/public';
 
 // EXPORT types
 export {
@@ -105,4 +105,4 @@ export {
   ISearchSource,
   EsQuerySortValue,
   SortDirection,
-} from '../../../../src/plugins/data/public';
+} from '../../../src/plugins/data/public';

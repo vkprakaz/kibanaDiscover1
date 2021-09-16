@@ -11,7 +11,7 @@ import { EuiFlexGroup, EuiFlexItem, EuiButtonEmpty, EuiSpacer } from '@elastic/e
 import { IUiSettingsClient } from 'kibana/public';
 import { i18n } from '@kbn/i18n';
 import { HitsCounter } from '../hits_counter';
-import { DataPublicPluginStart, IndexPattern, search } from '../../../../../../../data/public';
+import { DataPublicPluginStart, IndexPattern, search } from '../../../../../../../../src/plugins/data/public';
 import { TimechartHeader } from '../timechart_header';
 import { SavedSearch } from '../../../../../saved_searches';
 import { AppState, GetStateReturn } from '../../services/discover_state';

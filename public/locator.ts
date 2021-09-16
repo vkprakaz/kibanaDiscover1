@@ -7,10 +7,10 @@
  */
 
 import type { SerializableState } from 'src/plugins/kibana_utils/common';
-import type { TimeRange, Filter, Query, QueryState, RefreshInterval } from '../../../../src/plugins/data/public';
-import type { LocatorDefinition, LocatorPublic } from '../../share/public';
-import { esFilters } from '../../../../src/plugins/data/public';
-import { setStateToKbnUrl } from '../../kibana_utils/public';
+import type { TimeRange, Filter, Query, QueryState, RefreshInterval } from '../../../src/plugins/data/public';
+import type { LocatorDefinition, LocatorPublic } from '../../../src/plugins/share/public';
+import { esFilters } from '../../../src/plugins/data/public';
+import { setStateToKbnUrl } from '../../../src/plugins/kibana_utils/public';
 
 export const DISCOVER_APP_LOCATOR = 'DISCOVER_APP_LOCATOR';
 

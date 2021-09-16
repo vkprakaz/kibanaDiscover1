@@ -7,7 +7,7 @@
  */
 
 import html from './doc_table.html';
-import { dispatchRenderComplete } from '../../../../../kibana_utils/public';
+import { dispatchRenderComplete } from '../../../../../../src/plugins/kibana_utils/public';
 import { SAMPLE_SIZE_SETTING } from '../../../../common';
 // @ts-expect-error
 import { getLimitedSearchResultsMessage } from './doc_table_strings';

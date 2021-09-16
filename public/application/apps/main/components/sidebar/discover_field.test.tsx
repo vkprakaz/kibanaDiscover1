@@ -13,9 +13,9 @@ import { mountWithIntl } from '@kbn/test/jest';
 // @ts-expect-error
 import stubbedLogstashFields from '../../../../../__fixtures__/logstash_fields';
 import { DiscoverField } from './discover_field';
-import { coreMock } from '../../../../../../../../core/public/mocks';
-import { IndexPatternField } from '../../../../../../../data/public';
-import { getStubIndexPattern } from '../../../../../../../data/public/test_utils';
+import { coreMock } from '../../../../../../../../src/core/public/mocks';
+import { IndexPatternField } from '../../../../../../../../src/plugins/data/public';
+import { getStubIndexPattern } from '../../../../../../../../src/plugins/data/public/test_utils';
 
 jest.mock('../../../../../kibana_services', () => ({
   getUiActions: jest.fn(() => {

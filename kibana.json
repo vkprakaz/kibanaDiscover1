@@ -1,6 +1,7 @@
 {
   "id": "discovernew",
-  "version": "kibana",
+  "version": "1.0.0",
+  "kibanaVersion": "kibana",
   "server": true,
   "ui": true,
   "requiredPlugins": [
@@ -16,7 +17,6 @@
     "indexPatternFieldEditor"
   ],
   "optionalPlugins": ["home", "share", "usageCollection"],
-  "requiredBundles": ["kibanaUtils", "home", "kibanaReact"],
   "owner": {
     "name": "Kibana App",
     "githubTeam": "kibana-app"

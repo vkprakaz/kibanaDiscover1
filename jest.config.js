@@ -8,7 +8,7 @@
 
 module.exports = {
   preset: '@kbn/test',
-  rootDir: '../../..',
-  roots: ['<rootDir>/src/plugins/discover'],
+  rootDir: '../..',
+  roots: ['<rootDir>/plugins/discovernew'],
   testRunner: 'jasmine2',
 };

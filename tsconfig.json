@@ -1,29 +1,30 @@
 {
-  "extends": "../../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "skipLibCheck": true,
     "composite": true,
     "outDir": "./target/types",
     "emitDeclarationOnly": true,
     "declaration": true,
     "declarationMap": true
   },
-  "include": ["common/**/*", "public/**/*", "server/**/*", "../../../typings/**/*"],
+  "include": ["common/**/*", "public/**/*", "server/**/*", "../../typings/**/*"],
   "references": [
     { "path": "../../core/tsconfig.json" },
-    { "path": "../charts/tsconfig.json" },
-    { "path": "../data/tsconfig.json" },
-    { "path": "../embeddable/tsconfig.json" },
-    { "path": "../inspector/tsconfig.json" },
-    { "path": "../url_forwarding/tsconfig.json" },
-    { "path": "../saved_objects/tsconfig.json" },
-    { "path": "../navigation/tsconfig.json" },
-    { "path": "../ui_actions/tsconfig.json" },
-    { "path": "../home/tsconfig.json" },
-    { "path": "../share/tsconfig.json" },
-    { "path": "../usage_collection/tsconfig.json" },
-    { "path": "../kibana_utils/tsconfig.json" },
-    { "path": "../kibana_react/tsconfig.json" },
-    { "path": "../kibana_legacy/tsconfig.json" },
-    { "path": "../index_pattern_field_editor/tsconfig.json"}
+    { "path": "../../src/plugins/charts/tsconfig.json" },
+    { "path": "../../src/plugins/data/tsconfig.json" },
+    { "path": "../../src/plugins/embeddable/tsconfig.json" },
+    { "path": "../../src/plugins/inspector/tsconfig.json" },
+    { "path": "../../src/plugins/url_forwarding/tsconfig.json" },
+    { "path": "../../src/plugins/saved_objects/tsconfig.json" },
+    { "path": "../../src/plugins/navigation/tsconfig.json" },
+    { "path": "../../src/plugins/ui_actions/tsconfig.json" },
+    { "path": "../../src/plugins/home/tsconfig.json" },
+    { "path": "../../src/plugins/share/tsconfig.json" },
+    { "path": "../../src/plugins/usage_collection/tsconfig.json" },
+    { "path": "../../src/plugins/kibana_utils/tsconfig.json" },
+    { "path": "../../src/plugins/kibana_react/tsconfig.json" },
+    { "path": "../../src/plugins/kibana_legacy/tsconfig.json" },
+    { "path": "../../src/plugins/index_pattern_field_editor/tsconfig.json"}
   ]
 }

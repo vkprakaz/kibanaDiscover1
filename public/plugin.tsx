@@ -463,6 +463,8 @@ export class OrderviewPlugin
         isEditable: () => coreStart.application.capabilities.orderview.save as boolean,
       };
     };
+    
+    factory.id = "ordersearch";
 
     const factory = new SearchEmbeddableFactory(getStartServices, this.getEmbeddableInjector);
     plugins.embeddable.registerEmbeddableFactory(factory.type, factory);

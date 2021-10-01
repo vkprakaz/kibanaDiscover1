@@ -15,7 +15,7 @@ import { SEARCH_FIELDS_FROM_SOURCE } from '../../../common';
 
 const setupMock = coreMock.createSetup();
 
-describe('Test Discover Context State', () => {
+describe('Test Orderview Context State', () => {
   let history: History;
   let state: ReturnType<typeof getState>;
   const getCurrentUrl = () => history.createHref(history.location);

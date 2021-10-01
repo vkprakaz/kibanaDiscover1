@@ -31,7 +31,7 @@ export function ContextErrorMessage({ status }: ContextErrorMessageProps) {
       <EuiCallOut
         title={
           <FormattedMessage
-            id="discover.context.failedToLoadAnchorDocumentDescription"
+            id="orderview.context.failedToLoadAnchorDocumentDescription"
             defaultMessage="Failed to load the anchor document"
           />
         }
@@ -42,7 +42,7 @@ export function ContextErrorMessage({ status }: ContextErrorMessageProps) {
         <EuiText data-test-subj="contextErrorMessageBody">
           {status.reason === FailureReason.UNKNOWN && (
             <FormattedMessage
-              id="discover.context.reloadPageDescription.reloadOrVisitTextMessage"
+              id="orderview.context.reloadPageDescription.reloadOrVisitTextMessage"
               defaultMessage="Please reload or go back to the document list to select a valid anchor document."
             />
           )}

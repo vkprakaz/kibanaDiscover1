@@ -38,7 +38,7 @@ describe('hits counter', function () {
 
   it('expect to render the number of hits', function () {
     component = mountWithIntl(<HitsCounter {...props} />);
-    const hits = findTestSubject(component, 'discoverQueryHits');
+    const hits = findTestSubject(component, 'orderviewQueryHits');
     expect(hits.text()).toBe('2');
   });
 
@@ -46,7 +46,7 @@ describe('hits counter', function () {
     component = mountWithIntl(
       <HitsCounter hits={1899} showResetButton={false} onResetQuery={jest.fn()} />
     );
-    const hits = findTestSubject(component, 'discoverQueryHits');
+    const hits = findTestSubject(component, 'orderviewQueryHits');
     expect(hits.text()).toBe('1,899');
   });
 

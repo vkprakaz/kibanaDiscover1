@@ -44,9 +44,9 @@ export function HitsCounter({ hits, showResetButton, onResetQuery }: HitsCounter
       >
         <EuiFlexItem grow={false}>
           <EuiText>
-            <strong data-test-subj="discoverQueryHits">{formatNumWithCommas(hits)}</strong>{' '}
+            <strong data-test-subj="orderviewQueryHits">{formatNumWithCommas(hits)}</strong>{' '}
             <FormattedMessage
-              id="discover.hitsPluralTitle"
+              id="orderview.hitsPluralTitle"
               defaultMessage="{hits, plural, one {hit} other {hits}}"
               values={{
                 hits,
@@ -61,12 +61,12 @@ export function HitsCounter({ hits, showResetButton, onResetQuery }: HitsCounter
               data-test-subj="resetSavedSearch"
               onClick={onResetQuery}
               size="s"
-              aria-label={i18n.translate('discover.reloadSavedSearchButton', {
+              aria-label={i18n.translate('orderview.reloadSavedSearchButton', {
                 defaultMessage: 'Reset search',
               })}
             >
               <FormattedMessage
-                id="discover.reloadSavedSearchButton"
+                id="orderview.reloadSavedSearchButton"
                 defaultMessage="Reset search"
               />
             </EuiButtonEmpty>

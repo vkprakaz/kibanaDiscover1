@@ -6,5 +6,5 @@
  * Side Public License, v 1.
  */
 
-export { DiscoverSidebar } from './discover_sidebar';
-export { DiscoverSidebarResponsive } from './discover_sidebar_responsive';
+export { OrderviewSidebar } from './orderview_sidebar';
+export { OrderviewSidebarResponsive } from './orderview_sidebar_responsive';

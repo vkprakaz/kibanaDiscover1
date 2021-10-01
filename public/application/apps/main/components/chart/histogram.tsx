@@ -36,12 +36,12 @@ import {
   renderEndzoneTooltip,
 } from '../../../../../../../../src/plugins/charts/public';
 
-export interface DiscoverHistogramProps {
+export interface OrderviewHistogramProps {
   chartData: IChart;
   timefilterUpdateHandler: (ranges: { from: number; to: number }) => void;
 }
 
-interface DiscoverHistogramState {
+interface OrderviewHistogramState {
   chartsTheme: EuiChartThemeType['theme'];
   chartsBaseTheme: Theme;
 }
@@ -56,7 +56,7 @@ function getTimezone(uiSettings: IUiSettingsClient) {
   }
 }
 
-export class DiscoverHistogram extends Component<DiscoverHistogramProps, DiscoverHistogramState> {
+export class OrderviewHistogram extends Component<OrderviewHistogramProps, OrderviewHistogramState> {
   public static propTypes = {
     chartData: PropTypes.object,
     timefilterUpdateHandler: PropTypes.func,
@@ -124,7 +124,7 @@ export class DiscoverHistogram extends Component<DiscoverHistogramProps, Discove
     /*
      * Deprecation: [interval] on [date_histogram] is deprecated, use [fixed_interval] or [calendar_interval].
      * see https://github.com/elastic/kibana/issues/27410
-     * TODO: Once the Discover query has been update, we should change the below to use the new field
+     * TODO: Once the Orderview query has been update, we should change the below to use the new field
      */
     const { intervalESValue, intervalESUnit, interval } = chartData.ordered;
     const xInterval = interval.asMilliseconds();
@@ -169,7 +169,7 @@ export class DiscoverHistogram extends Component<DiscoverHistogramProps, Discove
           baseTheme={chartsBaseTheme}
         />
         <Axis
-          id="discover-histogram-left-axis"
+          id="orderview-histogram-left-axis"
           position={Position.Left}
           ticks={5}
           title={chartData.yAxisLabel}
@@ -177,7 +177,7 @@ export class DiscoverHistogram extends Component<DiscoverHistogramProps, Discove
           tickFormat={(value) => xAxisFormatter.convert(value)}
         />
         <Axis
-          id="discover-histogram-bottom-axis"
+          id="orderview-histogram-bottom-axis"
           position={Position.Bottom}
           title={chartData.xAxisLabel}
           tickFormat={this.formatXValue}
@@ -193,7 +193,7 @@ export class DiscoverHistogram extends Component<DiscoverHistogramProps, Discove
           domainMax={xDomain.max}
         />
         <HistogramBarSeries
-          id="discover-histogram"
+          id="orderview-histogram"
           minBarHeight={2}
           xScaleType={ScaleType.Time}
           yScaleType={ScaleType.Linear}

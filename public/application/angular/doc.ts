@@ -18,7 +18,7 @@ interface LazyScope extends ng.IScope {
 const { timefilter } = getServices();
 const app = getAngularModule();
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-app.directive('discoverDoc', function (reactDirective: any) {
+app.directive('orderviewDoc', function (reactDirective: any) {
   return reactDirective(
     Doc,
     [

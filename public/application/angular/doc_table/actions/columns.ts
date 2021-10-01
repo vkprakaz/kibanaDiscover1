@@ -9,9 +9,9 @@ import { Capabilities, IUiSettingsClient } from 'kibana/public';
 import { popularizeField } from '../../../helpers/popularize_field';
 import { IndexPattern, IndexPatternsContract } from '../../../../kibana_services';
 import {
-  AppState as DiscoverState,
-  GetStateReturn as DiscoverGetStateReturn,
-} from '../../../apps/main/services/discover_state';
+  AppState as OrderviewState,
+  GetStateReturn as OrderviewGetStateReturn,
+} from '../../../apps/main/services/orderview_state';
 import {
   AppState as ContextState,
   GetStateReturn as ContextGetStateReturn,
@@ -74,11 +74,11 @@ export function getStateColumnActions({
   indexPattern: IndexPattern;
   indexPatterns: IndexPatternsContract;
   useNewFieldsApi: boolean;
-  setAppState: DiscoverGetStateReturn['setAppState'] | ContextGetStateReturn['setAppState'];
-  state: DiscoverState | ContextState;
+  setAppState: OrderviewGetStateReturn['setAppState'] | ContextGetStateReturn['setAppState'];
+  state: OrderviewState | ContextState;
 }) {
   function onAddColumn(columnName: string) {
-    if (capabilities.discover.save) {
+    if (capabilities.orderview.save) {
       popularizeField(indexPattern, columnName, indexPatterns);
     }
     const columns = addColumn(state.columns || [], columnName, useNewFieldsApi);
@@ -89,7 +89,7 @@ export function getStateColumnActions({
   }
 
   function onRemoveColumn(columnName: string) {
-    if (capabilities.discover.save) {
+    if (capabilities.orderview.save) {
       popularizeField(indexPattern, columnName, indexPatterns);
     }
     const columns = removeColumn(state.columns || [], columnName, useNewFieldsApi);

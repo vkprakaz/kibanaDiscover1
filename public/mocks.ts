@@ -6,10 +6,10 @@
  * Side Public License, v 1.
  */
 
-import { DiscoverSetup, DiscoverStart } from '.';
+import { OrderviewSetup, OrderviewStart } from '.';
 
-export type Setup = jest.Mocked<DiscoverSetup>;
-export type Start = jest.Mocked<DiscoverStart>;
+export type Setup = jest.Mocked<OrderviewSetup>;
+export type Start = jest.Mocked<OrderviewStart>;
 
 const createSetupContract = (): Setup => {
   const setupContract: Setup = {
@@ -32,10 +32,10 @@ const createSetupContract = (): Setup => {
 
 const createStartContract = (): Start => {
   const startContract: Start = {
-    savedSearchLoader: {} as DiscoverStart['savedSearchLoader'],
+    savedSearchLoader: {} as OrderviewStart['savedSearchLoader'],
     urlGenerator: ({
       createUrl: jest.fn(),
-    } as unknown) as DiscoverStart['urlGenerator'],
+    } as unknown) as OrderviewStart['urlGenerator'],
     locator: {
       getLocation: jest.fn(),
       getUrl: jest.fn(),
@@ -50,7 +50,7 @@ const createStartContract = (): Start => {
   return startContract;
 };
 
-export const discoverPluginMock = {
+export const orderviewPluginMock = {
   createSetupContract,
   createStartContract,
 };

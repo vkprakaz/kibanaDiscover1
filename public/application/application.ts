@@ -11,17 +11,17 @@ import angular from 'angular';
 import { getServices } from '../kibana_services';
 
 /**
- * Here's where Discover's inner angular is mounted and rendered
+ * Here's where Orderview's inner angular is mounted and rendered
  */
 export async function renderApp(moduleName: string, element: HTMLElement) {
   // do not wait for fontawesome
   getServices().kibanaLegacy.loadFontAwesome();
   await import('./angular');
-  const $injector = mountDiscoverApp(moduleName, element);
+  const $injector = mountOrderviewApp(moduleName, element);
   return () => $injector.get('$rootScope').$destroy();
 }
 
-function mountDiscoverApp(moduleName: string, element: HTMLElement) {
+function mountOrderviewApp(moduleName: string, element: HTMLElement) {
   const mountpoint = document.createElement('div');
   const appWrapper = document.createElement('div');
   appWrapper.setAttribute('ng-view', '');

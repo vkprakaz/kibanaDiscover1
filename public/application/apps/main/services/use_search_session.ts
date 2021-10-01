@@ -7,10 +7,10 @@
  */
 import { useMemo, useEffect } from 'react';
 import { History } from 'history';
-import { DiscoverSearchSessionManager } from './discover_search_session';
-import { createSearchSessionRestorationDataProvider, GetStateReturn } from './discover_state';
+import { OrderviewSearchSessionManager } from './orderview_search_session';
+import { createSearchSessionRestorationDataProvider, GetStateReturn } from './orderview_state';
 import { noSearchSessionStorageCapabilityMessage } from '../../../../../../../src/plugins/data/public';
-import { DiscoverServices } from '../../../../build_services';
+import { OrderviewServices } from '../../../../build_services';
 import { SavedSearch } from '../../../../saved_searches';
 
 export function useSearchSession({
@@ -19,7 +19,7 @@ export function useSearchSession({
   stateContainer,
   savedSearch,
 }: {
-  services: DiscoverServices;
+  services: OrderviewServices;
   stateContainer: GetStateReturn;
   history: History;
   savedSearch: SavedSearch;
@@ -30,7 +30,7 @@ export function useSearchSession({
    */
   const searchSessionManager = useMemo(
     () =>
-      new DiscoverSearchSessionManager({
+      new OrderviewSearchSessionManager({
         history,
         session: data.search.session,
       }),
@@ -46,7 +46,7 @@ export function useSearchSession({
       }),
       {
         isDisabled: () =>
-          capabilities.discover.storeSearchSession
+          capabilities.orderview.storeSearchSession
             ? { disabled: false }
             : {
                 disabled: true,
@@ -55,7 +55,7 @@ export function useSearchSession({
       }
     );
   }, [
-    capabilities.discover.storeSearchSession,
+    capabilities.orderview.storeSearchSession,
     data,
     savedSearch,
     stateContainer.appStateContainer,

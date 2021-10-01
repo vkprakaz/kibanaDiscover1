@@ -10,7 +10,7 @@ import React from 'react';
 import { mountWithIntl } from '@kbn/test/jest';
 import { findTestSubject } from '@elastic/eui/lib/test';
 
-import { DiscoverNoResults, DiscoverNoResultsProps } from './no_results';
+import { OrderviewNoResults, OrderviewNoResultsProps } from './no_results';
 
 jest.mock('../../../../../kibana_services', () => {
   return {
@@ -30,17 +30,17 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-function mountAndFindSubjects(props: DiscoverNoResultsProps) {
-  const component = mountWithIntl(<DiscoverNoResults {...props} />);
+function mountAndFindSubjects(props: OrderviewNoResultsProps) {
+  const component = mountWithIntl(<OrderviewNoResults {...props} />);
   return {
-    mainMsg: findTestSubject(component, 'discoverNoResults').length > 0,
-    timeFieldMsg: findTestSubject(component, 'discoverNoResultsTimefilter').length > 0,
-    luceneMsg: findTestSubject(component, 'discoverNoResultsLucene').length > 0,
-    errorMsg: findTestSubject(component, 'discoverNoResultsError').length > 0,
+    mainMsg: findTestSubject(component, 'orderviewNoResults').length > 0,
+    timeFieldMsg: findTestSubject(component, 'orderviewNoResultsTimefilter').length > 0,
+    luceneMsg: findTestSubject(component, 'orderviewNoResultsLucene').length > 0,
+    errorMsg: findTestSubject(component, 'orderviewNoResultsError').length > 0,
   };
 }
 
-describe('DiscoverNoResults', () => {
+describe('OrderviewNoResults', () => {
   describe('props', () => {
     describe('no props', () => {
       test('renders default feedback', () => {

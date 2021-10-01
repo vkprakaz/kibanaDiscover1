@@ -11,12 +11,12 @@ import { configMock } from '../../../../__mocks__/config';
 import { indexPatternMock } from '../../../../__mocks__/index_pattern';
 import { indexPatternsMock } from '../../../../__mocks__/index_patterns';
 import { Capabilities } from '../../../../../../../core/types';
-import { AppState } from '../../../apps/main/services/discover_state';
+import { AppState } from '../../../apps/main/services/orderview_state';
 
 function getStateColumnAction(state: {}, setAppState: (state: Partial<AppState>) => void) {
   return getStateColumnActions({
     capabilities: ({
-      discover: {
+      orderview: {
         save: false,
       },
     } as unknown) as Capabilities,

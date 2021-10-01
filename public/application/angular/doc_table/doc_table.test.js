@@ -68,7 +68,7 @@ describe('docTable', () => {
       uiSettings: core.uiSettings,
     });
     getInnerAngularModule(
-      'app/discover',
+      'app/orderview',
       core,
       {
         data: dataPluginMock.createStartContract(),
@@ -76,7 +76,7 @@ describe('docTable', () => {
       },
       coreMock.createPluginInitializerContext()
     );
-    angular.mock.module('app/discover');
+    angular.mock.module('app/orderview');
   });
   beforeEach(() => {
     $elem = angular.element(`

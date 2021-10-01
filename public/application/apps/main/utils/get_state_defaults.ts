@@ -14,7 +14,7 @@ import { getDefaultSort } from '../../../angular/doc_table/lib/get_default_sort'
 import { SavedSearch } from '../../../../saved_searches';
 import { DataPublicPluginStart } from '../../../../../../../../src/plugins/data/public';
 
-import { AppState } from '../services/discover_state';
+import { AppState } from '../services/orderview_state';
 
 function getDefaultColumns(savedSearch: SavedSearch, config: IUiSettingsClient) {
   if (savedSearch.columns && savedSearch.columns.length > 0) {

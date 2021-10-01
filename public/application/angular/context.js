@@ -15,7 +15,7 @@ const k7Breadcrumbs = () => {
   return [
     ...getRootBreadcrumbs(),
     {
-      text: i18n.translate('discover.context.breadcrumb', {
+      text: i18n.translate('orderview.context.breadcrumb', {
         defaultMessage: 'Surrounding documents',
       }),
     },

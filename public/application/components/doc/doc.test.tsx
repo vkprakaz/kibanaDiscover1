@@ -102,7 +102,7 @@ async function mountDoc(update = false, indexPatternGetter: any = null) {
   return comp;
 }
 
-describe('Test of <Doc /> of Discover', () => {
+describe('Test of <Doc /> of Orderview', () => {
   test('renders loading msg', async () => {
     const comp = await mountDoc();
     expect(findTestSubject(comp, 'doc-msg-loading').length).toBe(1);

@@ -11,18 +11,18 @@ import { FeatureCatalogueCategory, HomePublicPluginSetup } from '../../../src/pl
 
 export function registerFeature(home: HomePublicPluginSetup) {
   home.featureCatalogue.register({
-    id: 'discover',
-    title: i18n.translate('discover.discoverTitle', {
-      defaultMessage: 'Discover',
+    id: 'orderview',
+    title: i18n.translate('orderview.orderviewTitle', {
+      defaultMessage: 'Orderview',
     }),
-    subtitle: i18n.translate('discover.discoverSubtitle', {
+    subtitle: i18n.translate('orderview.orderviewSubtitle', {
       defaultMessage: 'Search and find insights.',
     }),
-    description: i18n.translate('discover.discoverDescription', {
+    description: i18n.translate('orderview.orderviewDescription', {
       defaultMessage: 'Interactively explore your data by querying and filtering raw documents.',
     }),
-    icon: 'discoverApp',
-    path: '/app/discover#/',
+    icon: 'orderviewApp',
+    path: '/app/orderview#/',
     showOnHomePage: false,
     category: FeatureCatalogueCategory.DATA,
     solutionId: 'kibana',

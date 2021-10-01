@@ -69,7 +69,7 @@ describe('timechart header', function () {
 
   it('expect to render the date range', function () {
     component = mountWithIntl(<TimechartHeader {...props} />);
-    const datetimeRangeText = findTestSubject(component, 'discoverIntervalDateRange');
+    const datetimeRangeText = findTestSubject(component, 'orderviewIntervalDateRange');
     expect(datetimeRangeText.text()).toBe(
       'May 14, 2020 @ 11:05:13.590 - May 14, 2020 @ 11:20:13.590 per'
     );
@@ -77,7 +77,7 @@ describe('timechart header', function () {
 
   it('expects to render a dropdown with the interval options', () => {
     component = mountWithIntl(<TimechartHeader {...props} />);
-    const dropdown = findTestSubject(component, 'discoverIntervalSelect');
+    const dropdown = findTestSubject(component, 'orderviewIntervalSelect');
     expect(dropdown.length).toBe(1);
     // @ts-expect-error
     const values = dropdown.find('option').map((option) => option.prop('value'));
@@ -89,7 +89,7 @@ describe('timechart header', function () {
 
   it('should change the interval', function () {
     component = mountWithIntl(<TimechartHeader {...props} />);
-    findTestSubject(component, 'discoverIntervalSelect').simulate('change', {
+    findTestSubject(component, 'orderviewIntervalSelect').simulate('change', {
       target: { value: 'ms' },
     });
     expect(props.onChangeInterval).toHaveBeenCalled();

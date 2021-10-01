@@ -16,7 +16,7 @@ import {
 } from '../../../../components/context_app/utils/constants';
 import { SurrDocType } from '../../api/context';
 
-describe('Test Discover Context ActionBar for successor | predecessor records', () => {
+describe('Test Orderview Context ActionBar for successor | predecessor records', () => {
   [SurrDocType.SUCCESSORS, SurrDocType.PREDECESSORS].forEach((type) => {
     const onChangeCount = jest.fn();
     const props = {

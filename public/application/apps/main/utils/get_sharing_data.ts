@@ -10,7 +10,7 @@ import type { Capabilities, IUiSettingsClient } from 'kibana/public';
 import { ISearchSource } from '../../../../../../../../src/plugins/data/common';
 import { DOC_HIDE_TIME_COLUMN_SETTING, SORT_DEFAULT_ORDER_SETTING } from '../../../../../common';
 import type { SavedSearch, SortOrder } from '../../../../saved_searches/types';
-import { AppState } from '../services/discover_state';
+import { AppState } from '../services/orderview_state';
 import { getSortForSearchSource } from '../../../angular/doc_table';
 
 /**
@@ -54,7 +54,7 @@ export async function getSharingData(
   };
 }
 
-export interface DiscoverCapabilities {
+export interface OrderviewCapabilities {
   createShortUrl?: boolean;
   save?: boolean;
   saveQuery?: boolean;
@@ -63,9 +63,9 @@ export interface DiscoverCapabilities {
 }
 
 export const showPublicUrlSwitch = (anonymousUserCapabilities: Capabilities) => {
-  if (!anonymousUserCapabilities.discover) return false;
+  if (!anonymousUserCapabilities.orderview) return false;
 
-  const discover = (anonymousUserCapabilities.discover as unknown) as DiscoverCapabilities;
+  const orderview = (anonymousUserCapabilities.orderview as unknown) as OrderviewCapabilities;
 
-  return !!discover.show;
+  return !!orderview.show;
 };

@@ -53,7 +53,7 @@ function getRenderFn(domNode: Element, props: DocTableEmbeddableProps) {
   };
 }
 
-export function DiscoverDocTableEmbeddable(props: DocTableEmbeddableProps) {
+export function OrderviewDocTableEmbeddable(props: DocTableEmbeddableProps) {
   return (
     <I18nProvider>
       <DocTableLegacyInner {...props} />

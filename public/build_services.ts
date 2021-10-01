@@ -29,7 +29,7 @@ import { SharePluginStart } from 'src/plugins/share/public';
 import { ChartsPluginStart } from 'src/plugins/charts/public';
 
 import { UiCounterMetricType } from '@kbn/analytics';
-import { DiscoverStartPlugins } from './plugin';
+import { OrderviewStartPlugins } from './plugin';
 import { createSavedSearchesLoader, SavedSearch } from './saved_searches';
 import { getHistory } from './kibana_services';
 import { KibanaLegacyStart } from '../../kibana_legacy/public';
@@ -37,7 +37,7 @@ import { UrlForwardingStart } from '../../url_forwarding/public';
 import { NavigationPublicPluginStart } from '../../navigation/public';
 import { IndexPatternFieldEditorStart } from '../../index_pattern_field_editor/public';
 
-export interface DiscoverServices {
+export interface OrderviewServices {
   addBasePath: (path: string) => string;
   capabilities: Capabilities;
   chrome: ChromeStart;
@@ -66,10 +66,10 @@ export interface DiscoverServices {
 
 export async function buildServices(
   core: CoreStart,
-  plugins: DiscoverStartPlugins,
+  plugins: OrderviewStartPlugins,
   context: PluginInitializerContext,
   getEmbeddableInjector: () => Promise<auto.IInjectorService>
-): Promise<DiscoverServices> {
+): Promise<OrderviewServices> {
   const services = {
     savedObjectsClient: core.savedObjects.client,
     savedObjects: plugins.savedObjects,
@@ -102,7 +102,7 @@ export async function buildServices(
     timefilter: plugins.data.query.timefilter.timefilter,
     toastNotifications: core.notifications.toasts,
     uiSettings: core.uiSettings,
-    trackUiMetric: usageCollection?.reportUiCounter.bind(usageCollection, 'discover'),
+    trackUiMetric: usageCollection?.reportUiCounter.bind(usageCollection, 'orderview'),
     indexPatternFieldEditor: plugins.indexPatternFieldEditor,
   };
 }

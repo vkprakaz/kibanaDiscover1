@@ -11,13 +11,13 @@ import { ChromeStart, DocLinksStart } from 'kibana/public';
 
 export function addHelpMenuToAppChrome(chrome: ChromeStart, docLinks: DocLinksStart) {
   chrome.setHelpExtension({
-    appName: i18n.translate('discover.helpMenu.appName', {
-      defaultMessage: 'Discover',
+    appName: i18n.translate('orderview.helpMenu.appName', {
+      defaultMessage: 'Orderview',
     }),
     links: [
       {
         linkType: 'documentation',
-        href: `${docLinks.links.discover.guide}`,
+        href: `${docLinks.links.orderview.guide}`,
       },
     ],
   });

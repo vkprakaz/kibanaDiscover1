@@ -92,7 +92,7 @@ export async function loadIndexPattern(
 }
 
 /**
- * Function used in the discover controller to message the user about the state of the current
+ * Function used in the orderview controller to message the user about the state of the current
  * index pattern
  */
 export function resolveIndexPattern(
@@ -109,7 +109,7 @@ export function resolveIndexPattern(
   }
 
   if (stateVal && !stateValFound) {
-    const warningTitle = i18n.translate('discover.valueIsNotConfiguredIndexPatternIDWarningTitle', {
+    const warningTitle = i18n.translate('orderview.valueIsNotConfiguredIndexPatternIDWarningTitle', {
       defaultMessage: '{stateVal} is not a configured index pattern ID',
       values: {
         stateVal: `"${stateVal}"`,
@@ -119,7 +119,7 @@ export function resolveIndexPattern(
     if (ownIndexPattern) {
       toastNotifications.addWarning({
         title: warningTitle,
-        text: i18n.translate('discover.showingSavedIndexPatternWarningDescription', {
+        text: i18n.translate('orderview.showingSavedIndexPatternWarningDescription', {
           defaultMessage:
             'Showing the saved index pattern: "{ownIndexPatternTitle}" ({ownIndexPatternId})',
           values: {
@@ -133,7 +133,7 @@ export function resolveIndexPattern(
 
     toastNotifications.addWarning({
       title: warningTitle,
-      text: i18n.translate('discover.showingDefaultIndexPatternWarningDescription', {
+      text: i18n.translate('orderview.showingDefaultIndexPatternWarningDescription', {
         defaultMessage:
           'Showing the default index pattern: "{loadedIndexPatternTitle}" ({loadedIndexPatternId})',
         values: {

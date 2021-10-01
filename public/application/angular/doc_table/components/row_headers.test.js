@@ -74,7 +74,7 @@ describe('Doc Table', () => {
     });
 
     getInnerAngularModule(
-      'app/discover',
+      'app/orderview',
       core,
       {
         data: dataMock,
@@ -82,7 +82,7 @@ describe('Doc Table', () => {
       },
       coreMock.createPluginInitializerContext()
     );
-    angular.mock.module('app/discover');
+    angular.mock.module('app/orderview');
   });
   beforeEach(
     angular.mock.inject(function ($rootScope, Private, $timeout) {

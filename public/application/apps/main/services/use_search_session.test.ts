@@ -9,9 +9,9 @@
 import { useSearchSession } from './use_search_session';
 import { renderHook } from '@testing-library/react-hooks';
 import { createSearchSessionMock } from '../../../../__mocks__/search_session';
-import { discoverServiceMock } from '../../../../__mocks__/services';
+import { orderviewServiceMock } from '../../../../__mocks__/services';
 import { savedSearchMock } from '../../../../__mocks__/saved_search';
-import { getState } from './discover_state';
+import { getState } from './orderview_state';
 import { uiSettingsMock } from '../../../../__mocks__/ui_settings';
 
 describe('test useSearchSession', () => {
@@ -24,11 +24,11 @@ describe('test useSearchSession', () => {
     });
 
     const nextId = 'id';
-    discoverServiceMock.data.search.session.start = jest.fn(() => nextId);
+    orderviewServiceMock.data.search.session.start = jest.fn(() => nextId);
 
     const { result } = renderHook(() => {
       return useSearchSession({
-        services: discoverServiceMock,
+        services: orderviewServiceMock,
         history,
         stateContainer,
         savedSearch: savedSearchMock,

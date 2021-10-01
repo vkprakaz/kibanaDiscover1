@@ -14,7 +14,7 @@ import { setServices, SortDirection } from '../../../../kibana_services';
 import { Query } from '../../../../../../../../src/plugins/data/public';
 import { EsHitRecordList, fetchContextProvider, SurrDocType } from './context';
 import { EsHitRecord } from './context';
-import { DiscoverServices } from '../../../../build_services';
+import { OrderviewServices } from '../../../../build_services';
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const ANCHOR_TIMESTAMP = new Date(MS_PER_DAY).toJSON();
@@ -53,7 +53,7 @@ describe('context app', function () {
             },
           },
         },
-      } as unknown) as DiscoverServices);
+      } as unknown) as OrderviewServices);
 
       fetchSuccessors = (
         indexPatternId,
@@ -248,7 +248,7 @@ describe('context app', function () {
             },
           },
         },
-      } as unknown) as DiscoverServices);
+      } as unknown) as OrderviewServices);
 
       fetchSuccessors = (
         indexPatternId,

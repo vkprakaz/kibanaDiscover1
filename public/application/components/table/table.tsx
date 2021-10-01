@@ -135,7 +135,7 @@ export function DocViewTable({
                     <td className="kbnDocViewer__field">&nbsp;</td>
                     <td className="kbnDocViewer__multifield_title" colSpan={2}>
                       <b>
-                        {i18n.translate('discover.fieldChooser.discoverField.multiFields', {
+                        {i18n.translate('orderview.fieldChooser.orderviewField.multiFields', {
                           defaultMessage: 'Multi fields',
                         })}
                       </b>

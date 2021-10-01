@@ -746,7 +746,7 @@ exports[`Source Viewer component renders loading state 1`] = `
           >
             <FormattedMessage
               defaultMessage="Loading JSON"
-              id="discover.loadingJSON"
+              id="orderview.loadingJSON"
               values={Object {}}
             >
               Loading JSON

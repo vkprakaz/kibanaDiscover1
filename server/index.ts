@@ -6,6 +6,6 @@
  * Side Public License, v 1.
  */
 
-import { DiscoverServerPlugin } from './plugin';
+import { OrderviewServerPlugin } from './plugin';
 
-export const plugin = () => new DiscoverServerPlugin();
+export const plugin = () => new OrderviewServerPlugin();

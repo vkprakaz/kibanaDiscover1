@@ -18,11 +18,11 @@ import {
 } from '../../angular/doc_table/create_doc_table_react';
 import { LoadingStatus } from '../../angular/context_query_state';
 import { ActionBar } from '../../angular/context/components/action_bar/action_bar';
-import { DiscoverGrid, DiscoverGridProps } from '../discover_grid/discover_grid';
+import { OrderviewGrid, OrderviewGridProps } from '../orderview_grid/orderview_grid';
 import { ElasticSearchHit } from '../../doc_views/doc_views_types';
 import { AppState } from '../../angular/context_state';
 import { EsHitRecord, EsHitRecordList, SurrDocType } from '../../angular/context/api/context';
-import { DiscoverServices } from '../../../build_services';
+import { OrderviewServices } from '../../../build_services';
 import { MAX_CONTEXT_SIZE, MIN_CONTEXT_SIZE } from './utils/constants';
 
 export interface ContextAppContentProps {
@@ -30,7 +30,7 @@ export interface ContextAppContentProps {
   onAddColumn: (columnsName: string) => void;
   onRemoveColumn: (columnsName: string) => void;
   onSetColumns: (columnsNames: string[]) => void;
-  services: DiscoverServices;
+  services: OrderviewServices;
   indexPattern: IndexPattern;
   predecessorCount: number;
   successorCount: number;
@@ -57,7 +57,7 @@ export function clamp(value: number) {
   return Math.max(Math.min(MAX_CONTEXT_SIZE, value), MIN_CONTEXT_SIZE);
 }
 
-const DataGridMemoized = React.memo(DiscoverGrid);
+const DataGridMemoized = React.memo(OrderviewGrid);
 const DocTableLegacyMemoized = React.memo(DocTableLegacy);
 const ActionBarMemoized = React.memo(ActionBar);
 
@@ -121,7 +121,7 @@ export function ContextAppContent({
       onAddColumn,
       onRemoveColumn,
       onSetColumns,
-    } as DiscoverGridProps;
+    } as OrderviewGridProps;
   };
 
   const legacyDocTableProps = () => {
@@ -145,7 +145,7 @@ export function ContextAppContent({
     ) {
       return (
         <EuiText textAlign="center" data-test-subj="contextApp_loadingIndicator">
-          <FormattedMessage id="discover.context.loadingDescription" defaultMessage="Loading..." />
+          <FormattedMessage id="orderview.context.loadingDescription" defaultMessage="Loading..." />
         </EuiText>
       );
     }
@@ -174,7 +174,7 @@ export function ContextAppContent({
       {loadingFeedback()}
       <EuiHorizontalRule margin="xs" />
       {isLegacy && isAnchorLoaded && (
-        <div className="discover-table">
+        <div className="orderview-table">
           <DocTableLegacyMemoized {...legacyDocTableProps()} />
         </div>
       )}

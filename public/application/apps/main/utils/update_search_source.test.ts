@@ -10,7 +10,7 @@ import { updateSearchSource } from './update_search_source';
 import { createSearchSourceMock } from '../../../../../../../../src/plugins/data/common/search/search_source/mocks';
 import { indexPatternMock } from '../../../../__mocks__/index_pattern';
 import { IUiSettingsClient } from 'kibana/public';
-import { DiscoverServices } from '../../../../build_services';
+import { OrderviewServices } from '../../../../build_services';
 import { dataPluginMock } from '../../../../../../../../src/plugins/data/public/mocks';
 import { SAMPLE_SIZE_SETTING } from '../../../../../common';
 import { SortOrder } from '../../../../saved_searches/types';
@@ -36,7 +36,7 @@ describe('updateSearchSource', () => {
             return false;
           },
         } as unknown) as IUiSettingsClient,
-      } as unknown) as DiscoverServices,
+      } as unknown) as OrderviewServices,
       sort: [] as SortOrder[],
       useNewFieldsApi: false,
     });
@@ -65,7 +65,7 @@ describe('updateSearchSource', () => {
             return false;
           },
         } as unknown) as IUiSettingsClient,
-      } as unknown) as DiscoverServices,
+      } as unknown) as OrderviewServices,
       sort: [] as SortOrder[],
       useNewFieldsApi: true,
     });
@@ -97,7 +97,7 @@ describe('updateSearchSource', () => {
             return false;
           },
         } as unknown) as IUiSettingsClient,
-      } as unknown) as DiscoverServices,
+      } as unknown) as OrderviewServices,
       sort: [] as SortOrder[],
       useNewFieldsApi: true,
     });
@@ -129,7 +129,7 @@ describe('updateSearchSource', () => {
             return false;
           },
         } as unknown) as IUiSettingsClient,
-      } as unknown) as DiscoverServices,
+      } as unknown) as OrderviewServices,
       sort: [] as SortOrder[],
       useNewFieldsApi: false,
     });

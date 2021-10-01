@@ -11,8 +11,8 @@ import type { IndexPattern } from 'src/plugins/../../src/plugins/data/public';
 
 /**
  * This function checks if the given field in a given index pattern is a nested field's parent.
- * Discover doesn't flatten arrays of objects, so for documents with an `object` or `nested` field that
- * contains an array, Discover will only detect the top level root field. We want to detect when those
+ * Orderview doesn't flatten arrays of objects, so for documents with an `object` or `nested` field that
+ * contains an array, Orderview will only detect the top level root field. We want to detect when those
  * root fields are `nested` so that we can display the proper icon and label. However, those root
  * `nested` fields are not a part of the index pattern. Their children are though, and contain nested path
  * info. So to detect nested fields we look through the index pattern for nested children

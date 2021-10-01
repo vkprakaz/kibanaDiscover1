@@ -12,9 +12,9 @@ import type { LocatorDefinition, LocatorPublic } from '../../../src/plugins/shar
 import { esFilters } from '../../../src/plugins/data/public';
 import { setStateToKbnUrl } from '../../../src/plugins/kibana_utils/public';
 
-export const DISCOVER_APP_LOCATOR = 'DISCOVER_APP_LOCATOR';
+export const ORDERVEW_APP_LOCATOR = 'ORDERVEW_APP_LOCATOR';
 
-export interface DiscoverAppLocatorParams extends SerializableState {
+export interface OrderviewAppLocatorParams extends SerializableState {
   /**
    * Optionally set saved search ID.
    */
@@ -77,18 +77,18 @@ export interface DiscoverAppLocatorParams extends SerializableState {
   savedQuery?: string;
 }
 
-export type DiscoverAppLocator = LocatorPublic<DiscoverAppLocatorParams>;
+export type OrderviewAppLocator = LocatorPublic<OrderviewAppLocatorParams>;
 
-export interface DiscoverAppLocatorDependencies {
+export interface OrderviewAppLocatorDependencies {
   useHash: boolean;
 }
 
-export class DiscoverAppLocatorDefinition implements LocatorDefinition<DiscoverAppLocatorParams> {
-  public readonly id = DISCOVER_APP_LOCATOR;
+export class OrderviewAppLocatorDefinition implements LocatorDefinition<OrderviewAppLocatorParams> {
+  public readonly id = ORDERVEW_APP_LOCATOR;
 
-  constructor(protected readonly deps: DiscoverAppLocatorDependencies) {}
+  constructor(protected readonly deps: OrderviewAppLocatorDependencies) {}
 
-  public readonly getLocation = async (params: DiscoverAppLocatorParams) => {
+  public readonly getLocation = async (params: OrderviewAppLocatorParams) => {
     const {
       useHash = this.deps.useHash,
       filters,
@@ -138,7 +138,7 @@ export class DiscoverAppLocatorDefinition implements LocatorDefinition<DiscoverA
     }
 
     return {
-      app: 'discover',
+      app: 'orderview',
       path,
       state: {},
     };

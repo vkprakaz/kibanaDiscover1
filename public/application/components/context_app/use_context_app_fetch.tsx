@@ -9,7 +9,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { i18n } from '@kbn/i18n';
 import { fromPairs } from 'lodash';
 import { CONTEXT_TIE_BREAKER_FIELDS_SETTING } from '../../../../common';
-import { DiscoverServices } from '../../../build_services';
+import { OrderviewServices } from '../../../build_services';
 import { fetchAnchorProvider } from '../../angular/context/api/anchor';
 import { EsHitRecord, fetchContextProvider, SurrDocType } from '../../angular/context/api/context';
 import { MarkdownSimple, toMountPoint } from '../../../../../../src/plugins/kibana_react/public';
@@ -33,7 +33,7 @@ export interface ContextAppFetchProps {
   indexPattern: IndexPattern;
   appState: AppState;
   useNewFieldsApi: boolean;
-  services: DiscoverServices;
+  services: OrderviewServices;
 }
 
 export function useContextAppFetch({
@@ -72,7 +72,7 @@ export function useContextAppFetch({
   const fetchAnchorRow = useCallback(async () => {
     const { sort } = appState;
     const [[, sortDir]] = sort;
-    const errorTitle = i18n.translate('discover.context.unableToLoadAnchorDocumentDescription', {
+    const errorTitle = i18n.translate('orderview.context.unableToLoadAnchorDocumentDescription', {
       defaultMessage: 'Unable to load the anchor document',
     });
 
@@ -82,7 +82,7 @@ export function useContextAppFetch({
         title: errorTitle,
         text: toMountPoint(
           <MarkdownSimple>
-            {i18n.translate('discover.context.invalidTieBreakerFiledSetting', {
+            {i18n.translate('orderview.context.invalidTieBreakerFiledSetting', {
               defaultMessage: 'Invalid tie breaker field setting',
             })}
           </MarkdownSimple>
@@ -126,7 +126,7 @@ export function useContextAppFetch({
         type === SurrDocType.PREDECESSORS ? appState.predecessorCount : appState.successorCount;
       const anchor = fetchedAnchor || fetchedState.anchor;
       const statusKey = `${type}Status`;
-      const errorTitle = i18n.translate('discover.context.unableToLoadDocumentDescription', {
+      const errorTitle = i18n.translate('orderview.context.unableToLoadDocumentDescription', {
         defaultMessage: 'Unable to load documents',
       });
 

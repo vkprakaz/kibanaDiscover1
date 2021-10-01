@@ -15,7 +15,7 @@ exports[`render 1`] = `
       <h2>
         <FormattedMessage
           defaultMessage="Open search"
-          id="discover.topNav.openSearchPanel.openSearchTitle"
+          id="orderview.topNav.openSearchPanel.openSearchTitle"
           values={Object {}}
         />
       </h2>
@@ -26,7 +26,7 @@ exports[`render 1`] = `
       noItemsMessage={
         <FormattedMessage
           defaultMessage="No matching searches found."
-          id="discover.topNav.openSearchPanel.noSearchesFoundDescription"
+          id="orderview.topNav.openSearchPanel.noSearchesFoundDescription"
           values={Object {}}
         />
       }
@@ -58,7 +58,7 @@ exports[`render 1`] = `
         >
           <FormattedMessage
             defaultMessage="Manage searches"
-            id="discover.topNav.openSearchPanel.manageSearchesButtonLabel"
+            id="orderview.topNav.openSearchPanel.manageSearchesButtonLabel"
             values={Object {}}
           />
         </EuiButton>

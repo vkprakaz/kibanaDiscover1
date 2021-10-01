@@ -17,7 +17,7 @@ export function LoadingSpinner() {
     <div className="dscLoading">
       <EuiTitle size="s" data-test-subj="loadingSpinnerText">
         <h2>
-          <FormattedMessage id="discover.searchingTitle" defaultMessage="Searching" />
+          <FormattedMessage id="orderview.searchingTitle" defaultMessage="Searching" />
         </h2>
       </EuiTitle>
       <EuiSpacer size="m" />

@@ -9,15 +9,15 @@ import { useEffect, useRef, useCallback } from 'react';
 import { i18n } from '@kbn/i18n';
 import { merge, Subject, BehaviorSubject } from 'rxjs';
 import { debounceTime, tap, filter } from 'rxjs/operators';
-import { DiscoverServices } from '../../../../build_services';
-import { DiscoverSearchSessionManager } from './discover_search_session';
+import { OrderviewServices } from '../../../../build_services';
+import { OrderviewSearchSessionManager } from './orderview_search_session';
 import {
   IndexPattern,
   isCompleteResponse,
   SearchSource,
   tabifyAggResponse,
 } from '../../../../../../../src/plugins/data/common';
-import { GetStateReturn } from './discover_state';
+import { GetStateReturn } from './orderview_state';
 import { ElasticSearchHit } from '../../../doc_views/doc_views_types';
 import { RequestAdapter } from '../../../../../../../src/plugins/inspector/public';
 import { AutoRefreshDoneFn, search } from '../../../../../../../src/plugins/data/public';
@@ -69,9 +69,9 @@ export const useSavedSearch = ({
 }: {
   indexPattern: IndexPattern;
   initialFetchStatus: FetchStatus;
-  searchSessionManager: DiscoverSearchSessionManager;
+  searchSessionManager: OrderviewSearchSessionManager;
   searchSource: SearchSource;
-  services: DiscoverServices;
+  services: OrderviewServices;
   stateContainer: GetStateReturn;
   useNewFieldsApi: boolean;
 }): UseSavedSearch => {
@@ -194,10 +194,10 @@ export const useSavedSearch = ({
         sessionId,
         inspector: {
           adapter: inspectorAdapters.requests,
-          title: i18n.translate('discover.inspectorRequestDataTitle', {
+          title: i18n.translate('orderview.inspectorRequestDataTitle', {
             defaultMessage: 'data',
           }),
-          description: i18n.translate('discover.inspectorRequestDescriptionDocument', {
+          description: i18n.translate('orderview.inspectorRequestDescriptionDocument', {
             defaultMessage: 'This request queries Elasticsearch to fetch the data for the search.',
           }),
         },

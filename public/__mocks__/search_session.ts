@@ -8,14 +8,14 @@
 import { createMemoryHistory } from 'history';
 import { dataPluginMock } from '../../../../../src/plugins/data/public/mocks';
 import { DataPublicPluginStart } from '../../../../../src/plugins/data/public';
-import { DiscoverSearchSessionManager } from '../application/apps/main/services/discover_search_session';
+import { OrderviewSearchSessionManager } from '../application/apps/main/services/orderview_search_session';
 
 export function createSearchSessionMock() {
   const history = createMemoryHistory();
   const session = dataPluginMock.createStartContract().search.session as jest.Mocked<
     DataPublicPluginStart['search']['session']
   >;
-  const searchSessionManager = new DiscoverSearchSessionManager({
+  const searchSessionManager = new OrderviewSearchSessionManager({
     history,
     session,
   });

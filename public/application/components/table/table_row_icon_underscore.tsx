@@ -12,13 +12,13 @@ import { i18n } from '@kbn/i18n';
 
 export function DocViewTableRowIconUnderscore() {
   const ariaLabel = i18n.translate(
-    'discover.docViews.table.fieldNamesBeginningWithUnderscoreUnsupportedAriaLabel',
+    'orderview.docViews.table.fieldNamesBeginningWithUnderscoreUnsupportedAriaLabel',
     {
       defaultMessage: 'Warning',
     }
   );
   const tooltipContent = i18n.translate(
-    'discover.docViews.table.fieldNamesBeginningWithUnderscoreUnsupportedTooltip',
+    'orderview.docViews.table.fieldNamesBeginningWithUnderscoreUnsupportedTooltip',
     {
       defaultMessage: 'Field names beginning with {underscoreSign} are not supported',
       values: { underscoreSign: '_' },

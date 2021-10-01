@@ -103,15 +103,15 @@ export function TimechartHeader({
     >
       <EuiFlexItem grow={false} className="eui-hideFor--m">
         <EuiToolTip
-          content={i18n.translate('discover.howToChangeTheTimeTooltip', {
+          content={i18n.translate('orderview.howToChangeTheTimeTooltip', {
             defaultMessage: 'To change the time, use the global time filter.',
           })}
           delay="long"
         >
-          <EuiText data-test-subj="discoverIntervalDateRange" textAlign="center" size="s">
+          <EuiText data-test-subj="orderviewIntervalDateRange" textAlign="center" size="s">
             {`${toMoment(timeRange.from)} - ${toMoment(timeRange.to)} ${
               interval !== 'auto'
-                ? i18n.translate('discover.timechartHeader.timeIntervalSelect.per', {
+                ? i18n.translate('orderview.timechartHeader.timeIntervalSelect.per', {
                     defaultMessage: 'per',
                   })
                 : ''
@@ -121,12 +121,12 @@ export function TimechartHeader({
       </EuiFlexItem>
       <EuiFlexItem className="dscTimeIntervalSelect" grow={false}>
         <EuiSelect
-          aria-label={i18n.translate('discover.timechartHeader.timeIntervalSelect.ariaLabel', {
+          aria-label={i18n.translate('orderview.timechartHeader.timeIntervalSelect.ariaLabel', {
             defaultMessage: 'Time interval',
           })}
           compressed
           id="dscResultsIntervalSelector"
-          data-test-subj="discoverIntervalSelect"
+          data-test-subj="orderviewIntervalSelect"
           options={options
             .filter(({ val }) => val !== 'custom')
             .map(({ display, val }) => {
@@ -141,17 +141,17 @@ export function TimechartHeader({
           append={
             bucketInterval.scaled ? (
               <EuiIconTip
-                id="discoverIntervalIconTip"
-                content={i18n.translate('discover.bucketIntervalTooltip', {
+                id="orderviewIntervalIconTip"
+                content={i18n.translate('orderview.bucketIntervalTooltip', {
                   defaultMessage:
                     'This interval creates {bucketsDescription} to show in the selected time range, so it has been scaled to {bucketIntervalDescription}.',
                   values: {
                     bucketsDescription:
                       bucketInterval!.scale && bucketInterval!.scale > 1
-                        ? i18n.translate('discover.bucketIntervalTooltip.tooLargeBucketsText', {
+                        ? i18n.translate('orderview.bucketIntervalTooltip.tooLargeBucketsText', {
                             defaultMessage: 'buckets that are too large',
                           })
-                        : i18n.translate('discover.bucketIntervalTooltip.tooManyBucketsText', {
+                        : i18n.translate('orderview.bucketIntervalTooltip.tooManyBucketsText', {
                             defaultMessage: 'too many buckets',
                           }),
                     bucketIntervalDescription: bucketInterval.description,

@@ -6,4 +6,4 @@
  * Side Public License, v 1.
  */
 
-export { DiscoverLayout } from './discover_layout';
+export { OrderviewLayout } from './orderview_layout';

@@ -53,7 +53,7 @@ export function fetchAnchorProvider(
 
     if (get(response, ['hits', 'total'], 0) < 1) {
       throw new Error(
-        i18n.translate('discover.context.failedToLoadAnchorDocumentErrorDescription', {
+        i18n.translate('orderview.context.failedToLoadAnchorDocumentErrorDescription', {
           defaultMessage: 'Failed to load anchor document.',
         })
       );

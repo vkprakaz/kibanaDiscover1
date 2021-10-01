@@ -14,7 +14,7 @@ export const searchSavedObjectType: SavedObjectsType = {
   hidden: false,
   namespaceType: 'single',
   management: {
-    icon: 'discoverApp',
+    icon: 'orderviewApp',
     defaultSearchField: 'title',
     importableAndExportable: true,
     getTitle(obj) {
@@ -25,8 +25,8 @@ export const searchSavedObjectType: SavedObjectsType = {
     },
     getInAppUrl(obj) {
       return {
-        path: `/app/discover#/view/${encodeURIComponent(obj.id)}`,
-        uiCapabilitiesPath: 'discover.show',
+        path: `/app/orderview#/view/${encodeURIComponent(obj.id)}`,
+        uiCapabilitiesPath: 'orderview.show',
       };
     },
   },

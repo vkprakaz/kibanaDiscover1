@@ -12,8 +12,8 @@ jest.mock('../../../../../../../../src/plugins/saved_objects/public');
 import { onSaveSearch } from './on_save_search';
 import { indexPatternMock } from '../../../../../__mocks__/index_pattern';
 import { savedSearchMock } from '../../../../../__mocks__/saved_search';
-import { DiscoverServices } from '../../../../../build_services';
-import { GetStateReturn } from '../../services/discover_state';
+import { OrderviewServices } from '../../../../../build_services';
+import { GetStateReturn } from '../../services/orderview_state';
 import { i18nServiceMock } from '../../../../../../../../src/core/public/mocks';
 
 test('onSaveSearch', async () => {
@@ -21,7 +21,7 @@ test('onSaveSearch', async () => {
     core: {
       i18n: i18nServiceMock.create(),
     },
-  } as unknown) as DiscoverServices;
+  } as unknown) as OrderviewServices;
   const stateMock = ({} as unknown) as GetStateReturn;
 
   await onSaveSearch({

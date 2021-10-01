@@ -22,7 +22,7 @@ import { getServices } from '../../../kibana_services';
 (getServices as jest.Mock).mockImplementation(() => ({
   uiSettings: {
     get: (key: string) => {
-      if (key === 'discover:showMultiFields') {
+      if (key === 'orderview:showMultiFields') {
         return false;
       }
     },
@@ -75,8 +75,8 @@ indexPattern.fields.getByName = (name: string) => {
 
 indexPattern.flattenHit = indexPatterns.flattenHitWrapper(indexPattern, indexPattern.metaFields);
 
-describe('DocViewTable at Discover', () => {
-  // At Discover's main view, all buttons are rendered
+describe('DocViewTable at Orderview', () => {
+  // At Orderview's main view, all buttons are rendered
   // check for existence of action buttons and warnings
 
   const hit = {
@@ -184,7 +184,7 @@ describe('DocViewTable at Discover', () => {
   });
 });
 
-describe('DocViewTable at Discover Context', () => {
+describe('DocViewTable at Orderview Context', () => {
   // here no toggleColumnButtons  are rendered
   const hit = {
     _index: 'logstash-2014.09.09',
@@ -237,7 +237,7 @@ describe('DocViewTable at Discover Context', () => {
   });
 });
 
-describe('DocViewTable at Discover Doc', () => {
+describe('DocViewTable at Orderview Doc', () => {
   const hit = {
     _index: 'logstash-2014.09.09',
     _score: 1,
@@ -261,7 +261,7 @@ describe('DocViewTable at Discover Doc', () => {
   });
 });
 
-describe('DocViewTable at Discover Doc with Fields API', () => {
+describe('DocViewTable at Orderview Doc with Fields API', () => {
   const indexPatterneCommerce = ({
     fields: {
       getAll: () => [
@@ -385,7 +385,7 @@ describe('DocViewTable at Discover Doc with Fields API', () => {
     (getServices as jest.Mock).mockImplementationOnce(() => ({
       uiSettings: {
         get: (key: string) => {
-          return key === 'discover:showMultiFields';
+          return key === 'orderview:showMultiFields';
         },
       },
     }));

@@ -9,7 +9,7 @@
 import { hashedItemStore, getStatesFromKbnUrl } from '../../kibana_utils/public';
 import { mockStorage } from '../../kibana_utils/public/storage/hashed_item_store/mock';
 import { FilterStateStore } from '../../../../src/plugins/data/common';
-import { DiscoverAppLocatorDefinition } from './locator';
+import { OrderviewAppLocatorDefinition } from './locator';
 import { SerializableState } from 'src/plugins/kibana_utils/common';
 
 const indexPatternId: string = 'c367b774-a4c2-11ea-bb37-0242ac130002';
@@ -20,7 +20,7 @@ interface SetupParams {
 }
 
 const setup = async ({ useHash = false }: SetupParams = {}) => {
-  const locator = new DiscoverAppLocatorDefinition({
+  const locator = new OrderviewAppLocatorDefinition({
     useHash,
   });
 
@@ -34,18 +34,18 @@ beforeEach(() => {
   hashedItemStore.storage = mockStorage;
 });
 
-describe('Discover url generator', () => {
-  test('can create a link to Discover with no state and no saved search', async () => {
+describe('Orderview url generator', () => {
+  test('can create a link to Orderview with no state and no saved search', async () => {
     const { locator } = await setup();
     const { app, path } = await locator.getLocation({});
     const { _a, _g } = getStatesFromKbnUrl(path, ['_a', '_g']);
 
-    expect(app).toBe('discover');
+    expect(app).toBe('orderview');
     expect(_a).toEqual({});
     expect(_g).toEqual({});
   });
 
-  test('can create a link to a saved search in Discover', async () => {
+  test('can create a link to a saved search in Orderview', async () => {
     const { locator } = await setup();
     const { path } = await locator.getLocation({ savedSearchId });
     const { _a, _g } = getStatesFromKbnUrl(path, ['_a', '_g']);

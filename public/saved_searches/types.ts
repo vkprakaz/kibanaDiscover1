@@ -8,7 +8,7 @@
 
 import { SearchSource } from '../../../../../src/plugins/data/public';
 import { SavedObjectSaveOpts } from '../../../saved_objects/public';
-import { DiscoverGridSettings } from '../application/components/discover_grid/types';
+import { OrderviewGridSettings } from '../application/components/orderview_grid/types';
 
 export type SortOrder = [string, string];
 export interface SavedSearch {
@@ -18,7 +18,7 @@ export interface SavedSearch {
   description?: string;
   columns: string[];
   sort: SortOrder[];
-  grid: DiscoverGridSettings;
+  grid: OrderviewGridSettings;
   destroy: () => void;
   save: (saveOptions: SavedObjectSaveOpts) => Promise<string>;
   lastSavedTitle?: string;

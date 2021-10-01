@@ -15,20 +15,20 @@ interface Props {
   onRefresh: () => void;
 }
 
-export const DiscoverUninitialized = ({ onRefresh }: Props) => {
+export const OrderviewUninitialized = ({ onRefresh }: Props) => {
   return (
     <I18nProvider>
       <EuiEmptyPrompt
-        iconType="discoverApp"
+        iconType="orderviewApp"
         title={
           <h2>
-            <FormattedMessage id="discover.uninitializedTitle" defaultMessage="Start searching" />
+            <FormattedMessage id="orderview.uninitializedTitle" defaultMessage="Start searching" />
           </h2>
         }
         body={
           <p>
             <FormattedMessage
-              id="discover.uninitializedText"
+              id="orderview.uninitializedText"
               defaultMessage="Write a query, add some filters, or simply hit Refresh to retrieve results for the current query."
             />
           </p>
@@ -36,7 +36,7 @@ export const DiscoverUninitialized = ({ onRefresh }: Props) => {
         actions={
           <EuiButton color="primary" fill onClick={onRefresh}>
             <FormattedMessage
-              id="discover.uninitializedRefreshButtonText"
+              id="orderview.uninitializedRefreshButtonText"
               defaultMessage="Refresh data"
             />
           </EuiButton>

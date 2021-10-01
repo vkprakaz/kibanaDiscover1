@@ -11,8 +11,8 @@ import { i18n } from '@kbn/i18n';
 import { SavedObjectSaveModal, showSaveModal } from '../../../../../../../../src/plugins/saved_objects/public';
 import { SavedSearch } from '../../../../../saved_searches';
 import { IndexPattern } from '../../../../../../../../src/plugins/data/common/index_patterns/index_patterns';
-import { DiscoverServices } from '../../../../../build_services';
-import { GetStateReturn } from '../../services/discover_state';
+import { OrderviewServices } from '../../../../../build_services';
+import { GetStateReturn } from '../../services/orderview_state';
 import { setBreadcrumbsTitle } from '../../../../helpers/breadcrumbs';
 import { persistSavedSearch } from '../../utils/persist_saved_search';
 
@@ -32,14 +32,14 @@ async function saveDataSource({
     isTitleDuplicateConfirmed: boolean;
     onTitleDuplicate: () => void;
   };
-  services: DiscoverServices;
+  services: OrderviewServices;
   state: GetStateReturn;
 }) {
   const prevSavedSearchId = savedSearch.id;
   function onSuccess(id: string) {
     if (id) {
       services.toastNotifications.addSuccess({
-        title: i18n.translate('discover.notifications.savedSearchTitle', {
+        title: i18n.translate('orderview.notifications.savedSearchTitle', {
           defaultMessage: `Search '{savedSearchTitle}' was saved`,
           values: {
             savedSearchTitle: savedSearch.title,
@@ -61,7 +61,7 @@ async function saveDataSource({
 
   function onError(error: Error) {
     services.toastNotifications.addDanger({
-      title: i18n.translate('discover.notifications.notSavedSearchTitle', {
+      title: i18n.translate('orderview.notifications.notSavedSearchTitle', {
         defaultMessage: `Search '{savedSearchTitle}' was not saved.`,
         values: {
           savedSearchTitle: savedSearch.title,
@@ -90,7 +90,7 @@ export async function onSaveSearch({
   indexPattern: IndexPattern;
   navigateTo: (path: string) => void;
   savedSearch: SavedSearch;
-  services: DiscoverServices;
+  services: OrderviewServices;
   state: GetStateReturn;
 }) {
   const onSave = async ({
@@ -135,12 +135,12 @@ export async function onSaveSearch({
       onClose={() => {}}
       title={savedSearch.title}
       showCopyOnSave={!!savedSearch.id}
-      objectType={i18n.translate('discover.localMenu.saveSaveSearchObjectType', {
+      objectType={i18n.translate('orderview.localMenu.saveSaveSearchObjectType', {
         defaultMessage: 'search',
       })}
-      description={i18n.translate('discover.localMenu.saveSaveSearchDescription', {
+      description={i18n.translate('orderview.localMenu.saveSaveSearchDescription', {
         defaultMessage:
-          'Save your Discover search so you can use it in visualizations and dashboards',
+          'Save your Orderview search so you can use it in visualizations and dashboards',
       })}
       showDescription={false}
     />

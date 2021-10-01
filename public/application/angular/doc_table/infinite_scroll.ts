@@ -23,7 +23,7 @@ export function createInfiniteScrollDirective() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let checkTimer: any;
       /**
-       * depending on which version of Discover is displayed, different elements are scrolling
+       * depending on which version of Orderview is displayed, different elements are scrolling
        * and have therefore to be considered for calculation of infinite scrolling
        */
       const scrollDiv = $element.parents('.dscTable');

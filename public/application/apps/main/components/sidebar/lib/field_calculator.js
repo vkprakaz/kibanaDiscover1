@@ -30,7 +30,7 @@ function getFieldValueCounts(params) {
   ) {
     return {
       error: i18n.translate(
-        'discover.fieldChooser.fieldCalculator.analysisIsNotAvailableForGeoFieldsErrorMessage',
+        'orderview.fieldChooser.fieldCalculator.analysisIsNotAvailableForGeoFieldsErrorMessage',
         {
           defaultMessage: 'Analysis is not available for geo fields.',
         }
@@ -55,7 +55,7 @@ function getFieldValueCounts(params) {
     if (params.hits.length - missing === 0) {
       return {
         error: i18n.translate(
-          'discover.fieldChooser.fieldCalculator.fieldIsNotPresentInDocumentsErrorMessage',
+          'orderview.fieldChooser.fieldCalculator.fieldIsNotPresentInDocumentsErrorMessage',
           {
             defaultMessage:
               'This field is present in your Elasticsearch mapping but not in the {hitsLength} documents shown in the doc table. You may still be able to visualize or search on it.',
@@ -91,7 +91,7 @@ function _groupValues(allValues, params) {
     if (_.isObject(value) && !Array.isArray(value)) {
       throw new Error(
         i18n.translate(
-          'discover.fieldChooser.fieldCalculator.analysisIsNotAvailableForObjectFieldsErrorMessage',
+          'orderview.fieldChooser.fieldCalculator.analysisIsNotAvailableForObjectFieldsErrorMessage',
           {
             defaultMessage: 'Analysis is not available for object fields.',
           }

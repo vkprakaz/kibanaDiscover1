@@ -13,8 +13,8 @@ import { SavedSearch } from '../../saved_searches';
 export function getRootBreadcrumbs() {
   return [
     {
-      text: i18n.translate('discover.rootBreadcrumb', {
-        defaultMessage: 'Discover',
+      text: i18n.translate('orderview.rootBreadcrumb', {
+        defaultMessage: 'Orderview',
       }),
       href: '#/',
     },
@@ -32,18 +32,18 @@ export function getSavedSearchBreadcrumbs($route: any) {
 }
 
 /**
- * Helper function to set the Discover's breadcrumb
+ * Helper function to set the Orderview's breadcrumb
  * if there's an active savedSearch, its title is appended
  */
 export function setBreadcrumbsTitle(savedSearch: SavedSearch, chrome: ChromeStart) {
-  const discoverBreadcrumbsTitle = i18n.translate('discover.discoverBreadcrumbTitle', {
-    defaultMessage: 'Discover',
+  const orderviewBreadcrumbsTitle = i18n.translate('orderview.orderviewBreadcrumbTitle', {
+    defaultMessage: 'Orderview',
   });
 
   if (savedSearch.id && savedSearch.title) {
     chrome.setBreadcrumbs([
       {
-        text: discoverBreadcrumbsTitle,
+        text: orderviewBreadcrumbsTitle,
         href: '#/',
       },
       { text: savedSearch.title },
@@ -51,7 +51,7 @@ export function setBreadcrumbsTitle(savedSearch: SavedSearch, chrome: ChromeStar
   } else {
     chrome.setBreadcrumbs([
       {
-        text: discoverBreadcrumbsTitle,
+        text: orderviewBreadcrumbsTitle,
       },
     ]);
   }

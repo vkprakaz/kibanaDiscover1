@@ -33,11 +33,11 @@ export class SearchEmbeddableFactory
   private $injector: auto.IInjectorService | null;
   private getInjector: () => Promise<auto.IInjectorService> | null;
   public readonly savedObjectMetaData = {
-    name: i18n.translate('discover.savedSearch.savedObjectName', {
+    name: i18n.translate('orderview.savedSearch.savedObjectName', {
       defaultMessage: 'Saved search',
     }),
     type: 'search',
-    getIconForSavedObject: () => 'discoverApp',
+    getIconForSavedObject: () => 'orderviewApp',
   };
 
   constructor(
@@ -57,7 +57,7 @@ export class SearchEmbeddableFactory
   };
 
   public getDisplayName() {
-    return i18n.translate('discover.embeddable.search.displayName', {
+    return i18n.translate('orderview.embeddable.search.displayName', {
       defaultMessage: 'search',
     });
   }
@@ -74,7 +74,7 @@ export class SearchEmbeddableFactory
     const filterManager = getServices().filterManager;
 
     const url = await getServices().getSavedSearchUrlById(savedObjectId);
-    const editUrl = getServices().addBasePath(`/app/discover${url}`);
+    const editUrl = getServices().addBasePath(`/app/orderview${url}`);
     try {
       const savedObject = await getServices().getSavedSearchById(savedObjectId);
       const indexPattern = savedObject.searchSource.getField('index');
@@ -88,7 +88,7 @@ export class SearchEmbeddableFactory
           editUrl,
           editPath: url,
           filterManager,
-          editable: getServices().capabilities.discover.save as boolean,
+          editable: getServices().capabilities.orderview.save as boolean,
           indexPatterns: indexPattern ? [indexPattern] : [],
           services: getServices(),
         },

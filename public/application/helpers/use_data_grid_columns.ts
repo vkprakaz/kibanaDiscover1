@@ -11,9 +11,9 @@ import { useMemo } from 'react';
 import { Capabilities, IUiSettingsClient } from 'kibana/public';
 import { IndexPattern, IndexPatternsContract } from '../../kibana_services';
 import {
-  AppState as DiscoverState,
-  GetStateReturn as DiscoverGetStateReturn,
-} from '../apps/main/services/discover_state';
+  AppState as OrderviewState,
+  GetStateReturn as OrderviewGetStateReturn,
+} from '../apps/main/services/orderview_state';
 import {
   AppState as ContextState,
   GetStateReturn as ContextGetStateReturn,
@@ -26,8 +26,8 @@ interface UseDataGridColumnsProps {
   indexPattern: IndexPattern;
   indexPatterns: IndexPatternsContract;
   useNewFieldsApi: boolean;
-  setAppState: DiscoverGetStateReturn['setAppState'] | ContextGetStateReturn['setAppState'];
-  state: DiscoverState | ContextState;
+  setAppState: OrderviewGetStateReturn['setAppState'] | ContextGetStateReturn['setAppState'];
+  state: OrderviewState | ContextState;
 }
 
 export const useDataGridColumns = ({

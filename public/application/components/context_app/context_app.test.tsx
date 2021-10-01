@@ -15,7 +15,7 @@ import { ContextAppContent } from './context_app_content';
 import { indexPatternMock } from '../../../__mocks__/index_pattern';
 import { ContextApp } from './context_app';
 import { setServices } from '../../../kibana_services';
-import { DiscoverServices } from '../../../build_services';
+import { OrderviewServices } from '../../../build_services';
 import { indexPatternsMock } from '../../../__mocks__/index_patterns';
 import { act } from 'react-dom/test-utils';
 import { uiSettingsMock } from '../../../__mocks__/ui_settings';
@@ -51,7 +51,7 @@ describe('ContextApp test', () => {
         },
       },
       capabilities: {
-        discover: {
+        orderview: {
           save: true,
         },
       },
@@ -62,7 +62,7 @@ describe('ContextApp test', () => {
       history: () => {},
       filterManager: mockFilterManager,
       uiSettings: uiSettingsMock,
-    } as unknown) as DiscoverServices);
+    } as unknown) as OrderviewServices);
   });
 
   it('renders correctly', async () => {

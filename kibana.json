@@ -1,5 +1,5 @@
 {
-  "id": "discovernew",
+  "id": "orderviewnew",
   "version": "1.0.0",
   "kibanaVersion": "kibana",
   "server": true,
@@ -21,5 +21,5 @@
     "name": "Kibana App",
     "githubTeam": "kibana-app"
   },
-  "description": "This plugin contains the Discover application and the saved search embeddable."
+  "description": "This plugin contains the Orderview application and the saved search embeddable."
 }

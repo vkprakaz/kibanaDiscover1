@@ -14,31 +14,31 @@ import { DataPublicPluginStart } from '../../../../../../../data/public';
 import { getLuceneQueryMessage, getTimeFieldMessage } from './no_results_helper';
 import './_no_results.scss';
 
-export interface DiscoverNoResultsProps {
+export interface OrderviewNoResultsProps {
   timeFieldName?: string;
   queryLanguage?: string;
   error?: Error;
   data?: DataPublicPluginStart;
 }
 
-export function DiscoverNoResults({
+export function OrderviewNoResults({
   timeFieldName,
   queryLanguage,
   error,
   data,
-}: DiscoverNoResultsProps) {
+}: OrderviewNoResultsProps) {
   const callOut = !error ? (
     <EuiFlexItem grow={false} className="dscNoResults">
       <EuiCallOut
         title={
           <FormattedMessage
-            id="discover.noResults.searchExamples.noResultsMatchSearchCriteriaTitle"
+            id="orderview.noResults.searchExamples.noResultsMatchSearchCriteriaTitle"
             defaultMessage="No results match your search criteria"
           />
         }
         color="warning"
         iconType="help"
-        data-test-subj="discoverNoResults"
+        data-test-subj="orderviewNoResults"
       />
       {timeFieldName ? getTimeFieldMessage() : null}
       {queryLanguage === 'lucene'
@@ -50,13 +50,13 @@ export function DiscoverNoResults({
       <EuiCallOut
         title={
           <FormattedMessage
-            id="discover.noResults.searchExamples.noResultsBecauseOfError"
+            id="orderview.noResults.searchExamples.noResultsBecauseOfError"
             defaultMessage="We encountered an error retrieving search results"
           />
         }
         color="danger"
         iconType="alert"
-        data-test-subj="discoverNoResultsError"
+        data-test-subj="orderviewNoResultsError"
       >
         <EuiButton
           size="s"
@@ -64,7 +64,7 @@ export function DiscoverNoResults({
           onClick={() => (data ? data.search.showError(error) : void 0)}
         >
           <FormattedMessage
-            id="discover.showErrorMessageAgain"
+            id="orderview.showErrorMessageAgain"
             defaultMessage="Show error message"
           />
         </EuiButton>

@@ -11,9 +11,9 @@ import type { TimeRange, Filter, Query, QueryState, RefreshInterval } from '../.
 import { esFilters } from '../../../src/plugins/data/public';
 import { setStateToKbnUrl } from '../../../src/plugins/kibana_utils/public';
 
-export const DISCOVER_APP_URL_GENERATOR = 'DISCOVER_APP_URL_GENERATOR';
+export const ORDERVEW_APP_URL_GENERATOR = 'ORDERVEW_APP_URL_GENERATOR';
 
-export interface DiscoverUrlGeneratorState {
+export interface OrderviewUrlGeneratorState {
   /**
    * Optionally set saved search ID.
    */
@@ -84,11 +84,11 @@ interface Params {
 
 export const SEARCH_SESSION_ID_QUERY_PARAM = 'searchSessionId';
 
-export class DiscoverUrlGenerator
-  implements UrlGeneratorsDefinition<typeof DISCOVER_APP_URL_GENERATOR> {
+export class OrderviewUrlGenerator
+  implements UrlGeneratorsDefinition<typeof ORDERVEW_APP_URL_GENERATOR> {
   constructor(private readonly params: Params) {}
 
-  public readonly id = DISCOVER_APP_URL_GENERATOR;
+  public readonly id = ORDERVEW_APP_URL_GENERATOR;
 
   public readonly createUrl = async ({
     useHash = this.params.useHash,
@@ -103,7 +103,7 @@ export class DiscoverUrlGenerator
     savedQuery,
     sort,
     interval,
-  }: DiscoverUrlGeneratorState): Promise<string> => {
+  }: OrderviewUrlGeneratorState): Promise<string> => {
     const savedSearchPath = savedSearchId ? `view/${encodeURIComponent(savedSearchId)}` : '';
     const appState: {
       query?: Query;

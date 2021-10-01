@@ -5,7 +5,7 @@
  * in compliance with, at your election, the Elastic License 2.0 or the Server
  * Side Public License, v 1.
  */
-import { DiscoverServices } from '../build_services';
+import { OrderviewServices } from '../build_services';
 import { dataPluginMock } from '../../../../../src/plugins/data/public/mocks';
 import { chromeServiceMock, coreMock, docLinksServiceMock } from '../../../../core/public/mocks';
 import { DEFAULT_COLUMNS_SETTING } from '../../common';
@@ -14,7 +14,7 @@ import { UI_SETTINGS } from '../../../../../src/plugins/data/common';
 import { TopNavMenu } from '../../../navigation/public';
 const dataPlugin = dataPluginMock.createStartContract();
 
-export const discoverServiceMock = ({
+export const orderviewServiceMock = ({
   core: coreMock.createStart(),
   chrome: chromeServiceMock.createStartContract(),
   history: () => ({
@@ -28,7 +28,7 @@ export const discoverServiceMock = ({
     visualize: {
       show: true,
     },
-    discover: {
+    orderview: {
       save: false,
     },
     advancedSettings: {
@@ -60,4 +60,4 @@ export const discoverServiceMock = ({
   metadata: {
     branch: 'test',
   },
-} as unknown) as DiscoverServices;
+} as unknown) as OrderviewServices;

@@ -6,4 +6,4 @@
  * Side Public License, v 1.
  */
 
-export { DiscoverMainApp } from './discover_main_app';
+export { OrderviewMainApp } from './orderview_main_app';

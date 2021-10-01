@@ -72,7 +72,7 @@ function getRenderFn(domNode: Element, props: any) {
                 columns="renderProps.columns"
                 data-description="{{renderProps.searchDescription}}"
                 data-shared-item
-                data-test-subj="discoverDocTable"
+                data-test-subj="orderviewDocTable"
                 data-title="{{renderProps.searchTitle}}"
                 filter="renderProps.onFilter"
                 hits="renderProps.rows"
@@ -105,7 +105,7 @@ export function DocTableLegacy(renderProps: DocTableLegacyProps) {
   const [minimumVisibleRows, setMinimumVisibleRows] = useState(renderProps.minimumVisibleRows);
   const onSkipBottomButtonClick = useCallback(async () => {
     // delay scrolling to after the rows have been rendered
-    const bottomMarker = document.getElementById('discoverBottomMarker');
+    const bottomMarker = document.getElementById('orderviewBottomMarker');
     const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
     // show all the rows
     setMinimumVisibleRows(renderProps.rows.length);
@@ -149,22 +149,22 @@ export function DocTableLegacy(renderProps: DocTableLegacyProps) {
       {renderProps.onBackToTop && renderProps.rows.length === renderProps.sampleSize ? (
         <div
           className="dscTable__footer"
-          data-test-subj="discoverDocTableFooter"
+          data-test-subj="orderviewDocTableFooter"
           tabIndex={-1}
-          id="discoverBottomMarker"
+          id="orderviewBottomMarker"
         >
           <FormattedMessage
-            id="discover.howToSeeOtherMatchingDocumentsDescription"
+            id="orderview.howToSeeOtherMatchingDocumentsDescription"
             defaultMessage="These are the first {sampleSize} documents matching
                   your search, refine your search to see others."
             values={{ sampleSize: renderProps.sampleSize }}
           />
-          <EuiButtonEmpty onClick={renderProps.onBackToTop} data-test-subj="discoverBackToTop">
-            <FormattedMessage id="discover.backToTopLinkText" defaultMessage="Back to top." />
+          <EuiButtonEmpty onClick={renderProps.onBackToTop} data-test-subj="orderviewBackToTop">
+            <FormattedMessage id="orderview.backToTopLinkText" defaultMessage="Back to top." />
           </EuiButtonEmpty>
         </div>
       ) : (
-        <span tabIndex={-1} id="discoverBottomMarker">
+        <span tabIndex={-1} id="orderviewBottomMarker">
           &#8203;
         </span>
       )}

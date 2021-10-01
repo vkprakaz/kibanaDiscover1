@@ -30,7 +30,7 @@ import { createTableRowDirective } from './doc_table/components/table_row';
 import { createPagerFactory } from './doc_table/lib/pager/pager_factory';
 import { createInfiniteScrollDirective } from './doc_table/infinite_scroll';
 import { createDocViewerDirective } from './doc_viewer';
-import { createDiscoverGridDirective } from './create_discover_grid_directive';
+import { createOrderviewGridDirective } from './create_orderview_grid_directive';
 import { createRenderCompleteDirective } from './directives/render_complete';
 import {
   initAngularBootstrap,
@@ -40,18 +40,18 @@ import {
   registerListenEventListener,
   watchMultiDecorator,
 } from '../../../../../src/plugins/kibana_legacy/public';
-import { DiscoverStartPlugins } from '../../plugin';
+import { OrderviewStartPlugins } from '../../plugin';
 import { getScopedHistory } from '../../kibana_services';
-import { createDiscoverDirective } from './create_discover_directive';
+import { createOrderviewDirective } from './create_orderview_directive';
 
 /**
- * returns the main inner angular module, it contains all the parts of Angular Discover
+ * returns the main inner angular module, it contains all the parts of Angular Orderview
  * needs to render, so in the end the current 'kibana' angular module is no longer necessary
  */
 export function getInnerAngularModule(
   name: string,
   core: CoreStart,
-  deps: DiscoverStartPlugins,
+  deps: OrderviewStartPlugins,
   context: PluginInitializerContext
 ) {
   initAngularBootstrap();
@@ -66,7 +66,7 @@ export function getInnerAngularModule(
 export function getInnerAngularModuleEmbeddable(
   name: string,
   core: CoreStart,
-  deps: DiscoverStartPlugins
+  deps: OrderviewStartPlugins
 ) {
   return initializeInnerAngularModule(name, core, deps.navigation, deps.data, true);
 }
@@ -74,7 +74,7 @@ export function getInnerAngularModuleEmbeddable(
 let initialized = false;
 
 export function initializeInnerAngularModule(
-  name = 'app/discover',
+  name = 'app/orderview',
   core: CoreStart,
   navigation: NavigationStart,
   data: DataPublicPluginStart,
@@ -96,11 +96,11 @@ export function initializeInnerAngularModule(
         'ngSanitize',
         'react',
         'ui.bootstrap',
-        'discoverI18n',
-        'discoverPrivate',
-        'discoverDocTable',
-        'discoverPagerFactory',
-        'discoverPromise',
+        'orderviewI18n',
+        'orderviewPrivate',
+        'orderviewDocTable',
+        'orderviewPagerFactory',
+        'orderviewPromise',
       ])
       .config(watchMultiDecorator)
       .directive('icon', (reactDirective) => reactDirective(EuiIcon))
@@ -113,30 +113,30 @@ export function initializeInnerAngularModule(
       'ngRoute',
       'react',
       'ui.bootstrap',
-      'discoverI18n',
-      'discoverPrivate',
-      'discoverPromise',
-      'discoverLocalStorageProvider',
-      'discoverDocTable',
-      'discoverPagerFactory',
+      'orderviewI18n',
+      'orderviewPrivate',
+      'orderviewPromise',
+      'orderviewLocalStorageProvider',
+      'orderviewDocTable',
+      'orderviewPagerFactory',
     ])
     .config(watchMultiDecorator)
     .run(registerListenEventListener)
     .directive('renderComplete', createRenderCompleteDirective)
-    .directive('discover', createDiscoverDirective);
+    .directive('orderview', createOrderviewDirective);
 }
 
 function createLocalPromiseModule() {
-  angular.module('discoverPromise', []).service('Promise', PromiseServiceCreator);
+  angular.module('orderviewPromise', []).service('Promise', PromiseServiceCreator);
 }
 
 function createLocalPrivateModule() {
-  angular.module('discoverPrivate', []).provider('Private', PrivateProvider);
+  angular.module('orderviewPrivate', []).provider('Private', PrivateProvider);
 }
 
 function createLocalI18nModule() {
   angular
-    .module('discoverI18n', [])
+    .module('orderviewI18n', [])
     .provider('i18n', I18nProvider)
     .filter('i18n', i18nFilter)
     .directive('i18nId', i18nDirective);
@@ -144,7 +144,7 @@ function createLocalI18nModule() {
 
 function createLocalStorageModule() {
   angular
-    .module('discoverLocalStorageProvider', ['discoverPrivate'])
+    .module('orderviewLocalStorageProvider', ['orderviewPrivate'])
     .service('localStorage', createLocalStorageService('localStorage'))
     .service('sessionStorage', createLocalStorageService('sessionStorage'));
 }
@@ -156,19 +156,19 @@ const createLocalStorageService = function (type: string) {
 };
 
 function createPagerFactoryModule() {
-  angular.module('discoverPagerFactory', []).factory('pagerFactory', createPagerFactory);
+  angular.module('orderviewPagerFactory', []).factory('pagerFactory', createPagerFactory);
 }
 
 function createDocTableModule() {
   angular
-    .module('discoverDocTable', ['discoverPagerFactory', 'react'])
+    .module('orderviewDocTable', ['orderviewPagerFactory', 'react'])
     .directive('docTable', createDocTableDirective)
     .directive('kbnTableHeader', createTableHeaderDirective)
     .directive('toolBarPagerText', createToolBarPagerTextDirective)
     .directive('kbnTableRow', createTableRowDirective)
     .directive('toolBarPagerButtons', createToolBarPagerButtonsDirective)
     .directive('kbnInfiniteScroll', createInfiniteScrollDirective)
-    .directive('discoverGrid', createDiscoverGridDirective)
+    .directive('orderviewGrid', createOrderviewGridDirective)
     .directive('docViewer', createDocViewerDirective)
     .directive('contextAppLegacy', createContextAppLegacy);
 }

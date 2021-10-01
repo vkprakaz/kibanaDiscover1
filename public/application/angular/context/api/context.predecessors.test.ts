@@ -13,7 +13,7 @@ import { EsHitRecordList, fetchContextProvider, SurrDocType } from './context';
 import { setServices, SortDirection } from '../../../../kibana_services';
 import { EsHitRecord } from './context';
 import { Query } from '../../../../../../../../src/plugins/data/public';
-import { DiscoverServices } from '../../../../build_services';
+import { OrderviewServices } from '../../../../build_services';
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const ANCHOR_TIMESTAMP = new Date(MS_PER_DAY).toJSON();
@@ -53,7 +53,7 @@ describe('context app', function () {
             },
           },
         },
-      } as unknown) as DiscoverServices);
+      } as unknown) as OrderviewServices);
 
       fetchPredecessors = (
         indexPatternId,
@@ -245,7 +245,7 @@ describe('context app', function () {
             },
           },
         },
-      } as unknown) as DiscoverServices);
+      } as unknown) as OrderviewServices);
 
       fetchPredecessors = (
         indexPatternId,

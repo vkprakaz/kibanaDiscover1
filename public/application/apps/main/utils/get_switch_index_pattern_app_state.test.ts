@@ -35,7 +35,7 @@ const getIndexPattern = (id: string, timeFieldName: string, fields: string[]) =>
 const currentIndexPattern = getIndexPattern('curr', '', ['category', 'name']);
 const nextIndexPattern = getIndexPattern('next', '', ['category']);
 
-describe('Discover getSwitchIndexPatternAppState', () => {
+describe('Orderview getSwitchIndexPatternAppState', () => {
   test('removing fields that are not part of the next index pattern, keeping unknown fields ', async () => {
     const result = getSwitchIndexPatternAppState(
       currentIndexPattern,

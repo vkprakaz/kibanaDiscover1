@@ -9,7 +9,7 @@
 import { validateTimeRange } from './validate_time_range';
 import { notificationServiceMock } from '../../../../../../../core/public/mocks';
 
-describe('Discover validateTimeRange', () => {
+describe('Orderview validateTimeRange', () => {
   test('validates given time ranges correctly', async () => {
     const { toasts } = notificationServiceMock.createStartContract();
     [

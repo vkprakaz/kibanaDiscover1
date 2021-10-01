@@ -10,7 +10,7 @@ import { DataPublicPluginStart } from '../../../../../../../../src/plugins/data/
 
 /**
  * Helper function to apply or remove aggregations to a given search source used for gaining data
- * for Discover's histogram vis
+ * for Orderview's histogram vis
  */
 export function getChartAggConfigs(
   searchSource: SearchSource,

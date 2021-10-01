@@ -11,7 +11,7 @@ import 'angular-sanitize';
 // required for ngRoute
 import 'angular-route';
 
-import './discover';
+import './orderview';
 import './doc';
 import './context';
 import './doc_viewer';

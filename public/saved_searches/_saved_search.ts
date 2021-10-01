@@ -54,7 +54,7 @@ export function createSavedSearchClass(savedObjects: SavedObjectsStart) {
       });
       this.showInRecentlyAccessed = true;
       this.id = id;
-      this.getFullPath = () => `/app/discover#/view/${String(id)}`;
+      this.getFullPath = () => `/app/orderview#/view/${String(id)}`;
     }
   }
 

@@ -8,9 +8,9 @@
 
 import React from 'react';
 
-import { DiscoverGridEmbeddable } from '../angular/create_discover_grid_directive';
-import { DiscoverDocTableEmbeddable } from '../angular/doc_table/create_doc_table_embeddable';
-import { DiscoverGridProps } from '../components/discover_grid/discover_grid';
+import { OrderviewGridEmbeddable } from '../angular/create_orderview_grid_directive';
+import { OrderviewDocTableEmbeddable } from '../angular/doc_table/create_doc_table_embeddable';
+import { OrderviewGridProps } from '../components/orderview_grid/orderview_grid';
 import { SearchProps } from './saved_search_embeddable';
 
 interface SavedSearchEmbeddableComponentProps {
@@ -19,8 +19,8 @@ interface SavedSearchEmbeddableComponentProps {
   refs: HTMLElement;
 }
 
-const DiscoverDocTableEmbeddableMemoized = React.memo(DiscoverDocTableEmbeddable);
-const DiscoverGridEmbeddableMemoized = React.memo(DiscoverGridEmbeddable);
+const OrderviewDocTableEmbeddableMemoized = React.memo(OrderviewDocTableEmbeddable);
+const OrderviewGridEmbeddableMemoized = React.memo(OrderviewGridEmbeddable);
 
 export function SavedSearchEmbeddableComponent({
   searchProps,
@@ -32,8 +32,8 @@ export function SavedSearchEmbeddableComponent({
       ...searchProps,
       refs,
     };
-    return <DiscoverDocTableEmbeddableMemoized {...docTableProps} />;
+    return <OrderviewDocTableEmbeddableMemoized {...docTableProps} />;
   }
-  const discoverGridProps = searchProps as DiscoverGridProps;
-  return <DiscoverGridEmbeddableMemoized {...discoverGridProps} className="dscDiscoverGrid" />;
+  const orderviewGridProps = searchProps as OrderviewGridProps;
+  return <OrderviewGridEmbeddableMemoized {...orderviewGridProps} className="dscOrderviewGrid" />;
 }

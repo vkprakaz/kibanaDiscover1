@@ -14,12 +14,12 @@ import {
   TimeRange,
 } from '../../../../../../../../src/plugins/data/common';
 import { ISearchSource } from '../../../../../../../../src/plugins/data/public';
-import { AppState, GetStateReturn } from '../../services/discover_state';
+import { AppState, GetStateReturn } from '../../services/orderview_state';
 import { SavedSearchRefetchSubject, SavedSearchDataSubject } from '../../services/use_saved_search';
-import { DiscoverServices } from '../../../../../build_services';
+import { OrderviewServices } from '../../../../../build_services';
 import { SavedSearch } from '../../../../../saved_searches';
 
-export interface DiscoverLayoutProps {
+export interface OrderviewLayoutProps {
   indexPattern: IndexPattern;
   indexPatternList: Array<SavedObject<IndexPatternAttributes>>;
   navigateTo: (url: string) => void;
@@ -30,7 +30,7 @@ export interface DiscoverLayoutProps {
   savedSearchData$: SavedSearchDataSubject;
   savedSearchRefetch$: SavedSearchRefetchSubject;
   searchSource: ISearchSource;
-  services: DiscoverServices;
+  services: OrderviewServices;
   state: AppState;
   stateContainer: GetStateReturn;
 }

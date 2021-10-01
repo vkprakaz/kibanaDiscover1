@@ -24,7 +24,7 @@ describe('Get context url', () => {
       addBasePath
     );
     expect(url).toMatchInlineSnapshot(
-      `"/base/app/discover#/context/ipId/docId?_g=(filters:!())&_a=(columns:!(test1,test2),filters:!())"`
+      `"/base/app/orderview#/context/ipId/docId?_g=(filters:!())&_a=(columns:!(test1,test2),filters:!())"`
     );
   });
 
@@ -37,7 +37,7 @@ describe('Get context url', () => {
       addBasePath
     );
     expect(url).toMatchInlineSnapshot(
-      `"/base/app/discover#/context/ipId/doc%20Id?_g=(filters:!())&_a=(columns:!(test1,test2),filters:!())"`
+      `"/base/app/orderview#/context/ipId/doc%20Id?_g=(filters:!())&_a=(columns:!(test1,test2),filters:!())"`
     );
   });
 });

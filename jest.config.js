@@ -9,6 +9,6 @@
 module.exports = {
   preset: '@kbn/test',
   rootDir: '../..',
-  roots: ['<rootDir>/plugins/discovernew'],
+  roots: ['<rootDir>/plugins/orderviewnew'],
   testRunner: 'jasmine2',
 };

@@ -58,7 +58,7 @@ export function getDisplayedColumns(
       ? [
           {
             name: '__document__',
-            displayName: i18n.translate('discover.docTable.tableHeader.documentHeader', {
+            displayName: i18n.translate('orderview.docTable.tableHeader.documentHeader', {
               defaultMessage: 'Document',
             }),
             isSortable: false,

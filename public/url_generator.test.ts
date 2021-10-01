@@ -6,12 +6,12 @@
  * Side Public License, v 1.
  */
 
-import { DiscoverUrlGenerator } from './url_generator';
+import { OrderviewUrlGenerator } from './url_generator';
 import { hashedItemStore, getStatesFromKbnUrl } from '../../kibana_utils/public';
 import { mockStorage } from '../../kibana_utils/public/storage/hashed_item_store/mock';
 import { FilterStateStore } from '../../../../src/plugins/data/common';
 
-const appBasePath: string = 'xyz/app/discover';
+const appBasePath: string = 'xyz/app/orderview';
 const indexPatternId: string = 'c367b774-a4c2-11ea-bb37-0242ac130002';
 const savedSearchId: string = '571aaf70-4c88-11e8-b3d7-01146121b73d';
 
@@ -20,7 +20,7 @@ interface SetupParams {
 }
 
 const setup = async ({ useHash = false }: SetupParams = {}) => {
-  const generator = new DiscoverUrlGenerator({
+  const generator = new OrderviewUrlGenerator({
     appBasePath,
     useHash,
   });
@@ -35,8 +35,8 @@ beforeEach(() => {
   hashedItemStore.storage = mockStorage;
 });
 
-describe('Discover url generator', () => {
-  test('can create a link to Discover with no state and no saved search', async () => {
+describe('Orderview url generator', () => {
+  test('can create a link to Orderview with no state and no saved search', async () => {
     const { generator } = await setup();
     const url = await generator.createUrl({});
     const { _a, _g } = getStatesFromKbnUrl(url, ['_a', '_g']);
@@ -46,7 +46,7 @@ describe('Discover url generator', () => {
     expect(_g).toEqual({});
   });
 
-  test('can create a link to a saved search in Discover', async () => {
+  test('can create a link to a saved search in Orderview', async () => {
     const { generator } = await setup();
     const url = await generator.createUrl({ savedSearchId });
     const { _a, _g } = getStatesFromKbnUrl(url, ['_a', '_g']);
@@ -206,7 +206,7 @@ describe('Discover url generator', () => {
     const url = await generator.createUrl({
       searchSessionId: '__test__',
     });
-    expect(url).toMatchInlineSnapshot(`"xyz/app/discover#/?_g=()&_a=()&searchSessionId=__test__"`);
+    expect(url).toMatchInlineSnapshot(`"xyz/app/orderview#/?_g=()&_a=()&searchSessionId=__test__"`);
     expect(url).toContain('__test__');
   });
 
@@ -219,7 +219,7 @@ describe('Discover url generator', () => {
       savedQuery: '__savedQueryId__',
     });
     expect(url).toMatchInlineSnapshot(
-      `"xyz/app/discover#/?_g=()&_a=(columns:!(_source),interval:auto,savedQuery:__savedQueryId__,sort:!(!('timestamp,%20asc')))"`
+      `"xyz/app/orderview#/?_g=()&_a=(columns:!(_source),interval:auto,savedQuery:__savedQueryId__,sort:!(!('timestamp,%20asc')))"`
     );
   });
 

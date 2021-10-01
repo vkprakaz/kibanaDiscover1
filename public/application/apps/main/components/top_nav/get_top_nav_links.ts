@@ -11,10 +11,10 @@ import moment from 'moment';
 import { showOpenSearchPanel } from './show_open_search_panel';
 import { getSharingData, showPublicUrlSwitch } from '../../utils/get_sharing_data';
 import { unhashUrl } from '../../../../../../../../src/plugins/kibana_utils/public';
-import { DiscoverServices } from '../../../../../build_services';
+import { OrderviewServices } from '../../../../../build_services';
 import { SavedSearch } from '../../../../../saved_searches';
 import { onSaveSearch } from './on_save_search';
-import { GetStateReturn } from '../../services/discover_state';
+import { GetStateReturn } from '../../services/orderview_state';
 import { IndexPattern, ISearchSource } from '../../../../../kibana_services';
 import { openOptionsPopover } from './open_options_popover';
 
@@ -34,7 +34,7 @@ export const getTopNavLinks = ({
   indexPattern: IndexPattern;
   navigateTo: (url: string) => void;
   savedSearch: SavedSearch;
-  services: DiscoverServices;
+  services: OrderviewServices;
   state: GetStateReturn;
   onOpenInspector: () => void;
   searchSource: ISearchSource;
@@ -42,10 +42,10 @@ export const getTopNavLinks = ({
 }) => {
   const options = {
     id: 'options',
-    label: i18n.translate('discover.localMenu.localMenu.optionsTitle', {
+    label: i18n.translate('orderview.localMenu.localMenu.optionsTitle', {
       defaultMessage: 'Options',
     }),
-    description: i18n.translate('discover.localMenu.optionsDescription', {
+    description: i18n.translate('orderview.localMenu.optionsDescription', {
       defaultMessage: 'Options',
     }),
     run: (anchorElement: HTMLElement) =>
@@ -53,42 +53,42 @@ export const getTopNavLinks = ({
         I18nContext: services.core.i18n.Context,
         anchorElement,
       }),
-    testId: 'discoverOptionsButton',
+    testId: 'orderviewOptionsButton',
   };
 
   const newSearch = {
     id: 'new',
-    label: i18n.translate('discover.localMenu.localMenu.newSearchTitle', {
+    label: i18n.translate('orderview.localMenu.localMenu.newSearchTitle', {
       defaultMessage: 'New',
     }),
-    description: i18n.translate('discover.localMenu.newSearchDescription', {
+    description: i18n.translate('orderview.localMenu.newSearchDescription', {
       defaultMessage: 'New Search',
     }),
     run: () => navigateTo('/'),
-    testId: 'discoverNewButton',
+    testId: 'orderviewNewButton',
   };
 
   const saveSearch = {
     id: 'save',
-    label: i18n.translate('discover.localMenu.saveTitle', {
+    label: i18n.translate('orderview.localMenu.saveTitle', {
       defaultMessage: 'Save',
     }),
-    description: i18n.translate('discover.localMenu.saveSearchDescription', {
+    description: i18n.translate('orderview.localMenu.saveSearchDescription', {
       defaultMessage: 'Save Search',
     }),
-    testId: 'discoverSaveButton',
+    testId: 'orderviewSaveButton',
     run: () => onSaveSearch({ savedSearch, services, indexPattern, navigateTo, state }),
   };
 
   const openSearch = {
     id: 'open',
-    label: i18n.translate('discover.localMenu.openTitle', {
+    label: i18n.translate('orderview.localMenu.openTitle', {
       defaultMessage: 'Open',
     }),
-    description: i18n.translate('discover.localMenu.openSavedSearchDescription', {
+    description: i18n.translate('orderview.localMenu.openSavedSearchDescription', {
       defaultMessage: 'Open Saved Search',
     }),
-    testId: 'discoverOpenButton',
+    testId: 'orderviewOpenButton',
     run: () =>
       showOpenSearchPanel({
         onOpenSavedSearch,
@@ -98,10 +98,10 @@ export const getTopNavLinks = ({
 
   const shareSearch = {
     id: 'share',
-    label: i18n.translate('discover.localMenu.shareTitle', {
+    label: i18n.translate('orderview.localMenu.shareTitle', {
       defaultMessage: 'Share',
     }),
-    description: i18n.translate('discover.localMenu.shareSearchDescription', {
+    description: i18n.translate('orderview.localMenu.shareSearchDescription', {
       defaultMessage: 'Share Search',
     }),
     testId: 'shareTopNavButton',
@@ -117,7 +117,7 @@ export const getTopNavLinks = ({
       services.share.toggleShareContextMenu({
         anchorElement,
         allowEmbed: false,
-        allowShortUrl: !!services.capabilities.discover.createShortUrl,
+        allowShortUrl: !!services.capabilities.orderview.createShortUrl,
         shareableUrl: unhashUrl(window.location.href),
         objectId: savedSearch.id,
         objectType: 'search',
@@ -126,8 +126,8 @@ export const getTopNavLinks = ({
           // CSV reports can be generated without a saved search so we provide a fallback title
           title:
             savedSearch.title ||
-            i18n.translate('discover.localMenu.fallbackReportTitle', {
-              defaultMessage: 'Discover search [{date}]',
+            i18n.translate('orderview.localMenu.fallbackReportTitle', {
+              defaultMessage: 'Orderview search [{date}]',
               values: { date: moment().toISOString(true) },
             }),
         },
@@ -139,10 +139,10 @@ export const getTopNavLinks = ({
 
   const inspectSearch = {
     id: 'inspect',
-    label: i18n.translate('discover.localMenu.inspectTitle', {
+    label: i18n.translate('orderview.localMenu.inspectTitle', {
       defaultMessage: 'Inspect',
     }),
-    description: i18n.translate('discover.localMenu.openInspectorForSearchDescription', {
+    description: i18n.translate('orderview.localMenu.openInspectorForSearchDescription', {
       defaultMessage: 'Open Inspector for search',
     }),
     testId: 'openInspectorButton',
@@ -154,7 +154,7 @@ export const getTopNavLinks = ({
   return [
     ...(services.capabilities.advancedSettings.save ? [options] : []),
     newSearch,
-    ...(services.capabilities.discover.save ? [saveSearch] : []),
+    ...(services.capabilities.orderview.save ? [saveSearch] : []),
     openSearch,
     shareSearch,
     inspectSearch,

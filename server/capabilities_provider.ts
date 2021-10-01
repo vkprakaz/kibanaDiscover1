@@ -7,7 +7,7 @@
  */
 
 export const capabilitiesProvider = () => ({
-  discover: {
+  orderview: {
     show: true,
     createShortUrl: true,
     save: true,

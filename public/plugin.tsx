@@ -54,12 +54,12 @@ import { createSavedSearchesLoader } from './saved_searches';
 import { registerFeature } from './register_feature';
 import { buildServices } from './build_services';
 import {
-  DiscoverUrlGeneratorState,
-  DISCOVER_APP_URL_GENERATOR,
-  DiscoverUrlGenerator,
+  OrderviewUrlGeneratorState,
+  ORDERVEW_APP_URL_GENERATOR,
+  OrderviewUrlGenerator,
   SEARCH_SESSION_ID_QUERY_PARAM,
 } from './url_generator';
-import { DiscoverAppLocatorDefinition, DiscoverAppLocator } from './locator';
+import { OrderviewAppLocatorDefinition, OrderviewAppLocator } from './locator';
 import { SearchEmbeddableFactory } from './application/embeddable';
 import { UsageCollectionSetup } from '../../../src/plugins/usage_collection/public';
 import { replaceUrlHashQuery } from '../../../src/plugins/kibana_utils/public/';
@@ -68,17 +68,17 @@ import { SourceViewer } from './application/components/source_viewer/source_view
 
 declare module '../../share/public' {
   export interface UrlGeneratorStateMapping {
-    [DISCOVER_APP_URL_GENERATOR]: UrlGeneratorState<DiscoverUrlGeneratorState>;
+    [ORDERVEW_APP_URL_GENERATOR]: UrlGeneratorState<OrderviewUrlGeneratorState>;
   }
 }
 
 /**
  * @public
  */
-export interface DiscoverSetup {
+export interface OrderviewSetup {
   docViews: {
     /**
-     * Add new doc view shown along with table view and json view in the details of each document in Discover.
+     * Add new doc view shown along with table view and json view in the details of each document in Orderview.
      * Both react and angular doc views are supported.
      * @param docViewRaw
      */
@@ -86,11 +86,11 @@ export interface DiscoverSetup {
   };
 
   /**
-   * `share` plugin URL locator for Discover app. Use it to generate links into
-   * Discover application, for example, navigate:
+   * `share` plugin URL locator for Orderview app. Use it to generate links into
+   * Orderview application, for example, navigate:
    *
    * ```ts
-   * await plugins.discover.locator.navigate({
+   * await plugins.orderview.locator.navigate({
    *   savedSearchId: '571aaf70-4c88-11e8-b3d7-01146121b73d',
    *   indexPatternId: 'c367b774-a4c2-11ea-bb37-0242ac130002',
    *   timeRange: {
@@ -104,7 +104,7 @@ export interface DiscoverSetup {
    * Generate a location:
    *
    * ```ts
-   * const location = await plugins.discover.locator.getLocation({
+   * const location = await plugins.orderview.locator.getLocation({
    *   savedSearchId: '571aaf70-4c88-11e8-b3d7-01146121b73d',
    *   indexPatternId: 'c367b774-a4c2-11ea-bb37-0242ac130002',
    *   timeRange: {
@@ -115,23 +115,23 @@ export interface DiscoverSetup {
    * });
    * ```
    */
-  readonly locator: undefined | DiscoverAppLocator;
+  readonly locator: undefined | OrderviewAppLocator;
 }
 
-export interface DiscoverStart {
+export interface OrderviewStart {
   savedSearchLoader: SavedObjectLoader;
 
   /**
    * @deprecated Use URL locator instead. URL generaotr will be removed.
    */
-  readonly urlGenerator: undefined | UrlGeneratorContract<'DISCOVER_APP_URL_GENERATOR'>;
+  readonly urlGenerator: undefined | UrlGeneratorContract<'ORDERVEW_APP_URL_GENERATOR'>;
 
   /**
-   * `share` plugin URL locator for Discover app. Use it to generate links into
-   * Discover application, for example, navigate:
+   * `share` plugin URL locator for Orderview app. Use it to generate links into
+   * Orderview application, for example, navigate:
    *
    * ```ts
-   * await plugins.discover.locator.navigate({
+   * await plugins.orderview.locator.navigate({
    *   savedSearchId: '571aaf70-4c88-11e8-b3d7-01146121b73d',
    *   indexPatternId: 'c367b774-a4c2-11ea-bb37-0242ac130002',
    *   timeRange: {
@@ -145,7 +145,7 @@ export interface DiscoverStart {
    * Generate a location:
    *
    * ```ts
-   * const location = await plugins.discover.locator.getLocation({
+   * const location = await plugins.orderview.locator.getLocation({
    *   savedSearchId: '571aaf70-4c88-11e8-b3d7-01146121b73d',
    *   indexPatternId: 'c367b774-a4c2-11ea-bb37-0242ac130002',
    *   timeRange: {
@@ -156,13 +156,13 @@ export interface DiscoverStart {
    * });
    * ```
    */
-  readonly locator: undefined | DiscoverAppLocator;
+  readonly locator: undefined | OrderviewAppLocator;
 }
 
 /**
  * @internal
  */
-export interface DiscoverSetupPlugins {
+export interface OrderviewSetupPlugins {
   share?: SharePluginSetup;
   uiActions: UiActionsSetup;
   embeddable: EmbeddableSetup;
@@ -175,7 +175,7 @@ export interface DiscoverSetupPlugins {
 /**
  * @internal
  */
-export interface DiscoverStartPlugins {
+export interface OrderviewStartPlugins {
   uiActions: UiActionsStart;
   embeddable: EmbeddableStart;
   navigation: NavigationStart;
@@ -190,16 +190,16 @@ export interface DiscoverStartPlugins {
   indexPatternFieldEditor: IndexPatternFieldEditorStart;
 }
 
-const innerAngularName = 'app/discover';
-const embeddableAngularName = 'app/discoverEmbeddable';
+const innerAngularName = 'app/orderview';
+const embeddableAngularName = 'app/orderviewEmbeddable';
 
 /**
- * Contains Discover, one of the oldest parts of Kibana
+ * Contains Orderview, one of the oldest parts of Kibana
  * There are 2 kinds of Angular bootstrapped for rendering, additionally to the main Angular
- * Discover provides embeddables, those contain a slimmer Angular
+ * Orderview provides embeddables, those contain a slimmer Angular
  */
-export class DiscoverPlugin
-  implements Plugin<DiscoverSetup, DiscoverStart, DiscoverSetupPlugins, DiscoverStartPlugins> {
+export class OrderviewPlugin
+  implements Plugin<OrderviewSetup, OrderviewStart, OrderviewSetupPlugins, OrderviewStartPlugins> {
   constructor(private readonly initializerContext: PluginInitializerContext) {}
 
   private appStateUpdater = new BehaviorSubject<AppUpdater>(() => ({}));
@@ -212,25 +212,25 @@ export class DiscoverPlugin
   /**
    * @deprecated
    */
-  private urlGenerator?: DiscoverStart['urlGenerator'];
-  private locator?: DiscoverAppLocator;
+  private urlGenerator?: OrderviewStart['urlGenerator'];
+  private locator?: OrderviewAppLocator;
 
   /**
    * why are those functions public? they are needed for some mocha tests
    * can be removed once all is Jest
    */
   public initializeInnerAngular?: () => void;
-  public initializeServices?: () => Promise<{ core: CoreStart; plugins: DiscoverStartPlugins }>;
+  public initializeServices?: () => Promise<{ core: CoreStart; plugins: OrderviewStartPlugins }>;
 
   setup(
-    core: CoreSetup<DiscoverStartPlugins, DiscoverStart>,
-    plugins: DiscoverSetupPlugins
-  ): DiscoverSetup {
-    const baseUrl = core.http.basePath.prepend('/app/discover');
+    core: CoreSetup<OrderviewStartPlugins, OrderviewStart>,
+    plugins: OrderviewSetupPlugins
+  ): OrderviewSetup {
+    const baseUrl = core.http.basePath.prepend('/app/orderview');
 
     if (plugins.share) {
       this.urlGenerator = plugins.share.urlGenerators.registerUrlGenerator(
-        new DiscoverUrlGenerator({
+        new OrderviewUrlGenerator({
           appBasePath: baseUrl,
           useHash: core.uiSettings.get('state:storeInSessionStorage'),
         })
@@ -239,7 +239,7 @@ export class DiscoverPlugin
 
     if (plugins.share) {
       this.locator = plugins.share.url.locators.create(
-        new DiscoverAppLocatorDefinition({
+        new OrderviewAppLocatorDefinition({
           useHash: core.uiSettings.get('state:storeInSessionStorage'),
         })
       );
@@ -248,14 +248,14 @@ export class DiscoverPlugin
     this.docViewsRegistry = new DocViewsRegistry();
     setDocViewsRegistry(this.docViewsRegistry);
     this.docViewsRegistry.addDocView({
-      title: i18n.translate('discover.docViews.table.tableTitle', {
+      title: i18n.translate('orderview.docViews.table.tableTitle', {
         defaultMessage: 'Table',
       }),
       order: 10,
       component: DocViewTable,
     });
     this.docViewsRegistry.addDocView({
-      title: i18n.translate('discover.docViews.json.jsonTitle', {
+      title: i18n.translate('orderview.docViews.json.jsonTitle', {
         defaultMessage: 'JSON',
       }),
       order: 20,
@@ -278,11 +278,11 @@ export class DiscoverPlugin
     } = createKbnUrlTracker({
       // we pass getter here instead of plain `history`,
       // so history is lazily created (when app is mounted)
-      // this prevents redundant `#` when not in discover app
+      // this prevents redundant `#` when not in orderview app
       getHistory: getScopedHistory,
       baseUrl,
       defaultSubUrl: '#/',
-      storageKey: `lastUrl:${core.http.basePath.get()}:discover`,
+      storageKey: `lastUrl:${core.http.basePath.get()}:orderview`,
       navLinkUpdater$: this.appStateUpdater,
       toastNotifications: core.notifications.toasts,
       stateParams: [
@@ -320,8 +320,8 @@ export class DiscoverPlugin
 
     this.docViewsRegistry.setAngularInjectorGetter(this.getEmbeddableInjector);
     core.application.register({
-      id: 'discover',
-      title: 'Discover',
+      id: 'orderview',
+      title: 'Orderview',
       updater$: this.appStateUpdater.asObservable(),
       order: 1000,
       euiIconType: 'logoKibana',
@@ -329,10 +329,10 @@ export class DiscoverPlugin
       category: DEFAULT_APP_CATEGORIES.kibana,
       mount: async (params: AppMountParameters) => {
         if (!this.initializeServices) {
-          throw Error('Discover plugin method initializeServices is undefined');
+          throw Error('Orderview plugin method initializeServices is undefined');
         }
         if (!this.initializeInnerAngular) {
-          throw Error('Discover plugin method initializeInnerAngular is undefined');
+          throw Error('Orderview plugin method initializeInnerAngular is undefined');
         }
         setScopedHistory(params.history);
         setHeaderActionMenuMounter(params.setHeaderActionMenu);
@@ -357,10 +357,10 @@ export class DiscoverPlugin
       },
     });
 
-    plugins.urlForwarding.forwardApp('doc', 'discover', (path) => {
+    plugins.urlForwarding.forwardApp('doc', 'orderview', (path) => {
       return `#${path}`;
     });
-    plugins.urlForwarding.forwardApp('context', 'discover', (path) => {
+    plugins.urlForwarding.forwardApp('context', 'orderview', (path) => {
       const urlParts = path.split('/');
       // take care of urls containing legacy url, those split in the following way
       // ["", "context", indexPatternId, _type, id + params]
@@ -371,10 +371,10 @@ export class DiscoverPlugin
       }
       return `#${path}`;
     });
-    plugins.urlForwarding.forwardApp('discover', 'discover', (path) => {
-      const [, id, tail] = /discover\/([^\?]+)(.*)/.exec(path) || [];
+    plugins.urlForwarding.forwardApp('orderview', 'orderview', (path) => {
+      const [, id, tail] = /orderview\/([^\?]+)(.*)/.exec(path) || [];
       if (!id) {
-        return `#${path.replace('/discover', '') || '/'}`;
+        return `#${path.replace('/orderview', '') || '/'}`;
       }
       return `#/view/${id}${tail || ''}`;
     });
@@ -393,7 +393,7 @@ export class DiscoverPlugin
     };
   }
 
-  start(core: CoreStart, plugins: DiscoverStartPlugins) {
+  start(core: CoreStart, plugins: OrderviewStartPlugins) {
     // we need to register the application service at setup, but to render it
     // there are some start dependencies necessary, for this reason
     // initializeInnerAngular + initializeServices are assigned at start and used
@@ -451,16 +451,16 @@ export class DiscoverPlugin
   /**
    * register embeddable with a slimmer embeddable version of inner angular
    */
-  private registerEmbeddable(core: CoreSetup<DiscoverStartPlugins>, plugins: DiscoverSetupPlugins) {
+  private registerEmbeddable(core: CoreSetup<OrderviewStartPlugins>, plugins: OrderviewSetupPlugins) {
     if (!this.getEmbeddableInjector) {
-      throw Error('Discover plugin method getEmbeddableInjector is undefined');
+      throw Error('Orderview plugin method getEmbeddableInjector is undefined');
     }
 
     const getStartServices = async () => {
       const [coreStart, deps] = await core.getStartServices();
       return {
         executeTriggerActions: deps.uiActions.executeTriggerActions,
-        isEditable: () => coreStart.application.capabilities.discover.save as boolean,
+        isEditable: () => coreStart.application.capabilities.orderview.save as boolean,
       };
     };
 
@@ -471,7 +471,7 @@ export class DiscoverPlugin
   private getEmbeddableInjector = async () => {
     if (!this.embeddableInjector) {
       if (!this.initializeServices) {
-        throw Error('Discover plugin getEmbeddableInjector:  initializeServices is undefined');
+        throw Error('Orderview plugin getEmbeddableInjector:  initializeServices is undefined');
       }
       const { core, plugins } = await this.initializeServices();
       getServices().kibanaLegacy.loadFontAwesome();

@@ -31,10 +31,10 @@ export function SkipBottomButton({ onClick }: SkipBottomButtonProps) {
       className="dscSkipButton"
       id="dscSkipButton"
       destinationId=""
-      data-test-subj="discoverSkipTableButton"
+      data-test-subj="orderviewSkipTableButton"
       position="absolute"
     >
-      <FormattedMessage id="discover.skipToBottomButtonLabel" defaultMessage="Go to end of table" />
+      <FormattedMessage id="orderview.skipToBottomButtonLabel" defaultMessage="Go to end of table" />
     </EuiSkipLink>
   );
 }

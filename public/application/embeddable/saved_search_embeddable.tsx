@@ -17,7 +17,7 @@ import { SavedSearch } from '../../saved_searches';
 import { Adapters, RequestAdapter } from '../../../../../src/plugins/inspector/common';
 import { SEARCH_EMBEDDABLE_TYPE } from './constants';
 import { APPLY_FILTER_TRIGGER, esFilters, FilterManager } from '../../../../../src/plugins/data/public';
-import { DiscoverServices } from '../../build_services';
+import { OrderviewServices } from '../../build_services';
 import {
   Query,
   TimeRange,
@@ -41,12 +41,12 @@ import {
 import * as columnActions from '../angular/doc_table/actions/columns';
 import { getDefaultSort } from '../angular/doc_table';
 import { handleSourceColumnState } from '../angular/helpers';
-import { DiscoverGridProps } from '../components/discover_grid/discover_grid';
-import { DiscoverGridSettings } from '../components/discover_grid/types';
+import { OrderviewGridProps } from '../components/orderview_grid/orderview_grid';
+import { OrderviewGridSettings } from '../components/orderview_grid/types';
 import { updateSearchSource } from './helpers/update_search_source';
 
-export interface SearchProps extends Partial<DiscoverGridProps> {
-  settings?: DiscoverGridSettings;
+export interface SearchProps extends Partial<OrderviewGridProps> {
+  settings?: OrderviewGridSettings;
   description?: string;
   sharedItemTitle?: string;
   inspectorAdapters?: Adapters;
@@ -64,7 +64,7 @@ interface SearchEmbeddableConfig {
   indexPatterns?: IndexPattern[];
   editable: boolean;
   filterManager: FilterManager;
-  services: DiscoverServices;
+  services: OrderviewServices;
 }
 
 export class SavedSearchEmbeddable
@@ -78,7 +78,7 @@ export class SavedSearchEmbeddable
   public readonly type = SEARCH_EMBEDDABLE_TYPE;
   private filterManager: FilterManager;
   private abortController?: AbortController;
-  private services: DiscoverServices;
+  private services: OrderviewServices;
 
   private prevTimeRange?: TimeRange;
   private prevFilters?: Filter[];
@@ -108,7 +108,7 @@ export class SavedSearchEmbeddable
         defaultTitle: savedSearch.title,
         editUrl,
         editPath,
-        editApp: 'discover',
+        editApp: 'orderview',
         indexPatterns,
         editable,
       },
@@ -168,10 +168,10 @@ export class SavedSearchEmbeddable
           sessionId: searchSessionId,
           inspector: {
             adapter: this.inspectorAdapters.requests,
-            title: i18n.translate('discover.embeddable.inspectorRequestDataTitle', {
+            title: i18n.translate('orderview.embeddable.inspectorRequestDataTitle', {
               defaultMessage: 'Data',
             }),
-            description: i18n.translate('discover.embeddable.inspectorRequestDescription', {
+            description: i18n.translate('orderview.embeddable.inspectorRequestDescription', {
               defaultMessage:
                 'This request queries Elasticsearch to fetch the data for the search.',
             }),

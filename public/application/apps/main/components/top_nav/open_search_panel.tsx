@@ -42,7 +42,7 @@ export function OpenSearchPanel(props: OpenSearchPanelProps) {
         <EuiTitle size="m">
           <h2>
             <FormattedMessage
-              id="discover.topNav.openSearchPanel.openSearchTitle"
+              id="orderview.topNav.openSearchPanel.openSearchTitle"
               defaultMessage="Open search"
             />
           </h2>
@@ -52,15 +52,15 @@ export function OpenSearchPanel(props: OpenSearchPanelProps) {
         <SavedObjectFinderUi
           noItemsMessage={
             <FormattedMessage
-              id="discover.topNav.openSearchPanel.noSearchesFoundDescription"
+              id="orderview.topNav.openSearchPanel.noSearchesFoundDescription"
               defaultMessage="No matching searches found."
             />
           }
           savedObjectMetaData={[
             {
               type: SEARCH_OBJECT_TYPE,
-              getIconForSavedObject: () => 'discoverApp',
-              name: i18n.translate('discover.savedSearch.savedObjectName', {
+              getIconForSavedObject: () => 'orderviewApp',
+              name: i18n.translate('orderview.savedSearch.savedObjectName', {
                 defaultMessage: 'Saved search',
               }),
             },
@@ -85,7 +85,7 @@ export function OpenSearchPanel(props: OpenSearchPanelProps) {
               )}
             >
               <FormattedMessage
-                id="discover.topNav.openSearchPanel.manageSearchesButtonLabel"
+                id="orderview.topNav.openSearchPanel.manageSearchesButtonLabel"
                 defaultMessage="Manage searches"
               />
             </EuiButton>

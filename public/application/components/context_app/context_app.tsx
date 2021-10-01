@@ -141,7 +141,7 @@ export const ContextApp = ({ indexPattern, indexPatternId, anchorId }: ContextAp
               <EuiText>
                 <strong>
                   <FormattedMessage
-                    id="discover.context.contextOfTitle"
+                    id="orderview.context.contextOfTitle"
                     defaultMessage="Documents surrounding #{anchorId}"
                     values={{ anchorId }}
                   />

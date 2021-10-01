@@ -14,7 +14,7 @@ import { DocViewerTab } from './doc_viewer_tab';
 import { DocView, DocViewRenderProps } from '../../doc_views/doc_views_types';
 
 /**
- * Rendering tabs with different views of 1 Elasticsearch hit in Discover.
+ * Rendering tabs with different views of 1 Elasticsearch hit in Orderview.
  * The tabs are provided by the `docs_views` registry.
  * A view can contain a React `component`, or any JS framework by using
  * a `render` function.
@@ -40,7 +40,7 @@ export function DocViewer(renderProps: DocViewRenderProps) {
     });
 
   if (!tabs.length) {
-    // There there's a minimum of 2 tabs active in Discover.
+    // There there's a minimum of 2 tabs active in Orderview.
     // This condition takes care of unit tests with 0 tabs.
     return null;
   }

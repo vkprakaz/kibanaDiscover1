@@ -11,7 +11,7 @@ import { stubbedSavedObjectIndexPattern } from '../../../__mocks__/stubbed_saved
 import { IndexPattern } from '../../../../../../../src/plugins/data/common/index_patterns/index_patterns';
 import { fieldFormatsMock } from '../../../../../../../src/plugins/data/common/field_formats/mocks';
 import { setServices } from '../../../kibana_services';
-import { DiscoverServices } from '../../../build_services';
+import { OrderviewServices } from '../../../build_services';
 
 describe('Row formatter', () => {
   const hit = {
@@ -64,7 +64,7 @@ describe('Row formatter', () => {
       uiSettings: {
         get: () => 100,
       },
-    } as unknown) as DiscoverServices);
+    } as unknown) as OrderviewServices);
   });
 
   it('formats document properly', () => {
@@ -78,7 +78,7 @@ describe('Row formatter', () => {
       uiSettings: {
         get: () => 1,
       },
-    } as unknown) as DiscoverServices);
+    } as unknown) as OrderviewServices);
     expect(formatRow(hit, indexPattern).trim()).toMatchInlineSnapshot(
       `"<dl class=\\"source truncate-by-height\\"><dt>also:</dt><dd>with \\\\&quot;quotes\\\\&quot; or &#39;single qoutes&#39;</dd> </dl>"`
     );

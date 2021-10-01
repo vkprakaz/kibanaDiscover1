@@ -8,13 +8,13 @@
 import { Subject } from 'rxjs';
 import { renderHook } from '@testing-library/react-hooks';
 import { createSearchSessionMock } from '../../../../__mocks__/search_session';
-import { discoverServiceMock } from '../../../../__mocks__/services';
+import { orderviewServiceMock } from '../../../../__mocks__/services';
 import { savedSearchMock } from '../../../../__mocks__/saved_search';
 import { indexPatternMock } from '../../../../__mocks__/index_pattern';
 import { useSavedSearch } from './use_saved_search';
-import { getState } from './discover_state';
+import { getState } from './orderview_state';
 import { uiSettingsMock } from '../../../../__mocks__/ui_settings';
-import { useDiscoverState } from './use_discover_state';
+import { useOrderviewState } from './use_orderview_state';
 import { FetchStatus } from '../../../types';
 
 describe('test useSavedSearch', () => {
@@ -32,7 +32,7 @@ describe('test useSavedSearch', () => {
         initialFetchStatus: FetchStatus.LOADING,
         searchSessionManager,
         searchSource: savedSearchMock.searchSource.createCopy(),
-        services: discoverServiceMock,
+        services: orderviewServiceMock,
         stateContainer,
         useNewFieldsApi: true,
       });
@@ -53,13 +53,13 @@ describe('test useSavedSearch', () => {
       uiSettings: uiSettingsMock,
     });
 
-    discoverServiceMock.data.query.timefilter.timefilter.getTime = jest.fn(() => {
+    orderviewServiceMock.data.query.timefilter.timefilter.getTime = jest.fn(() => {
       return { from: '2021-05-01T20:00:00Z', to: '2021-05-02T20:00:00Z' };
     });
 
     const { result: resultState } = renderHook(() => {
-      return useDiscoverState({
-        services: discoverServiceMock,
+      return useOrderviewState({
+        services: orderviewServiceMock,
         history,
         initialIndexPattern: indexPatternMock,
         initialSavedSearch: savedSearchMock,
@@ -72,7 +72,7 @@ describe('test useSavedSearch', () => {
         initialFetchStatus: FetchStatus.LOADING,
         searchSessionManager,
         searchSource: resultState.current.searchSource,
-        services: discoverServiceMock,
+        services: orderviewServiceMock,
         stateContainer,
         useNewFieldsApi: true,
       });
@@ -96,13 +96,13 @@ describe('test useSavedSearch', () => {
       uiSettings: uiSettingsMock,
     });
 
-    discoverServiceMock.data.query.timefilter.timefilter.getTime = jest.fn(() => {
+    orderviewServiceMock.data.query.timefilter.timefilter.getTime = jest.fn(() => {
       return { from: '2021-05-01T20:00:00Z', to: '2021-05-02T20:00:00Z' };
     });
 
     const { result: resultState } = renderHook(() => {
-      return useDiscoverState({
-        services: discoverServiceMock,
+      return useOrderviewState({
+        services: orderviewServiceMock,
         history,
         initialIndexPattern: indexPatternMock,
         initialSavedSearch: savedSearchMock,
@@ -115,7 +115,7 @@ describe('test useSavedSearch', () => {
         initialFetchStatus: FetchStatus.LOADING,
         searchSessionManager,
         searchSource: resultState.current.searchSource,
-        services: discoverServiceMock,
+        services: orderviewServiceMock,
         stateContainer,
         useNewFieldsApi: true,
       });

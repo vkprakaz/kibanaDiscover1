@@ -1,4 +1,4 @@
-# Discover Context App Implementation Notes
+# Orderview Context App Implementation Notes
 
 The implementation of this app is intended to exhibit certain desirable
 properties by adhering to a set of *principles*. This document aims to explain

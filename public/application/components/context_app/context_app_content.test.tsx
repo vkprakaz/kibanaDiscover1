@@ -19,7 +19,7 @@ import { ContextAppContent, ContextAppContentProps } from './context_app_content
 import { getServices } from '../../../kibana_services';
 import { LoadingStatus } from '../../angular/context_query_state';
 import { indexPatternMock } from '../../../__mocks__/index_pattern';
-import { DiscoverGrid } from '../discover_grid/discover_grid';
+import { OrderviewGrid } from '../orderview_grid/orderview_grid';
 
 jest.mock('../../../kibana_services', () => {
   return {
@@ -96,9 +96,9 @@ describe('ContextAppContent test', () => {
     expect(component.find(DocTableLegacy).length).toBe(0);
   });
 
-  it('should render discover grid correctly', () => {
+  it('should render orderview grid correctly', () => {
     const props = { ...defaultProps, isLegacy: false };
     const component = mountWithIntl(<ContextAppContent {...props} />);
-    expect(component.find(DiscoverGrid).length).toBe(1);
+    expect(component.find(OrderviewGrid).length).toBe(1);
   });
 });

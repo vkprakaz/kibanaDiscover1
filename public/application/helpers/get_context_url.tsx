@@ -10,17 +10,17 @@ import { stringify } from 'query-string';
 import rison from 'rison-node';
 import { url } from '../../../../../src/plugins/kibana_utils/common';
 import { esFilters, FilterManager } from '../../../../../src/plugins/data/public';
-import { DiscoverServices } from '../../build_services';
+import { OrderviewServices } from '../../build_services';
 
 /**
- * Helper function to generate an URL to a document in Discover's context view
+ * Helper function to generate an URL to a document in Orderview's context view
  */
 export function getContextUrl(
   documentId: string,
   indexPatternId: string,
   columns: string[],
   filterManager: FilterManager,
-  addBasePath: DiscoverServices['addBasePath']
+  addBasePath: OrderviewServices['addBasePath']
 ) {
   const globalFilters = filterManager.getGlobalFilters();
   const appFilters = filterManager.getAppFilters();
@@ -39,7 +39,7 @@ export function getContextUrl(
   );
 
   return addBasePath(
-    `/app/discover#/context/${encodeURIComponent(indexPatternId)}/${encodeURIComponent(
+    `/app/orderview#/context/${encodeURIComponent(indexPatternId)}/${encodeURIComponent(
       documentId
     )}?${hash}`
   );

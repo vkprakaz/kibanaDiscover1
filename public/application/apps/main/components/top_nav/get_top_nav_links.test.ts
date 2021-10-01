@@ -10,19 +10,19 @@ import { ISearchSource } from '../../../../../../../../src/plugins/data/public';
 import { getTopNavLinks } from './get_top_nav_links';
 import { indexPatternMock } from '../../../../../__mocks__/index_pattern';
 import { savedSearchMock } from '../../../../../__mocks__/saved_search';
-import { DiscoverServices } from '../../../../../build_services';
-import { GetStateReturn } from '../../services/discover_state';
+import { OrderviewServices } from '../../../../../build_services';
+import { GetStateReturn } from '../../services/orderview_state';
 
 const services = ({
   capabilities: {
-    discover: {
+    orderview: {
       save: true,
     },
     advancedSettings: {
       save: true,
     },
   },
-} as unknown) as DiscoverServices;
+} as unknown) as OrderviewServices;
 
 const state = ({} as unknown) as GetStateReturn;
 
@@ -44,28 +44,28 @@ test('getTopNavLinks result', () => {
         "id": "options",
         "label": "Options",
         "run": [Function],
-        "testId": "discoverOptionsButton",
+        "testId": "orderviewOptionsButton",
       },
       Object {
         "description": "New Search",
         "id": "new",
         "label": "New",
         "run": [Function],
-        "testId": "discoverNewButton",
+        "testId": "orderviewNewButton",
       },
       Object {
         "description": "Save Search",
         "id": "save",
         "label": "Save",
         "run": [Function],
-        "testId": "discoverSaveButton",
+        "testId": "orderviewSaveButton",
       },
       Object {
         "description": "Open Saved Search",
         "id": "open",
         "label": "Open",
         "run": [Function],
-        "testId": "discoverOpenButton",
+        "testId": "orderviewOpenButton",
       },
       Object {
         "description": "Share Search",

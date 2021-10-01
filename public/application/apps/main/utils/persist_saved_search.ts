@@ -9,10 +9,10 @@
 import { updateSearchSource } from './update_search_source';
 import { IndexPattern } from '../../../../../../../../src/plugins/data/public';
 import { SavedSearch } from '../../../../saved_searches';
-import { AppState } from '../services/discover_state';
+import { AppState } from '../services/orderview_state';
 import { SortOrder } from '../../../../saved_searches/types';
 import { SavedObjectSaveOpts } from '../../../../../../saved_objects/public';
-import { DiscoverServices } from '../../../../build_services';
+import { OrderviewServices } from '../../../../build_services';
 
 /**
  * Helper function to update and persist the given savedSearch
@@ -31,7 +31,7 @@ export async function persistSavedSearch(
     onError: (error: Error, savedSearch: SavedSearch) => void;
     onSuccess: (id: string) => void;
     saveOptions: SavedObjectSaveOpts;
-    services: DiscoverServices;
+    services: OrderviewServices;
     state: AppState;
   }
 ) {

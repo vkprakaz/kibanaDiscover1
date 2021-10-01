@@ -31,7 +31,7 @@ const mockIndexPatternService = ({
 (getServices as jest.Mock).mockImplementation(() => ({
   uiSettings: {
     get: (key: string) => {
-      if (key === 'discover:useNewFieldsApi') {
+      if (key === 'orderview:useNewFieldsApi') {
         return true;
       }
     },

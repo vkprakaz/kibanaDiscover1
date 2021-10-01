@@ -30,194 +30,194 @@ import {
 
 export const getUiSettings: () => Record<string, UiSettingsParams> = () => ({
   [DEFAULT_COLUMNS_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.defaultColumnsTitle', {
+    name: i18n.translate('orderview.advancedSettings.defaultColumnsTitle', {
       defaultMessage: 'Default columns',
     }),
     value: ['_source'],
-    description: i18n.translate('discover.advancedSettings.defaultColumnsText', {
-      defaultMessage: 'Columns displayed by default in the Discovery tab',
+    description: i18n.translate('orderview.advancedSettings.defaultColumnsText', {
+      defaultMessage: 'Columns displayed by default in the Orderviewy tab',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.arrayOf(schema.string()),
   },
   [MAX_DOC_FIELDS_DISPLAYED]: {
-    name: i18n.translate('discover.advancedSettings.maxDocFieldsDisplayedTitle', {
+    name: i18n.translate('orderview.advancedSettings.maxDocFieldsDisplayedTitle', {
       defaultMessage: 'Maximum document fields displayed',
     }),
     value: 200,
-    description: i18n.translate('discover.advancedSettings.maxDocFieldsDisplayedText', {
+    description: i18n.translate('orderview.advancedSettings.maxDocFieldsDisplayedText', {
       defaultMessage: 'Maximum number of fields rendered in the document column',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.number(),
   },
   [SAMPLE_SIZE_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.sampleSizeTitle', {
+    name: i18n.translate('orderview.advancedSettings.sampleSizeTitle', {
       defaultMessage: 'Number of rows',
     }),
     value: 500,
-    description: i18n.translate('discover.advancedSettings.sampleSizeText', {
+    description: i18n.translate('orderview.advancedSettings.sampleSizeText', {
       defaultMessage: 'The number of rows to show in the table',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.number(),
   },
   [SORT_DEFAULT_ORDER_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.sortDefaultOrderTitle', {
+    name: i18n.translate('orderview.advancedSettings.sortDefaultOrderTitle', {
       defaultMessage: 'Default sort direction',
     }),
     value: 'desc',
     options: ['desc', 'asc'],
     optionLabels: {
-      desc: i18n.translate('discover.advancedSettings.sortOrderDesc', {
+      desc: i18n.translate('orderview.advancedSettings.sortOrderDesc', {
         defaultMessage: 'Descending',
       }),
-      asc: i18n.translate('discover.advancedSettings.sortOrderAsc', {
+      asc: i18n.translate('orderview.advancedSettings.sortOrderAsc', {
         defaultMessage: 'Ascending',
       }),
     },
     type: 'select',
-    description: i18n.translate('discover.advancedSettings.sortDefaultOrderText', {
+    description: i18n.translate('orderview.advancedSettings.sortDefaultOrderText', {
       defaultMessage:
-        'Controls the default sort direction for time based index patterns in the Discover app.',
+        'Controls the default sort direction for time based index patterns in the Orderview app.',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.oneOf([schema.literal('desc'), schema.literal('asc')]),
   },
   [SEARCH_ON_PAGE_LOAD_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.searchOnPageLoadTitle', {
+    name: i18n.translate('orderview.advancedSettings.searchOnPageLoadTitle', {
       defaultMessage: 'Search on page load',
     }),
     value: true,
     type: 'boolean',
-    description: i18n.translate('discover.advancedSettings.searchOnPageLoadText', {
+    description: i18n.translate('orderview.advancedSettings.searchOnPageLoadText', {
       defaultMessage:
-        'Controls whether a search is executed when Discover first loads. This setting does not ' +
+        'Controls whether a search is executed when Orderview first loads. This setting does not ' +
         'have an effect when loading a saved search.',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.boolean(),
   },
   [DOC_HIDE_TIME_COLUMN_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.docTableHideTimeColumnTitle', {
+    name: i18n.translate('orderview.advancedSettings.docTableHideTimeColumnTitle', {
       defaultMessage: "Hide 'Time' column",
     }),
     value: false,
-    description: i18n.translate('discover.advancedSettings.docTableHideTimeColumnText', {
-      defaultMessage: "Hide the 'Time' column in Discover and in all Saved Searches on Dashboards.",
+    description: i18n.translate('orderview.advancedSettings.docTableHideTimeColumnText', {
+      defaultMessage: "Hide the 'Time' column in Orderview and in all Saved Searches on Dashboards.",
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.boolean(),
   },
   [FIELDS_LIMIT_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.fieldsPopularLimitTitle', {
+    name: i18n.translate('orderview.advancedSettings.fieldsPopularLimitTitle', {
       defaultMessage: 'Popular fields limit',
     }),
     value: 10,
-    description: i18n.translate('discover.advancedSettings.fieldsPopularLimitText', {
+    description: i18n.translate('orderview.advancedSettings.fieldsPopularLimitText', {
       defaultMessage: 'The top N most popular fields to show',
     }),
     schema: schema.number(),
   },
   [CONTEXT_DEFAULT_SIZE_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.context.defaultSizeTitle', {
+    name: i18n.translate('orderview.advancedSettings.context.defaultSizeTitle', {
       defaultMessage: 'Context size',
     }),
     value: 5,
-    description: i18n.translate('discover.advancedSettings.context.defaultSizeText', {
+    description: i18n.translate('orderview.advancedSettings.context.defaultSizeText', {
       defaultMessage: 'The number of surrounding entries to show in the context view',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.number(),
   },
   [CONTEXT_STEP_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.context.sizeStepTitle', {
+    name: i18n.translate('orderview.advancedSettings.context.sizeStepTitle', {
       defaultMessage: 'Context size step',
     }),
     value: 5,
-    description: i18n.translate('discover.advancedSettings.context.sizeStepText', {
+    description: i18n.translate('orderview.advancedSettings.context.sizeStepText', {
       defaultMessage: 'The step size to increment or decrement the context size by',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.number(),
   },
   [CONTEXT_TIE_BREAKER_FIELDS_SETTING]: {
-    name: i18n.translate('discover.advancedSettings.context.tieBreakerFieldsTitle', {
+    name: i18n.translate('orderview.advancedSettings.context.tieBreakerFieldsTitle', {
       defaultMessage: 'Tie breaker fields',
     }),
     value: ['_doc'],
-    description: i18n.translate('discover.advancedSettings.context.tieBreakerFieldsText', {
+    description: i18n.translate('orderview.advancedSettings.context.tieBreakerFieldsText', {
       defaultMessage:
         'A comma-separated list of fields to use for tie-breaking between documents that have the same timestamp value. ' +
         'From this list the first field that is present and sortable in the current index pattern is used.',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.arrayOf(schema.string()),
   },
   [DOC_TABLE_LEGACY]: {
-    name: i18n.translate('discover.advancedSettings.docTableVersionName', {
+    name: i18n.translate('orderview.advancedSettings.docTableVersionName', {
       defaultMessage: 'Use classic table',
     }),
     value: true,
-    description: i18n.translate('discover.advancedSettings.docTableVersionDescription', {
+    description: i18n.translate('orderview.advancedSettings.docTableVersionDescription', {
       defaultMessage:
-        'Discover uses a new table layout that includes better data sorting, drag-and-drop columns, and a full screen view. ' +
+        'Orderview uses a new table layout that includes better data sorting, drag-and-drop columns, and a full screen view. ' +
         'Turn on this option to use the classic table. Turn off to use the new table. ',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.boolean(),
     metric: {
       type: METRIC_TYPE.CLICK,
-      name: 'discover:useLegacyDataGrid',
+      name: 'orderview:useLegacyDataGrid',
     },
   },
   [MODIFY_COLUMNS_ON_SWITCH]: {
-    name: i18n.translate('discover.advancedSettings.discover.modifyColumnsOnSwitchTitle', {
+    name: i18n.translate('orderview.advancedSettings.orderview.modifyColumnsOnSwitchTitle', {
       defaultMessage: 'Modify columns when changing index patterns',
     }),
     value: true,
-    description: i18n.translate('discover.advancedSettings.discover.modifyColumnsOnSwitchText', {
+    description: i18n.translate('orderview.advancedSettings.orderview.modifyColumnsOnSwitchText', {
       defaultMessage: 'Remove columns that are not available in the new index pattern.',
     }),
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.boolean(),
     metric: {
       type: METRIC_TYPE.CLICK,
-      name: 'discover:modifyColumnsOnSwitchTitle',
+      name: 'orderview:modifyColumnsOnSwitchTitle',
     },
   },
   [SEARCH_FIELDS_FROM_SOURCE]: {
-    name: i18n.translate('discover.advancedSettings.discover.readFieldsFromSource', {
+    name: i18n.translate('orderview.advancedSettings.orderview.readFieldsFromSource', {
       defaultMessage: 'Read fields from _source',
     }),
     description: i18n.translate(
-      'discover.advancedSettings.discover.readFieldsFromSourceDescription',
+      'orderview.advancedSettings.orderview.readFieldsFromSourceDescription',
       {
         defaultMessage: `When enabled will load documents directly from \`_source\`. This is soon going to be deprecated. When disabled, will retrieve fields via the new Fields API in the high-level search service.`,
       }
     ),
     value: false,
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.boolean(),
   },
   [SHOW_MULTIFIELDS]: {
-    name: i18n.translate('discover.advancedSettings.discover.showMultifields', {
+    name: i18n.translate('orderview.advancedSettings.orderview.showMultifields', {
       defaultMessage: 'Show multi-fields',
     }),
-    description: i18n.translate('discover.advancedSettings.discover.showMultifieldsDescription', {
+    description: i18n.translate('orderview.advancedSettings.orderview.showMultifieldsDescription', {
       defaultMessage: `Controls whether {multiFields} display in the expanded document view. In most cases, multi-fields are the same as the original field. This option is only available when \`searchFieldsFromSource\` is off.`,
       values: {
         multiFields:
           `<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/multi-fields.html"
             target="_blank" rel="noopener">` +
-          i18n.translate('discover.advancedSettings.discover.multiFieldsLinkText', {
+          i18n.translate('orderview.advancedSettings.orderview.multiFieldsLinkText', {
             defaultMessage: 'multi-fields',
           }) +
           '</a>',
       },
     }),
     value: false,
-    category: ['discover'],
+    category: ['orderview'],
     schema: schema.boolean(),
   },
 });

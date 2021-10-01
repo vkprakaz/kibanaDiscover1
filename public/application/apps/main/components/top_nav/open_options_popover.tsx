@@ -41,10 +41,10 @@ export function OptionsPopover(props: OptionsPopoverProps) {
   const isLegacy = uiSettings.get(DOC_TABLE_LEGACY);
 
   const mode = isLegacy
-    ? i18n.translate('discover.openOptionsPopover.legacyTableText', {
+    ? i18n.translate('orderview.openOptionsPopover.legacyTableText', {
         defaultMessage: 'Classic table',
       })
-    : i18n.translate('discover.openOptionsPopover.dataGridText', {
+    : i18n.translate('orderview.openOptionsPopover.dataGridText', {
         defaultMessage: 'New table',
       });
 
@@ -54,13 +54,13 @@ export function OptionsPopover(props: OptionsPopoverProps) {
         <EuiText color="subdued" size="s">
           <p>
             <FormattedMessage
-              id="discover.topNav.optionsPopover.currentViewMode"
+              id="orderview.topNav.optionsPopover.currentViewMode"
               defaultMessage="{viewModeLabel}: {currentViewMode}"
               values={{
                 viewModeLabel: (
                   <strong>
                     <FormattedMessage
-                      id="discover.topNav.optionsPopover.currentViewModeLabel"
+                      id="orderview.topNav.optionsPopover.currentViewModeLabel"
                       defaultMessage="Current view mode"
                     />
                   </strong>
@@ -73,8 +73,8 @@ export function OptionsPopover(props: OptionsPopoverProps) {
         <EuiSpacer size="s" />
         <EuiText color="subdued" size="s">
           <FormattedMessage
-            id="discover.topNav.openOptionsPopover.description"
-            defaultMessage="Great news! Discover has better ways to sort data, drag and drop columns, and compare documents. Toggle 'Use classic table' in Advanced Settings to get started."
+            id="orderview.topNav.openOptionsPopover.description"
+            defaultMessage="Great news! Orderview has better ways to sort data, drag and drop columns, and compare documents. Toggle 'Use classic table' in Advanced Settings to get started."
           />
         </EuiText>
         <EuiSpacer />
@@ -83,7 +83,7 @@ export function OptionsPopover(props: OptionsPopoverProps) {
           fullWidth
           href={addBasePath(`/app/management/kibana/settings?query=${DOC_TABLE_LEGACY}`)}
         >
-          {i18n.translate('discover.openOptionsPopover.goToAdvancedSettings', {
+          {i18n.translate('orderview.openOptionsPopover.goToAdvancedSettings', {
             defaultMessage: 'Get started',
           })}
         </EuiButton>
@@ -92,10 +92,10 @@ export function OptionsPopover(props: OptionsPopoverProps) {
           <EuiButtonEmpty
             iconType="gear"
             size="s"
-            href={addBasePath(`/app/management/kibana/settings?query=category:(discover)`)}
+            href={addBasePath(`/app/management/kibana/settings?query=category:(orderview)`)}
           >
-            {i18n.translate('discover.openOptionsPopover.gotToAllSettings', {
-              defaultMessage: 'All Discover options',
+            {i18n.translate('orderview.openOptionsPopover.gotToAllSettings', {
+              defaultMessage: 'All Orderview options',
             })}
           </EuiButtonEmpty>
         </EuiTextAlign>

@@ -11,7 +11,7 @@ import { setServices, getServices } from '../../../kibana_services';
 import { SortDirection } from '../../../../../../../src/plugins/data/public';
 import { createFilterManagerMock } from '../../../../../../../src/plugins/data/public/query/filter_manager/filter_manager.mock';
 import { CONTEXT_TIE_BREAKER_FIELDS_SETTING } from '../../../../common';
-import { DiscoverServices } from '../../../build_services';
+import { OrderviewServices } from '../../../build_services';
 import { indexPatternMock } from '../../../__mocks__/index_pattern';
 import { indexPatternsMock } from '../../../__mocks__/index_patterns';
 import { FailureReason, LoadingStatus } from '../../angular/context_query_state';
@@ -71,7 +71,7 @@ const initDefaults = (tieBreakerFields: string[], indexPatternId = 'the-index-pa
         }
       },
     },
-  } as unknown) as DiscoverServices);
+  } as unknown) as OrderviewServices);
 
   return {
     dangerNotification,

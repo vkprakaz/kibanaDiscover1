@@ -6,4 +6,4 @@
  * Side Public License, v 1.
  */
 
-export { DiscoverNoResults } from './no_results';
+export { OrderviewNoResults } from './no_results';

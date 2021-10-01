@@ -101,7 +101,7 @@ export function createTableRowDirective($compile: ng.ICompileService) {
 
       $scope.getSingleDocHref = () => {
         return getServices().addBasePath(
-          `/app/discover#/doc/${$scope.indexPattern.id}/${
+          `/app/orderview#/doc/${$scope.indexPattern.id}/${
             $scope.row._index
           }?id=${encodeURIComponent($scope.row._id)}`
         );
@@ -176,14 +176,14 @@ export function createTableRowDirective($compile: ng.ICompileService) {
         let $cells = $el.children();
         newHtmls.forEach(function (html, i) {
           const $cell = $cells.eq(i);
-          if ($cell.data('discover:html') === html) return;
+          if ($cell.data('orderview:html') === html) return;
 
           const reuse = find($cells.slice(i + 1), (c) => {
-            return $.data(c, 'discover:html') === html;
+            return $.data(c, 'orderview:html') === html;
           });
 
           const $target = reuse ? $(reuse).detach() : $(html);
-          $target.data('discover:html', html);
+          $target.data('orderview:html', html);
           const $before = $cells.eq(i - 1);
           if ($before.length) {
             $before.after($target);

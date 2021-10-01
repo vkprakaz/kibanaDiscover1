@@ -23,7 +23,7 @@ import {
 import { SavedObjectFinderUi } from '../../../../../../../../src/plugins/saved_objects/public';
 import { getServices } from '../../../../../kibana_services';
 
-const SEARCH_OBJECT_TYPE = 'search';
+const SEARCH_OBJECT_TYPE = 'ordersearch';
 
 interface OpenSearchPanelProps {
   onClose: () => void;

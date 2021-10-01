@@ -36,7 +36,7 @@ export class SearchEmbeddableFactory
     name: i18n.translate('orderview.savedSearch.savedObjectName', {
       defaultMessage: 'Saved search',
     }),
-    type: 'search',
+    type: 'ordersearch',
     getIconForSavedObject: () => 'orderviewApp',
   };
 

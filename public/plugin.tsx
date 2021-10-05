@@ -464,7 +464,6 @@ export class OrderviewPlugin
       };
     };
     
-    factory.id = "ordersearch";
 
     const factory = new SearchEmbeddableFactory(getStartServices, this.getEmbeddableInjector);
     plugins.embeddable.registerEmbeddableFactory(factory.type, factory);

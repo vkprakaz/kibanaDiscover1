@@ -10,7 +10,7 @@ import { SavedObject, SavedObjectsStart } from '../../../saved_objects/public';
 
 export function createSavedSearchClass(savedObjects: SavedObjectsStart) {
   class SavedSearch extends savedObjects.SavedObjectClass {
-    public static type: string = 'search';
+    public static type: string = 'ordersearch';
     public static mapping = {
       title: 'text',
       description: 'text',
@@ -31,7 +31,7 @@ export function createSavedSearchClass(savedObjects: SavedObjectsStart) {
     constructor(id: string) {
       super({
         id,
-        type: 'search',
+        type: 'ordersearch',
         mapping: {
           title: 'text',
           description: 'text',

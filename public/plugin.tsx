@@ -19,7 +19,8 @@ import {
   CoreStart,
   Plugin,
   PluginInitializerContext,
-} from 'kibana/public';
+} from '../../../src/core/public';
+
 import { UiActionsStart, UiActionsSetup } from 'src/plugins/ui_actions/public';
 import { EmbeddableStart, EmbeddableSetup } from 'src/plugins/embeddable/public';
 import { ChartsPluginStart } from 'src/plugins/charts/public';
@@ -466,6 +467,7 @@ export class OrderviewPlugin
     
 
     const factory = new SearchEmbeddableFactory(getStartServices, this.getEmbeddableInjector);
+    factory.id="ordersearch";
     plugins.embeddable.registerEmbeddableFactory(factory.type, factory);
   }
 
